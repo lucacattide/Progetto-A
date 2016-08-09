@@ -2,7 +2,7 @@
 
 	// Invio Form
 	
-	$email_proprietario = "luca@laboratorio-a.it"; // Dichiarazione ed Inizializzazione Variabile Destinatario
+	$email_proprietario = "info@laboratorio-a.it"; // Dichiarazione ed Inizializzazione Variabile Destinatario
 	$oggetto = "Notifiche | Progetto A"; // Dichiarazione ed Inizializzazione Variabile Oggetto
 	$corpo_destinatario = "Laboratorio-a\n\nGrazie per esserti iscritto alla newsletter.\nRiceverai presto novità ed aggiornamento su Progetto A.\n\nProssimamente su laboratorio-a.it\n_____________________\nIl Team di Laboratorio-a"; // Dichiarazione ed inizializzazione corpo email destinatario
 	
