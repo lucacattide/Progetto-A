@@ -4,7 +4,7 @@
 	
 	$email_proprietario = "luca@laboratorio-a.it"; // Dichiarazione ed Inizializzazione Variabile Destinatario
 	$oggetto = "Notifiche | Progetto A"; // Dichiarazione ed Inizializzazione Variabile Oggetto
-	$corpo_destinatario = "Laboratorio-a\n\nGrazie per averci lasciato il tuo contatto.\nRiceverai presto novità ed aggiornamento su Progetto A.\n\nProssimamente su laboratorio-a.it\n_____________________\nIl Team di Laboratorio-a"; // Dichiarazione ed inizializzazione corpo email destinatario
+	$corpo_destinatario = "Laboratorio-a\n\nGrazie per esserti iscritto alla newsletter.\nRiceverai presto novità ed aggiornamento su Progetto A.\n\nProssimamente su laboratorio-a.it\n_____________________\nIl Team di Laboratorio-a"; // Dichiarazione ed inizializzazione corpo email destinatario
 	
 	// Controllo Input
 
@@ -49,7 +49,7 @@
 		 
         if (@mail($email_proprietario, $oggetto, $email_corpo, $headers) && @mail($email, $oggetto, $corpo_destinatario, $headers_destinatario)) { // Funzione Mail
 		
-			echo "<div id='banner_email'><p>Indirizzo e-mail inviato correttamente.<br />Riceverai a breve una notifica di avvenuta registrazione.</p></div>";
+			echo "<div id='banner_email'><p>Indirizzo <span class='straniere'>e-mail</span> inviato correttamente.<br />Riceverai a breve una notifica di avvenuta registrazione.</p></div>";
 		
 		}
 		

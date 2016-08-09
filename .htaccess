@@ -1,0 +1,16 @@
+# Attiva il modulo Rewrite
+
+RewriteEngine On
+
+# Indexing
+
+DirectoryIndex landing.php
+
+# Redirect
+
+#Redirect /index.php /landing.php
+
+# Rewrite URL SEF
+
+RewriteRule ^progetto-a/?$ landing.php [L]
+RewriteRule ^/?$ index.php [L]

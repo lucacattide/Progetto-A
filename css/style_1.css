@@ -22,6 +22,8 @@ body
 	padding: 0;
 }
 
+.straniere { font-style: italic; }
+
 /* Titoli */
 
 h1
@@ -88,7 +90,7 @@ a:hover { color: #1A181E; }
 
 #mailing_list
 {
-	width: 22%;
+	width: 28%;
 	margin: 0 auto 10em;
 }
 
@@ -183,6 +185,8 @@ a { transition: all .3s ease-in-out; }
 #mailing_list { width: 29%; }
 
 #skip { right: 1.5%; }
+
+#mailing_list { width: 36%; }
 }
 
 @media all and (max-width: 1024px) {
@@ -193,10 +197,12 @@ a { transition: all .3s ease-in-out; }
 	padding-bottom: 18%;
 }
 
-#mailing_list { width: 36%; }
+#mailing_list { width: 46%; }
 }
 
 @media all and (max-width: 768px) {
+
+#counter { width: 90% !important; }
 
 #logo
 {
@@ -214,12 +220,52 @@ a { transition: all .3s ease-in-out; }
 
 #counter { width: 100%; }
 
-.ClassyCountdown-wrapper>div { width: calc(50% - 20px) !important;}
+.ClassyCountdown-wrapper>div { width: calc(50% - 20px) !important; }
+
+#skip { right: 2%; }
+
+label[for="accettazione"]
+{
+	margin: 1em auto;
+	line-height: 1.5rem;
+	display: block;
+	text-align: center;
+}
+
+#tooltip
+{
+	position: relative;
+	text-align: center;
+}
 }
 
 @media all and (max-width: 600px) {
 
 body { font-size: 12px; }
+
+#skip { right: 3%; }
+
+.ClassyCountdown-wrapper .ClassyCountdown-value span { font-size: 1rem !important; }
 }
 
+@media all and (max-width: 480px) {
+
+#skip { right: 3.5%; }
+}
+
+@media all and (max-width: 375px) {
+
+h2
+{
+	text-align: center;
+	font-size: .9rem;
+}
+
+#skip { right: 4%; }
+
+.ClassyCountdown-wrapper .ClassyCountdown-value span { font-size: .9rem !important; }
+}
+
+@media all and (max-width: 320px) {
+}
 /* Fine CSS */

@@ -33,7 +33,8 @@ function inizializza() {
 	$('.countdown').ClassyCountdown({
 		
 		theme: "black",
-		end: Math.round($.now() + 4492800000),
+		now: '0',
+		end: '4492800',
 		labelsOptions: {
 			lang: {
 				days: 'GG',
@@ -42,7 +43,8 @@ function inizializza() {
 				seconds: 'S'
 			},
 			style: 'font-size:1.5rem; text-transform:uppercase;font-family:"AtlasBold", sans-serif;'
-		},		
+		}
+			
 	});
    
 }
