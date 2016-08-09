@@ -1,0 +1,154 @@
+/* Inizio Importazioni */
+
+@import url("normalize.css"); /* CSS Reset */
+/*@import url("reset.css"); /* " */
+@import url("style.css"); /* " Transitions Ink */
+@import url("animate.css"); /* " Animate */
+
+/* Fine Importazioni */
+
+/* Inizio CSS */
+
+/* Generale ***********************************************/
+
+html, body
+{
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+}
+
+body
+{
+	font-size: 14px;
+	overflow: hiden;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+h7 { display: none; }
+
+#container
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+}
+
+.deseleziona
+{
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+/* Links ***********************************************/
+
+a:link { text-decoration: none; }
+
+/* Scena ***********************************************/
+
+a-scene { z-index: 0; }
+
+/* Logo ***********************************************/
+
+#logo
+{
+	position: fixed;
+	z-index: 1000;
+	top: 2%;
+	left: 1%;
+	width: 64px;
+	height: 4em; 
+	background-image: url("../img/logo.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: scroll;
+	background-position: 0 0;
+}
+
+/* Landing ***********************************************/
+
+#claim
+{
+	z-index: 1000;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto;
+	width: 32%;
+	text-align: center;
+	color: #fff;
+}
+
+#headline
+{
+	font-size: 2.286rem;
+	margin-bottom: 0;
+	text-transform: capitalize;
+	-webkit-animation-delay: 1s;  -moz-animation-delay: 1s;   -ms-animation-delay: 1s;   -o-animation-delay: 1s;   animation-delay: 1s; 
+}
+
+#tagline { font-size: 1.571rem; text-transform: lowercase;  	-webkit-animation-delay: .5s;  -moz-animation-delay:.5s;   -ms-animation-delay: .5s;   -o-animation-delay: .5s;  animation-delay:.5s; 
+}
+
+#entra
+{
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 2rem;
+	padding: .5em 2%;
+	background-color: transparent; 
+	border: 1px solid #F48E4E;
+	margin: 1em auto 0;
+	display: block;
+	width: 52%;
+	letter-spacing: 2px;
+}
+
+#entra:hover { background-color:  #F48E4E; 
+	border-color: #A75725; }
+#entra:focus { background-color:   #A75725; border-color: #F48E4E;}
+
+/* Transizioni **********************************************/
+
+#entra { transition: background-color .5s ease-in-out .3s, border-color .3s ease-in-out;  }
+
+/* Inizio Mobile ***********************************************/
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 768px) {
+}
+
+@media all and (max-width: 600px) {
+
+body { font-size: 14px; }
+}
+
+@media all and (max-width: 480px) {
+}
+
+@media all and (max-width: 375px) {
+}
+
+@media all and (max-width: 320px) {
+}
+
+/* Fine Mobile ***********************************************/
+
+/* Fine CSS */

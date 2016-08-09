@@ -1,235 +1,156 @@
-<!DOCTYPE html> <!--Dichiarazione DOCTYPE-->
+<?php 
+
+	/* Navigazione */
+
+	if (isset($_GET["pag"])) { // Se il parametro pagina è settato
+	
+		$pag = $_GET["pag"]; // Allora inizializzalo
+		
+	} else {  // Altrimenti inizializzazione default
+		
+		$pag = "";  
+		
+	}
+	
+	// Impostazione Timezone e Codifica Caratteri
+
+	@date_default_timezone_set('Europe/Rome');
+	@setlocale(LC_ALL, 'it_IT');
+	@setlocale(LC_TIME, 'ita', 'it_IT.utf8');
+	
+	// Impostazioni HTACCESS
+	
+	//variabili per htaccess
+
+	if( $pag == "prodotto" ) { // Se la pagina è
+  
+  		$siteurl = "http://localhost/progettoa/"; // Allora inizializza l'url
+  
+	} else { // Altrimenti inizializza default
+ 
+  		$siteurl = "";
+ 
+	} 
+  
+ 	// Menu htaccess 
+ 
+ 	$siteurl_base = "http://localhost/progettoa/"; // Inizializzazione URL base
+
+?>
+
+<!doctype html> <!--Dichairazione DOCTYPE-->
 
 <!--Inizio HTML-->
 
-<html lang="en">
+<html>
 
-	<!--Inizio Head-->
+    <!--Inizio Head-->
 
-	<head>	
-    
-      	<!--Inizio Definizione Meta Tags-->
+	<head>
 
-        <meta charset="utf-8" /> <!--Codifica Caratteri-->
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <!--Definizione Viewport-->
-    
-        <!--Titolo-->
+		<?php 
+		
+			include ("include/meta.php"); // Inclusione Meta Tags
+			
+		?>
         
-        <title>
+		<!--Inizio Inclusione JavaScript-->
         
-        	Progetto A | Laboratorio-a
-            
-        </title>
+        <script type="text/javascript" src="js/aframe.min.js"> <!--A-Frame-->
+		</script>
         
-      	<!--Fine Definizione Meta Tags-->
+        <!--Fine Inclusione JavaScript-->
         
-        <!--Inizio Inclusione CSS-->
-    	
-        <link rel="stylesheet" href="css/style.css"> <!--CSS Main-->
-        <link rel="stylesheet" href="css/jquery.classycountdown.min.css"> <!--" Counter-->
-        
-        <!--Fine Inclusione CSS-->
+		<!--Inclusione CSS-->
+
+		<link rel="stylesheet" type="text/css" href="<?php echo $siteurl; ?>css/style_lab.css"> <!--CSS Main-->
+        <link rel="icon" type="image/png" href="favicon.png" /> <!--FavIcon-->
 
 	</head>
     
-	<!--Fine Head-->
+    <!--Fine Head-->
+    
+    <!--Inizio Body-->
 
-	<!--Inizio Body-->
-
-    <body>
+	<body>
+    
+    	<!-- Google Tag Manager -->
+		
+       <!-- <noscript>
         
+        	<iframe src="//www.googletagmanager.com/ns.html?id=GTM-N2FH2T" height="0" width="0" style="display:none;visibility:hidden">
+            </iframe>
+            
+        </noscript>
+
+		<script>
+		
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-N2FH2T');
+            
+        </script>-->
+
+		<!-- End Google Tag Manager -->
+    	
         <!--Inizio Container-->
-    
-    	<div id="container">
+
+		<div id="container">
         
-        	<!--Inizio Skip-->
+			<?php 
             
-            <aside id="skip">
-            
-            	<!--Titolo-->
-            
-            	<h3>
-                	
-                    Skip
-                    
-                </h3>
+             include ("include/banner_cookies.php"); // Inclusione Banner Cookies
+             include("include/ui.php"); // Inclusione Intaerfaccia Utente
+			 
+              /*-- BODY -------------------------------------------------------------------*/
+      
+               switch($pag):
+               
+                 case "":
+                 
+                  include("include/landing.php");
                 
-                <a href="index.php" title="Salta e vai al sito web di laboratorio-a" target="0"> <!--Link-->
-                
-                	Vai al sito &#8594;
-                    
-                </a>	
+                  break;
+                 
+                  case "cookies":
+                 
+                  include("include/cookies.php");
+                  
+                  break;
+				  
+				  case "landing":
+                 
+                  include("include/landing.php");
+                  
+                  break;
+                 
+                 case "home":
+                 
+                  include("include/home.php");
+                  
+                  break;
+                              
+               endswitch;
+              
+              /*-- END BODY ------------------------------------------------------------------*/
+                       
+            ?>
             
-            </aside>
-            
-            <!--Fine Skip-->
-            
-            <!--Inizio Logo-->
-        
-            <aside id="logo">
-
-                <!--Titolo-->
-                
-                <h3>
-
-                    Logo
-
-                </h3>
-                
-            </aside>
-            
-            <!--Fine Logo-->
-            
-            <!--Inizio Countdown-->
-            
-            <aside id="counter">
-
-                <!--Titolo-->
-                
-                <h3>
-
-                    Countdown
-
-                </h3>
-                
-                <div class="countdown"> <!--Counter-->
-                </div>
-
-            </aside>
-            
-            <!--Fine Countdown-->
-            
-            <!--Inizio Summary-->
-
-            <section id="summary">
-                
-                <!--Inizio Titoli-->
-
-                <hgroup>
-                    
-                    <!--Titolo-->
-
-                    <h3>
-
-                        Summary
-
-                    </h3>
-                    
-                    <!--Titolo-->
-                    
-                    <h1>
-
-                        Progetto A
-
-                    </h1>
-
-                </hgroup>
-                
-                <!--Fine Titoli-->
-                
-                <!--Inizio Paragrafo-->
-
-                <article>
-                    
-                    <!--Inizio Titoli-->
-
-                    <hgroup>
-                        
-                        <!--Titolo-->
-
-                        <h3>
-
-                            Smmary
-
-                        </h3>
-                        
-                        <!--Titolo-->
-                        
-                        <h2>
-
-                            Curioso di scoprire cos'è? Iscriviti ora
-
-                        </h2>
-
-                    </hgroup>
-                    
-                    <!--Fine Titoli-->
-
-                </article>
-                
-                <!--Fine Summary-->
-
-                <!--Inizio Form-->
-                                
-                <form action="<?php echo $_SERVER['SELF']; ?>" method="POST" accept-charset="utf-8" autocomplete="on" id="mailing_list" enctype="application/x-www-form-urlencoded" title="Resta Aggiornato">
-
-                    <input type="email" id="email" name="email" tabindex="1" title="Inserisci la tua E-Mail" placeholder="Inserisci la tua E-Mail (es. mariorossi@email.it)" required>  
-                    
-                    <label for="accettazione">
-                    
-	                    <input type="checkbox" id="accettazione" name="accettazione" tabindex="2" required>
-    					
-                        Desidero ricevere aggiornamenti su Progetto A<br /><a id="privacy" href="#accettazione" title="Informativa sulla Privacy" tabindex="2">Privacy</a>
-    
-                    </label>
-                    
-                    <div id="tooltip">
-                    
-                    	Autorizzo al trattamento dei dati personali ai sensi del DLgs. 196/03.
-                    
-                    </div>
-                    
-                    <button type="submit" id="invia" title="Invia una notifica al mio indirizzo e-mail" tabindex="3">
-
-						Inviami una notifica
-
-                    </button>
-                    
-                       <?php
-				
-						  include "include/form.php"; // Inclusione Script Form
-				
-					   ?>
-
-                </form>             
-                
-                <!--Fine Form-->
-
-            </section>
-            
-            <!--Fine Summary-->
-        
         </div>
-        
-        <!--Fine Container-->
-    
+
+		<!--Fine Container-->
+
     </body>
     
-	<!--Fine Body-->
+    <!--Fine Body -->
     
-    <!--Inizio Inclusione Librerie JavaScript-->
-    
-    <script type="text/javascript" defer src="js/jquery-3.1.0.min.js"> <!--jQuery-->
-    </script>
-    
-    <!--Countdown-->
-    
-	<script defer src="js/jquery.classycountdown.min.js">
-    </script>
-	<script defer src="js/jquery.knob.js">
-    </script>
-	<script defer src="js/jquery.throttle.js">
-    </script>
-    <script type="text/javascript" defer src="js/template.js"> <!--Template-->
-    </script>
-    
-    <!--TypeKit-->
-   	
-	<script src="https://use.typekit.net/owz7awq.js">
-    </script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
-    
-    <!--Fine Inclusione Librerie JavaScript-->
+    <?php 
+		  
+     	include ("include/scripts.php"); // Inclusione JavaScript
+		
+    ?>
     
 </html>
 

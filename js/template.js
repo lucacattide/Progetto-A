@@ -3,48 +3,33 @@
 $(document).ready(function() {
 
 	inizializza(); // Invocazione Funzione Inizializzazione 
+	transizioni(); // Invocazione Funzione Transizioni 
 	
-	$("#privacy").on("click tap", function() { // Al click sulla voce
-		
-		$("#tooltip").slideDown(); // Mostra Tooltip
-		
-		setTimeout(function() {
-			
-			$("#tooltip").slideUp(); // Nascondi il Tooltip	
-		
-		}, 3000);
-		
-	});
-	$("#invia").on("click tap", function() {
-		
-		$("html, body").animate({ scrollTop: $(document).height() });	
-		
-	});
-
 });
 
 
 // Funzione Inizializzazione
 
-function inizializza() {
+function inizializza() {   
+}
+
+
+// Funzione Transizioni 
+
+function transizioni() {
 	
-	// Countdown
-	
-	$('.countdown').ClassyCountdown({
+	$("#entra").on("click tap", function() {
 		
-		theme: "black",
-		now: '0',
-		end: '4492800',
-		labelsOptions: {
-			lang: {
-				days: 'GG',
-				hours: 'H',
-				minutes: 'M',
-				seconds: 'S'
-			},
-			style: 'font-size:1.5rem; text-transform:uppercase;font-family:"AtlasBold", sans-serif;'
-		}
+		$(this).addClass("animated fadeOutDown");
+		$("#tagline").addClass("animated fadeOutDown");
+		$("#headline").addClass("animated fadeOutDown");
+		
+		setTimeout(function() {
 			
+			window.location.href = "index.php?pag=home";
+		
+		}, 2500);
+		
 	});
-   
+	
 }
