@@ -1,16 +1,12 @@
+# Disattiva il browsing della directory
+
+Options -Indexes
+
 # Attiva il modulo Rewrite
 
 RewriteEngine On
 
-# Indexing
+# Regole URL SEF
 
-DirectoryIndex landing.php
-
-# Redirect
-
-#Redirect /index.php /landing.php
-
-# Rewrite URL SEF
-
-RewriteRule ^progetto-a/?$ landing.php [L]
-RewriteRule ^/?$ index.php [L]
+RewriteRule ^home/?$ index.php [L]
+RewriteRule ^home/?$ index.php?pag=landing [L]
