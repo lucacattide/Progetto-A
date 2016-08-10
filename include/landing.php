@@ -6,8 +6,8 @@
     
      <a-assets>
     
-    	<img id="home" src="img/home.jpg" alt=""> <!--Sfondo-->
-        <audio id="bgm" src="audio/wonder-cycle-chris-zabriskie.mp3"> <!--BGM-->
+    	<img id="landing_1" src="img/landing_1.jpg" alt=""> <!--Sfondo-->
+    	<img id="landing_2" src="img/landing_2.jpg" alt=""> <!--Sfondo-->
   
   	</a-assets>
   
@@ -15,12 +15,9 @@
 
 	<!--Inizio Area-->
         
-    <a-sky src="#home" transparent="true" rotation="0 127 0"> <!--Sfondo-->
+    <a-sky id="sfondo_landing" src="#landing_1" transparent="true" rotation="0 127 0"> <!--Sfondo-->
     </a-sky>
     
-<!--    <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio--
-    </a-entity>
--->    
     <!--Inizio Entità Camera-->
     
     <a-entity position="0 0 0">

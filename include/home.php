@@ -15,12 +15,12 @@
 
 	<!--Inizio Area-->
         
-    <a-sky src="#home" transparent="true" rotation="0 130 0"> <!--Sfondo-->
+    <a-sky src="#home" transparent="true" rotation="0 30 0"> <!--Sfondo-->
     </a-sky>
     
-<!--    <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio--
+    <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio-->
     </a-entity>
--->    
+    
     <!--Inizio Entità Camera-->
     
     <a-entity position="0 0 0">
