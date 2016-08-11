@@ -1,12 +1,9 @@
-# Disattiva il browsing della directory
-
-Options -Indexes
-
 # Attiva il modulo Rewrite
 
 RewriteEngine On
 
 # Regole URL SEF
 
-RewriteRule ^home/?$ index.php [L]
-RewriteRule ^home/?$ index.php?pag=landing [L]
+RewriteRule ^/?$ index.php [L]
+RewriteRule ^/?$ index.php?pag=landing [L]
+RewriteRule ^home/?$ index.php?pag=home [L]

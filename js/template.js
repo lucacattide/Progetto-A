@@ -33,6 +33,8 @@ $(document).ready(function() {
       (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
 	  
 	  $(".c-hamburger.c-hamburger--htx").toggleClass("attivo"); // Rimuove lo stato attivo dal menu
+	  $("#mappa_sito").toggleClass("mappa_sito_attiva");
+	  $(".mappa_sito_sfondo").toggleClass("mappa_sito_sfondo_attivo");
 
     });
 
@@ -91,20 +93,8 @@ function transizioni() {
 		
 		
 	}, function() { // All'uscita nascondi
-		
-		//$("#preferiti i").removeClass("evidenzia_1");
-		//$("#preferiti").removeClass("entra_giu");
-		
 	});
 	$("#preferiti_link").hover(function() { // Al passaggio del mouse
-	
-		// Mostra link
-		
-		/*$("#preferiti i").addClass("evidenzia_1");
-		$("#preferiti_link").addClass("evidenzia_2");
-		$("#preferiti").addClass("entra_giu");*/
-		
-		
 	}, function() { // All'uscita nascondi
 		
 		$("#preferiti i").removeClass("evidenzia_1");
@@ -170,15 +160,25 @@ function transizioni() {
 	if ($("#claim").length > 0) { // Se siamo sulla landing
 	
 		$("#logo").addClass("nascondi"); // Allora nascondi logo
+		$("#preferiti").addClass("nascondi"); // Allora nascondi i preferiti
+		$("#icona_mappa_sito").addClass("nascondi"); // Allora nascondi la sitemap
 		$("#volume").addClass("nascondi"); // Allora nascondi il volume
+		$("#breadcrumb").addClass("nascondi"); // Allora nascondi il breadcrumb
+		$("#mappa_breadcrumb").addClass("nascondi"); // Allora nascondi il breadcrumb
 		$("#icona_footer").addClass("nascondi"); // Allora nascondi il volume
+		$("#live").addClass("nascondi"); // Allora nascondi il livestream
 		
 	} else {
 		
 		$("#logo").removeClass("nascondi"); // Altrimenti mostra
+		$("#preferiti").removeClass("nascondi"); // Alloramostra
+		$("#icona_mappa_sito").removeClass("nascondi"); // Allora mostra
 		$("#volume").removeClass("nascondi"); // Allora mostra
+		$("#breadcrumb").removeClass("nascondi"); // Allora mostra
+		$("#mappa_breadcrumb").removeClass("nascondi"); // Allora mostra
 		$("#icona_footer").removeClass("nascondi"); // Allora mostra
-		
+		$("#live").removeClass("nascondi"); // Allora mostra
+
     }
 	
 	// Entra

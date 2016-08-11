@@ -1,0 +1,270 @@
+/* Inizio Importazioni */
+
+@import url("normalize.css"); /* CSS Reset */
+@import url("counteverest.css"); /* " Countereverest */
+
+/* Fine Importazioni */
+
+/* Inizio CSS */
+
+/* Generale ***********************************************/
+
+body
+{
+	background-color: #f1f1f1;
+	font-size: 14px;
+	color: #000;
+	font-family: "AtlasReg", sans-serif;
+}
+
+#container
+{
+	margin: 0;
+	padding: 0;
+}
+
+.straniere { font-style: italic; }
+
+/* Titoli */
+
+h1
+{
+	text-align: center;
+	font-size: 4rem;
+}
+
+h2
+{
+	text-align: center;
+	font-size: 1rem;
+	margin: 1em 0 2em;
+}
+
+h3 { display: none; }
+
+/* Links */ 
+
+a:link, a:active, a:visited
+{
+	color: #342C38;
+	text-decoration: none;
+}
+
+a:hover { color: #1A181E; }
+
+/* Logo **********************************************/
+
+#logo
+{
+	display: block;
+	position: relative;
+	width: 12%;
+	height: auto;
+	padding-bottom: 11%;
+	background-size: 100%;
+	background-image: url("../img/logo_landing.svg");
+	background-attachment: scroll;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	margin: 10em auto 5em;
+}
+
+/* Skip **********************************************/
+
+#skip
+{
+	position: absolute;
+	right: 1%;
+	top: 2%;
+	font-weight: bold;
+}
+
+/* Counter **********************************************/
+
+.ce-countdown--theme-9
+{
+	background-color: transparent;
+	color: #342C38;
+	font-family: "AtlasReg", sans-serif;
+}
+
+.ce-countdown--theme-9 .ce-label { color: #1A181E; }
+
+/* Form **********************************************/
+
+#mailing_list
+{
+	width: 28%;
+	margin: 0 auto 10em;
+}
+
+#email
+{
+	width: 100%;
+	margin: 0 0 1em;
+	padding: 1em 2%;
+	font-size: 1rem;
+	border: 0;
+	text-align: center;
+}
+
+#email:focus, #email:hover
+{
+	-webkit-box-shadow: 0px 0px 1px 1px #342C38;
+	-moz-box-shadow: 0px 0px 1px 1px #342C38;
+	box-shadow: 0px 0px 1px 1px #342C38;
+}
+
+#invia
+{
+	display: block;
+	padding: 1em 2%;
+	font-size: 1rem;
+	width: 104%;
+	margin: 1em auto 0;
+	text-transform: uppercase;
+	border: 0;
+	background-color: #1A181E;
+	color: #f1f1f1;
+	font-weight: bold;
+}
+
+#invia:hover, #invia:focus
+{
+	background-color: #342C38;
+	cursor: pointer;
+}
+
+label[for="accettazione"]
+{
+	margin: 1em 0;
+	line-height: 1.5rem;
+}
+
+label[for="accettazione"]:hover { cursor: pointer; }
+
+#privacy
+{
+	font-weight: bold;
+	margin-left: 6%;
+	font-style: italic;
+}
+
+#tooltip
+{
+	display: none;
+	background-color: #342C38;
+	color: #f1f1f1;
+	font-weight: lighter;
+	width: auto;
+	height: auto;
+	padding: 1em 2%;
+	position: absolute;
+}
+
+#banner_email { text-align: center; }
+
+/* Transizioni  **********************************************/
+
+a { transition: all .3s ease-in-out; }
+
+#email { transition: all .3s ease-in-out; }
+
+#invia { transition: all .3s ease-in-out; }
+
+#accettazione { transition: all .3s ease-in-out; }
+
+#privacy { transition: all .3s ease-in-out; }
+
+/* Inizio Mobile ***********************************************/
+
+@media all and (max-width: 1280px) {
+
+#logo
+{
+	width: 15%;
+	padding-bottom: 14%;
+}
+
+#mailing_list { width: 29%; }
+
+#skip { right: 1.5%; }
+
+#mailing_list { width: 36%; }
+}
+
+@media all and (max-width: 1024px) {
+
+#logo
+{
+	width: 19%;
+	padding-bottom: 18%;
+}
+
+#mailing_list { width: 46%; }
+}
+
+@media all and (max-width: 768px) {
+
+/*#counter { width: 90% !important; }
+*/
+#logo
+{
+	width: 28%;
+	padding-bottom: 26%;
+}
+
+#mailing_list { width: 90%; }
+
+#email { width: 96%; }
+
+#invia { width: 100%; }
+
+#privacy { margin-left: 3%; }
+
+/*#counter { width: 100%; }
+*/
+
+#skip { right: 2%; }
+
+label[for="accettazione"]
+{
+	margin: 1em auto;
+	line-height: 1.5rem;
+	display: block;
+	text-align: center;
+}
+
+#tooltip
+{
+	position: relative;
+	text-align: center;
+}
+}
+
+@media all and (max-width: 600px) {
+
+body { font-size: 12px; }
+
+#skip { right: 3%; }
+}
+
+@media all and (max-width: 480px) {
+
+#skip { right: 3.5%; }
+}
+
+@media all and (max-width: 375px) {
+
+h2
+{
+	text-align: center;
+	font-size: .9rem;
+}
+
+#skip { right: 4%; }
+}
+
+@media all and (max-width: 320px) {
+}
+/* Fine CSS */

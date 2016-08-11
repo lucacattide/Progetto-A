@@ -73,35 +73,13 @@
     <!--Inizio Body-->
 
 	<body>
-    
-    	<!-- Google Tag Manager -->
-		
-       <!-- <noscript>
-        
-        	<iframe src="//www.googletagmanager.com/ns.html?id=GTM-N2FH2T" height="0" width="0" style="display:none;visibility:hidden">
-            </iframe>
-            
-        </noscript>
-
-		<script>
-		
-			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','GTM-N2FH2T');
-            
-        </script>-->
-
-		<!-- End Google Tag Manager -->
-    	
+        	
         <!--Inizio Container-->
 
 		<div id="container">
         
 			<?php 
             
-             include ("include/banner_cookies.php"); // Inclusione Banner Cookies
              include("include/ui.php"); // Inclusione Intaerfaccia Utente
 			 
               /*-- BODY -------------------------------------------------------------------*/
@@ -113,12 +91,6 @@
                   include("include/landing.php");
                 
                   break;
-                 
-                  case "cookies":
-                 
-                  include("include/cookies.php");
-                  
-                  break;
 				  
 				  case "landing":
                  
@@ -126,12 +98,12 @@
                   
                   break;
                  
-                 case "home":
+                  case "home":
                  
                   include("include/home.php");
                   
                   break;
-                              
+                
                endswitch;
               
               /*-- END BODY ------------------------------------------------------------------*/
