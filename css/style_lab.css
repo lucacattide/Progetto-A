@@ -93,11 +93,18 @@ h7 { display: none; }
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 1.143rem !important;
+	border-bottom: 1px solid #fff;
 }
 
 .prima_voce { padding-top: 1em; }
 
-.sottolineata:hover { border-bottom: 1px solid #000; }
+.spaziatura { margin-top: 1em; }
+
+.sottolineata { display: inline-block !important; }
+
+.sottolineata:hover { /*border-bottom: 1px solid #000;*//* text-decoration: underline;*/ }
+
+.sottolineata:hover li { border-bottom: 1px solid #000; }
 
 /* Links ***********************************************/
 
@@ -324,11 +331,11 @@ a-scene { z-index: 0; }
 	content: "";
 }
 
-.c-hamburger.c-hamburger--htx:hover span
+.icona_mappa_sopra
 {
-	left: 10px;
-	top: 23px;
-	background: #000;
+	left: 10px !important;
+	top: 23px !important;
+	background: #000 !important;
 }
 
 .c-hamburger.c-hamburger--htx:hover span::before
@@ -376,12 +383,16 @@ a-scene { z-index: 0; }
 	background: #000;
 }
 
+.c-hamburger--htx.is-active:hover span::before { left: 0; }
+
 .c-hamburger--htx.is-active span::after
 {
 	bottom: 0;
 	transform: rotate(-45deg);
 	background: #000;
 }
+
+.c-hamburger--htx.is-active:hover span::after { left: 0; }
 
 .c-hamburger--htx.is-active span::before, .c-hamburger--htx.is-active span::after { transition-delay: 0s, 0.3s; }
 
@@ -401,12 +412,15 @@ a-scene { z-index: 0; }
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
+	overflow: hidden;
 }
+
+.mappa_sito_out { transition: all 1s ease-out !important; }
 
 .mappa_sito_attiva
 {
 	z-index: 2000 !important;
-	opacity: 1 !important;
+	opacity: .7 !important;
 	background-color: #14A3A7 !important;
 	transform: translate(0, 0) !important;
 	border-radius: 0 !important;
@@ -416,7 +430,7 @@ a-scene { z-index: 0; }
 
 .mappa_sito_sfondo
 {
-	width: 0;
+	width: 20%;
 	height: 0;
 	position: relative;
 	top: 50%;
@@ -424,18 +438,55 @@ a-scene { z-index: 0; }
 	display: inline-block;
 	transform: translateY(-50%);
 	float: left;
-	padding: 5em 0;
+	padding: 0;
 	text-align: center;
 	color: #fff;
-	opacity: .7;
+	/*opacity: .7;*/
 	overflow: hidden;
 }
+.mappa_sito_sfondo_in {transition: all .5s ease-in-out 0s !important; }
+.mappa_sito_sfondo_attivo { /*width: 20% !important;*/ /*height: 40% !important;
+padding: 5em 0 !important; */ }
 
-.mappa_sito_sfondo_attivo
+.pannello_1_attivo
 {
-	width: 20% !important;
-	height: auto !important;
+	height: 40% !important;
+	padding: 5em 0 !important;
 }
+
+.pannello_1_attivo:hover { height: 60% !important; }
+
+.pannello_2_attivo
+{
+	height: 55% !important;
+	padding: 5em 0 !important;
+}
+
+.pannello_2_attivo:hover { height: 80% !important; }
+
+.pannello_3_attivo
+{
+	height: 95% !important;
+	padding: 5em 0 !important;
+}
+
+.pannello_3_attivo:hover { height: 100% !important; }
+
+.pannello_4_attivo
+{
+	height: 25% !important;
+	padding: 5em 0 !important;
+}
+
+.pannello_4_attivo:hover { height: 45% !important; }
+
+.pannello_5_attivo
+{
+	height: 22% !important;
+	padding: 5em 0 !important;
+}
+
+.pannello_5_attivo:hover { height: 42% !important; }
 
 .mappa_sito_sfondo:hover
 {
@@ -452,6 +503,13 @@ a-scene { z-index: 0; }
 	width: 170px;
 }
 
+.container_voci
+{
+	position: relative;
+	top: 50%;
+	transform: /*perspective(0px) */translateY(-50%);
+}
+
 .mappa_sito_sfondo ul li ul
 {
 	list-style: none;
@@ -464,8 +522,8 @@ a-scene { z-index: 0; }
 
 .mappa_sito_sfondo ul a
 {
-	padding: .5em 6%;
-	display: inline-block;
+	padding: 0 6%;
+	display: block;
 	color: #fff;
 }
 
@@ -764,9 +822,21 @@ a-scene { z-index: 0; }
 
 #mappa_sito { transition: transform 1s ease-in-out, border-radius .5s ease-in-out .5s, background-color 1s ease-in-out 1s; }
 
-.mappa_sito_sfondo { transition: all .5s ease-in-out; }
+/*.mappa_sito_sfondo { transition: all .5s ease-in-out 2.5s; }
+*/
+.pannello_1 { transition: height .5s ease-in 1s, padding .5s ease-in 1s, opacity .5s ease-in-out, background-color .5s ease-in-out; }
+
+.pannello_2 { transition: height .5s ease-in 1.1s, padding .5s ease-in 1.1s, opacity .5s ease-in-out, background-color .5s ease-in-out; }
+
+.pannello_3 { transition: height .5s ease-in 1.2s, padding .5s ease-in 1.2s, opacity .5s ease-in-out, background-color .5s ease-in-out; }
+
+.pannello_4 { transition: height .5s ease-in 1.5s, padding .5s ease-in 1.5s, opacity .5s ease-in-out, background-color .5s ease-in-out; }
+
+.pannello_5 { transition: height .5s ease-in 1.5s, padding .5s ease-in 1.7s, opacity .5s ease-in-out, background-color .5s ease-in-out; }
 
 .mappa_sito_sfondo ul a { transition: all .3s ease-in-out; }
+
+.sottolineata li { transition: all .3s ease-in-out; }
 
 /* Inizio Mobile ***********************************************/
 

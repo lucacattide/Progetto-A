@@ -22,7 +22,7 @@
     
     <a-entity position="0 0 0">
   
-  		<a-entity camera look-controls wasd-controls="adInverted: true"> <!--Camera-->
+  		<a-entity camera look-controls> <!--Camera-->
         </a-entity>
 
 	</a-entity>

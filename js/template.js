@@ -1,5 +1,12 @@
 // Inizio Javascript
 
+// Dichiarazione ed Inizializzazione Variabili Globali
+
+var aperto = 0; // Controllo attivazione mappa sito
+
+
+// Main
+
 $(document).ready(function() {
 
 	inizializza(); // Invocazione Funzione Inizializzazione 
@@ -33,9 +40,15 @@ $(document).ready(function() {
       (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
 	  
 	  $(".c-hamburger.c-hamburger--htx").toggleClass("attivo"); // Rimuove lo stato attivo dal menu
-	  $("#mappa_sito").toggleClass("mappa_sito_attiva");
-	  $(".mappa_sito_sfondo").toggleClass("mappa_sito_sfondo_attivo");
-
+	/*  $("#mappa_sito").toggleClass("mappa_sito_attiva"); // "
+	  $(".mappa_sito_sfondo").toggleClass("mappa_sito_sfondo_attivo"); // Rimuove la transizione sui pannelli del menu
+	  $(".pannello_1").toggleClass("pannello_1_attivo"); // Rimuove la transizione sui pannelli del menu
+	  $(".pannello_2").toggleClass("pannello_2_attivo"); // Rimuove la transizione sui pannelli del menu
+	  $(".pannello_3").toggleClass("pannello_3_attivo"); // Rimuove la transizione sui pannelli del menu
+	  $(".pannello_4").toggleClass("pannello_4_attivo"); // Rimuove la transizione sui pannelli del menu
+	  $(".pannello_5").toggleClass("pannello_5_attivo"); // Rimuove la transizione sui pannelli del menu
+*/
+	  
     });
 
   }
@@ -43,6 +56,8 @@ $(document).ready(function() {
 })();
 
 function inizializza() {   
+
+
 
 	// Aggiungi ai Preferiti
 	
@@ -77,6 +92,7 @@ function transizioni() {
 	
 	// Dichiarazione ed inizializzazione variabili
 	
+	var marker = document.querySelector("#marker_1"); // Marker
 	var audio = document.querySelector('[sound]'); // Audio
 	
 	// UI
@@ -107,11 +123,89 @@ function transizioni() {
 	
 	$(".c-hamburger.c-hamburger--htx").hover(function() {
 		
-		$("#icona_mappa_sito").addClass("evidenzia_3 ruota_sx");		
+		if (!$(".c-hamburger.c-hamburger--htx").hasClass("attivo")) { // Se il pulsante è attivo
+		
+			// Allora effettua transizioni
+		
+			$("#icona_mappa_sito").addClass("evidenzia_3 ruota_sx");		
+			$(".c-hamburger.c-hamburger--htx span").addClass("icona_mappa_sopra");
+		
+		}
+		
+	}, function() { // Altrimenti all'uscita rimuovi
+		
+		$("#icona_mappa_sito").removeClass("evidenzia_3 ruota_sx");		
+		$(".c-hamburger.c-hamburger--htx span").removeClass("icona_mappa_sopra");
+		
+	});
+	
+	// Controllo apertura mappa sito
+	
+	$("#icona_mappa_sito").on("click tap", function() { // Al click sul pulsante
+		
+		if (aperto === 0) { // Se il menu è chiuso allora aprilo
+			
+			$("#mappa_sito").removeClass("mappa_sito_out"); // Modifica la transizione al volo
+			$("#mappa_sito").addClass("mappa_sito_attiva");
+			$(".mappa_sito_sfondo").addClass("mappa_sito_sfondo_attivo"); // Rimuove la transizione sui pannelli del menu
+			$(".pannello_1").addClass("pannello_1_attivo"); // Rimuove la transizione sui pannelli del menu
+			$(".pannello_2").addClass("pannello_2_attivo"); // Rimuove la transizione sui pannelli del menu
+			$(".pannello_3").addClass("pannello_3_attivo"); // Rimuove la transizione sui pannelli del menu
+			$(".pannello_4").addClass("pannello_4_attivo"); // Rimuove la transizione sui pannelli del menu
+			$(".pannello_5").addClass("pannello_5_attivo"); // Rimuove la transizione sui pannelli del menu
+			
+			aperto = 1; // Setta lo stato come aperto
+			
+		} else { // Altrimenti chiudilo
+		
+			$("#mappa_sito").addClass("mappa_sito_out"); // Modifica la transizione al volo
+			$(".mappa_sito_sfondo").removeClass("mappa_sito_sfondo_in"); // Rimuove la transizione al volo 
+			$(".pannello_5").removeClass("pannello_5_attivo"); // Rimuove la transizione sui pannelli del menu
+			
+			setTimeout(function() {
+			
+				$(".pannello_4").removeClass("pannello_4_attivo"); // Rimuove la transizione sui pannelli del menu
+			
+			}, 500);
+			setTimeout(function() {
+			
+				$(".pannello_3").removeClass("pannello_3_attivo"); // Rimuove la transizione sui pannelli del menu
+			
+			}, 700);
+			setTimeout(function() {
+			
+				$(".pannello_2").removeClass("pannello_2_attivo"); // Rimuove la transizione sui pannelli del menu
+			
+			}, 1000);
+			setTimeout(function() {
+			
+				$(".pannello_1").removeClass("pannello_1_attivo"); // Rimuove la transizione sui pannelli del menu
+			
+			}, 1200);
+			setTimeout(function() {
+				
+				$(".mappa_sito_sfondo").removeClass("mappa_sito_sfondo_attivo"); // Rimuove la transizione sui pannelli del menu
+			
+			}, 1500);
+			setTimeout(function() {
+			
+				$("#mappa_sito").removeClass("mappa_sito_attiva");
+			
+			}, 3000);
+			
+			aperto = 0; // Setta lo stato come chiuso
+			
+		}	
+		
+	});
+		
+	$(".mappa_sito_sfondo").hover(function() { // Al passaggio del mouse sulle sezioni
+
+		$(this).addClass("mappa_sito_sfondo_in");//css("transition", "all .5s ease-in-out 0s"); // Aumenta la sensibilità delle transizioni al volo
 		
 	}, function() {
 		
-		$("#icona_mappa_sito").removeClass("evidenzia_3 ruota_sx");		
+		$(this).siblings().removeClass("mappa_sito_sfondo_in");
 		
 	});
 	
@@ -203,5 +297,21 @@ function transizioni() {
 		}, 3500);
 		
 	});
+	
+	// Home
+	
+	// Marker
+	
+	$(".marker").on("stateadded", function() { // Al click sul marker
 		
+		$(this).attr("src", "#marker_2"); // Effetto rollover
+		
+	});
+	$(".marker").on("stateremoved", function() { // All'uscita dall'elemento
+		
+		$(this).attr("src", "#marker_1"); // Effetto rollover
+		$("a-cursor").attr("position", "0 0 -10"); // Resetta dimensioni
+		
+	});
+	
 }

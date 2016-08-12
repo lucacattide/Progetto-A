@@ -110,9 +110,9 @@
     
     <!--Inizio Home-->
     
-    <div class="mappa_sito_sfondo">
+    <div class="mappa_sito_sfondo pannello_1">
     
-    	<ul>
+    	<ul class="container_voci">
         
         	<a class="sottolineata" href="<?php echo $siteurl_base ?>home" title="" tabindex="a">
             
@@ -123,7 +123,7 @@
                 </li>
             
             </a>
-            <a href="<?php echo $siteurl_base ?>home" title="" tabindex="b">
+            <a href="<?php echo $siteurl_base ?>home" title="">
             
                 <li class="prima_voce">
                 
@@ -132,7 +132,7 @@
                 </li>
                 
             </a>
-            <a href="<?php echo $siteurl_base ?>home" title="" tabindex="c">
+            <a href="<?php echo $siteurl_base ?>home" title="">
             
                 <li>
                 
@@ -141,7 +141,7 @@
                 </li>
                 
             </a>
-            <a href="http://www.facebook.com/laboratorioa" title="Segui Laboratorio-a su Facebook" tabindex="d" target="new">            
+            <a class="spaziatura" href="http://www.facebook.com/laboratorioa" title="Segui Laboratorio-a su Facebook" target="new">            
              
                 <li>
                     
@@ -150,7 +150,7 @@
                 </li>
                 
             </a>
-            <a href="<?php echo $siteurl_base ?>cookies" title="" tabindex="e">
+            <a class="spaziatura" href="<?php echo $siteurl_base ?>cookies" title="">
              
                 <li class="straniere">
                     
@@ -161,76 +161,116 @@
             </a>
             
         </ul>
-    
+            
     </div>
     
     <!--Fine Home-->
     
     <!--Inizio Chi Siamo-->
     
-    <div class="mappa_sito_sfondo">
+    <div class="mappa_sito_sfondo pannello_2">
     
-    	<ul>
+    	<ul class="container_voci">
         
-        	<li class="sezione">
-            	
-                Chi Siamo
+        	<a class="sottolineata" href="<?php echo $siteurl_base ?>chi-siamo" title="" tabindex="b">
+            
+                <li class="sezione">
+                    
+                    Chi Siamo
+                    
+                </li>
+            
+            </a>
+            <a href="<?php echo $siteurl_base ?>laboratorio-a" title="">
+            
+                <li class="prima_voce">
+                    
+                    Laboratorio-a
+                                    
+                </li>
                 
-            </li>
-            <li class="prima_voce">
-            	
-                Laboratorio-a
-                                
-            </li>
+            </a>
             <li>
             	
-                <span class="straniere">
+                <a class="spaziatura" href="<?php echo $siteurl_base ?>team" title="">
                 
-                	Team
+                    <span class="straniere">
                     
-                </span>
+                        Team
+                        
+                    </span>
+                
+                </a>
                 
                 <ul>
                 
-                	<li>
+                	<a href="<?php echo $siteurl_base ?>radeesh" title="">
                     
-                    	Radeesh
+                        <li>
+                        
+                            Radeesh
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>claudio" title="">
                     
-                    </li>
-                    <li>
+                        <li>
+                        
+                            Claudio
+                        
+                        </li>
                     
-                    	Claudio
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>fabrizio" title="">
                     
-                    </li>
-                	<li>
+                        <li>
+                        
+                            Fabrizio
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>giulio" title="">
                     
-                    	Fabrizio
+                        <li>
+                        
+                            Giulio
+                        
+                        </li> 
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>luca" title="">
                     
-                    </li>
-                    <li>
+                        <li>
+                        
+                            Luca
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>fabio" title="">
                     
-                    	Giulio
-                    
-                    </li> 
-                    <li>
-                    
-                    	Luca
-                    
-                    </li>
-                    <li>
-                    
-                    	Fabio
-                    
-                    </li>
+                        <li>
+                        
+                            Fabio
+                        
+                        </li>
+                        
+                    </a>
                                        
                 </ul>
                 
             </li>
-            <li>
-            	
-                Traguardi
+            <a href="<?php echo $siteurl_base ?>tabio" title="">
+            
+                <li>
+                    
+                    Traguardi
+                    
+                </li>
                 
-            </li>
+            </a>
             
         </ul>
     
@@ -240,143 +280,227 @@
     
 	<!--Inizio Servizi-->
     
-    <div class="mappa_sito_sfondo">
+    <div class="mappa_sito_sfondo pannello_3">
     
-    	<ul>
+    	<ul class="container_voci">
         
-        	<li class="sezione">
-            	
-                Servizi
-                
-            </li>
+        	<a class="sottolineata" href="<?php echo $siteurl_base ?>chi-siamo" title="" tabindex="c">
+        
+                <li class="sezione">
+                    
+                    Servizi
+                    
+                </li>
+            
+            </a>
             <li class="prima_voce">
             	
-                <span class="straniere">
+                <a href="<?php echo $siteurl_base ?>web" title="">
                 
-                	Web
+                    <span class="straniere">
                     
-                </span>
+                        Web
+                        
+                    </span>
+                
+                </a>
                 
                  <ul>
                 
-                	<li>
+                	<a href="<?php echo $siteurl_base ?>studio" title="">
                     
-                    	Studio
+                        <li>
+                        
+                            Studio
+                        
+                        </li>
                     
-                    </li>
-                    <li>
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>analisi" title="">
                     
-                    	Analisi
+                        <li>
+                        
+                            Analisi
+                        
+                        </li>
                     
-                    </li>
-                	<li>
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>sviluppo" title="">
                     
-                    	Sviluppo
+                        <li>
+                        
+                            Sviluppo
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>consegna" title="">
+                        
+                        <li>
+                        
+                            Consegna
+                        
+                        </li> 
                     
-                    </li>
-                    <li>
-                    
-                    	Consegna
-                    
-                    </li> 
+                    </a>
                                        
                 </ul>
                                 
             </li>
             <li>
             	
-                <span class="straniere">
+                <a href="<?php echo $siteurl_base ?>consegna" title="" tabindex="d">
                 
-                	Branding
+                    <span class="straniere">
                     
-                </span>
+                        Branding
+                        
+                    </span>
+                
+                </a>
                 
                 <ul>
                 
-                	<li>
+                	<a href="<?php echo $siteurl_base ?>analisi" title="">
                     
-                    	Analisi
+                        <li>
+                        
+                            Analisi
+                        
+                        </li>
                     
-                    </li>
-                    <li>
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>creativita" title="">
                     
-                    	Creatività
+                        <li>
+                        
+                            Creatività
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>produzione" title="">
                     
-                    </li>
-                	<li>
+                        <li>
+                        
+                            Produzione
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>presentazione" title="">
                     
-                    	Produzione
-                    
-                    </li>
-                    <li>
-                    
-                    	Presentazione
-                    
-                    </li> 
+                        <li>
+                        
+                            Presentazione
+                        
+                        </li> 
+                        
+                    </a>
                                        
                 </ul>
                 
             </li>
             <li>
             	
-                <span class="straniere">
+                <a href="<?php echo $siteurl_base ?>social" title="">
                 
-                	Social
+                	<span class="straniere">
+                
+                		Social
                     
-                </span>
+                	</span>
+                    
+                </a>
                 
                 <ul>
                 
-                	<li>
+                	<a href="<?php echo $siteurl_base ?>analisi" title="">
                     
-                    	Analisi
+                        <li>
+                        
+                            Analisi
+                        
+                        </li>
                     
-                    </li>
-                    <li>
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>editoria" title="">
                     
-                    	Editoria
+                        <li>
+                        
+                            Editoria
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>pubblicazione" title="">
+                	
+                        <li>
+                        
+                            Pubblicazione
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>condivisione" title="">
                     
-                    </li>
-                	<li>
-                    
-                    	Pubblicazione
-                    
-                    </li>
-                    <li>
-                    
-                    	Condivisione
-                    
-                    </li> 
+                        <li>
+                        
+                            Condivisione
+                        
+                        </li> 
+                        
+                    </a>
                                        
                 </ul>
                 
             </li>
             <li>
                 
-                Eventi
+                <a href="<?php echo $siteurl_base ?>eventi" title="">
+                
+                	Eventi
+                
+                </a>
                                     
                 <ul>
                 
-                	<li>
+                	<a href="<?php echo $siteurl_base ?>soggetto" title="">
                     
-                    	Soggetto
+                        <li>
+                        
+                            Soggetto
+                        
+                        </li>
                     
-                    </li>
-                    <li>
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>ideazione" title="">
                     
-                    	Ideazione
+                        <li>
+                        
+                            Ideazione
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>organizzazione" title="">
                     
-                    </li>
-                	<li>
+                        <li>
+                        
+                            Organizzazione
+                        
+                        </li>
+                        
+                    </a>
+                    <a href="<?php echo $siteurl_base ?>lancio" title="">
                     
-                    	Organizzazione
-                    
-                    </li>
-                    <li>
-                    
-                    	Lancio
-                    
-                    </li> 
+                        <li>
+                        
+                            Lancio
+                        
+                        </li> 
+                        
+                    </a>
                                        
                 </ul>
                 
@@ -390,15 +514,19 @@
     
 	<!--Inizio Casi Successo-->
     
-    <div class="mappa_sito_sfondo">
+    <div class="mappa_sito_sfondo pannello_4">
     
-    	<ul>
+    	<ul class="container_voci">
         
-        	<li class="sezione">
-            	
-                Casi di Successo
-                
-            </li>
+        	<a class="sottolineata" href="<?php echo $siteurl_base ?>casi-di-successo" title="" tabindex="e">
+            
+                <li class="sezione">
+                    
+                    Casi di Successo
+                    
+                </li>
+            
+            </a>
                         
         </ul>
     
@@ -408,15 +536,19 @@
     
     <!--Inizio Contatti-->
     
-    <div class="mappa_sito_sfondo">
+    <div class="mappa_sito_sfondo pannello_5">
     
-    	<ul>
+    	<ul class="container_voci">
         
-        	<li class="sezione">
-            	
-                Contatti
-                
-            </li>
+        	<a class="sottolineata" href="<?php echo $siteurl_base ?>contatti" title="" tabindex="f">
+            
+                <li class="sezione">
+                    
+                    Contatti
+                    
+                </li>
+            
+            </a>
                         
         </ul>
     
