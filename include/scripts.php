@@ -2,7 +2,9 @@
 
 <script type="text/javascript" defer src="js/jquery-3.1.0.min.js"> <!--jQuery-->
 </script>
-<script type="text/javascript" defer src="js/main-min.js"> <!--Template-->
+<script type="text/javascript" defer src="js/jquery.mCustomScrollbar.concat.min.js"> <!--Custom Scrollbar-->
+</script>
+<script type="text/javascript" defer src="js/main.js"> <!--Ink Transition-->
 </script>
 <script type="text/javascript" defer src="js/template.js"> <!--Template-->
 </script>

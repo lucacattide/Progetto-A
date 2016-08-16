@@ -16,24 +16,24 @@
 
 <!--Fine Logo--->
 
-<!--Inizio Livestream-->
+<!--Inizio Livestream--
 
 <aside id="live">
 
-	<h7> <!--Titolo-->
+	<h7> <!--Titolo--
     
     	Live
         
     </h7>
     
-    <div id="pulsante_live"> <!--Pulsante-->
+    <div id="pulsante_live"> <!--Pulsante--
     	
         <span>
         </span>
     
     </div>
     
-    <h2 id="live_titolo"> <!--Etichetta-->
+    <h2 id="live_titolo"> <!--Etichetta--
     
     	Live
     
@@ -299,7 +299,7 @@
                 
                     <span class="straniere">
                     
-                        Web
+                        Web & Mobile Development
                         
                     </span>
                 
@@ -353,7 +353,7 @@
                 
                     <span class="straniere">
                     
-                        Branding
+                        Visual & Brand Identity
                         
                     </span>
                 
@@ -407,7 +407,7 @@
                 
                 	<span class="straniere">
                 
-                		Social
+                		Social Media
                     
                 	</span>
                     

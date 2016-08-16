@@ -72,48 +72,67 @@
     
     <!--Inizio Body-->
 
-	<body>
+	<body class="glitch-transition">
+    
+        <!--Inizio Ink Transition-->
+    
+        <main class="cd-main-content">
         	
-        <!--Inizio Container-->
-
-		<div id="container">
+            <!--Inizio Container-->
+    
+            <div id="container">
+            
+                <?php 
+                
+                 include("include/ui.php"); // Inclusione Intaerfaccia Utente
+                 
+                  /*-- BODY -------------------------------------------------------------------*/
+          
+                   switch($pag):
+                   
+                     case "":
+                     
+                      include("include/landing.php");
+                    
+                      break;
+                      
+                      case "landing":
+                     
+                      include("include/landing.php");
+                      
+                      break;
+                     
+                      case "home":
+                     
+                      include("include/home.php");
+                      
+                      break;
+                    
+                   endswitch;
+                  
+                  /*-- END BODY ------------------------------------------------------------------*/
+                           
+                ?>
+                
+            </div>
+    
+            <!--Fine Container-->
+            
+        </main>
         
-			<?php 
-            
-             include("include/ui.php"); // Inclusione Intaerfaccia Utente
-			 
-              /*-- BODY -------------------------------------------------------------------*/
-      
-               switch($pag):
-               
-                 case "":
-                 
-                  include("include/landing.php");
-                
-                  break;
-				  
-				  case "landing":
-                 
-                  include("include/landing.php");
-                  
-                  break;
-                 
-                  case "home":
-                 
-                  include("include/home.php");
-                  
-                  break;
-                
-               endswitch;
-              
-              /*-- END BODY ------------------------------------------------------------------*/
-                       
-            ?>
-            
+        <!--Fine Ink Transition-->
+        
+        <!--Inizio Livello Transizione-->
+        
+        <div class="cd-transition-layer" data-frame="25"> 
+	
+            <div class="bg-layer">
+            </div>
+
         </div>
-
-		<!--Fine Container-->
-
+        
+        <!--Inizio Livello Transizione-->
+    
     </body>
     
     <!--Fine Body -->

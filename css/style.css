@@ -340,12 +340,12 @@ Glitch Effect
   font-family: "Work Sans", sans-serif;
   color: #ffffff;
 }
-.glitch-transition h1, .glitch-transition h2 {
+/*.glitch-transition h1, .glitch-transition h2 {
   margin-bottom: .4em;
   font-size: 4rem;
   font-weight: 700;
 }
-.glitch-transition .cd-btn {
+*/.glitch-transition .cd-btn {
   background: #676970;
   color: #ffffff;
 }
@@ -382,13 +382,13 @@ Glitch Effect
           animation: cd-sequence 0.8s steps(24) forwards reverse;
 }
 @media only screen and (min-width: 768px) {
-  .glitch-transition h1 {
+/*  .glitch-transition h1 {
     font-size: 8rem;
   }
   .glitch-transition h2 {
     font-size: 6rem;
   }
-}
+*/}
 
 /* -------------------------------- 
 

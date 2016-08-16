@@ -15,7 +15,7 @@ $(document).ready(function() {
 });
 
 
-// Funzione Inizializzazione
+// Inizializzazioni
 
 // Mappa del Sito
 
@@ -55,9 +55,37 @@ $(document).ready(function() {
 
 })();
 
+ // Custom Scrollbar
+ 
+ (function($){   
+ 
+    $(window).on("load", function() {
+ 
+        $("#container_recensioni").mCustomScrollbar({
+        
+            axis: "y",
+           /* autoDraggerLength: true,
+            autoHideScrollbar: true,
+            autoExpandScrollbar: true,
+            mouseWheel: { 
+                    
+                enable: true,
+                axis: "y"
+                    
+            },
+            documentTouchScroll: false,
+            contentTouchScroll: 25,*/
+            theme: "rounded"
+            
+        });
+                
+    });
+    
+})(jQuery);
+
+// Funzione Inizializzazione
+
 function inizializza() {   
-
-
 
 	// Aggiungi ai Preferiti
 	
@@ -313,5 +341,78 @@ function transizioni() {
 		$("a-cursor").attr("position", "0 0 -10"); // Resetta dimensioni
 		
 	});
+    
+    // Summary
+    
+    $("#summary_marker").on("click", function() { // Al click sul marker 
+    
+        $("#summary_home").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#summary_home").addClass("animated zoomIn"); // "
+        
+    });
+    
+    // Web
+    
+    $("#web_marker").on("click", function() { // Al click sul marker 
+    
+        $("#web").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#web").addClass("animated zoomIn"); // "
+        
+    });
+    
+    // Grafica
+    
+    $("#grafica_marker").on("click", function() { // Al click sul marker 
+    
+        $("#grafica").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#grafica").addClass("animated zoomIn"); // "
+        
+    });
+    
+    // Recensioni
+    
+    $("#recensioni_marker").on("click", function() { // Al click sul marker 
+    
+        $("#recensioni").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#recensioni").addClass("animated zoomIn"); // "
+        
+    });
+    
+    // Chiudi
+    
+    $(".chiudi").on("click tap", function() { // Al click del pulsante
+        
+        var cliccato = $(this); // Dichiarazione ed Inizializzazione variabile elemento cliccato
+        
+        $(this).parent().removeClass("animated zoomIn"); // Chiudi scheda
+        $(this).parent().addClass("animated zoomOut"); // "
+           
+        setTimeout(function() {
+            
+            cliccato.parent().addClass("nascondi"); // "
+            
+        }, 500);
+          
+    });
+    
+    // Pulsante Scheda
+    
+    $("#web .scheda_summary_pulsante").on("click tap", function(e) {
+        
+        e.preventDefault(); // Disabilita funzionalità standard link
+        
+        var cliccato = $(this); // Dichiarazione ed Inizializzazione variabile elemento cliccato
+        
+        $(this).parents(".scheda").removeClass("animated zoomIn"); // Chiudi scheda
+        $(this).parents(".scheda").addClass("animated zoomOut"); // "
+           
+        setTimeout(function() {
+            
+            cliccato.parents(".scheda").addClass("nascondi"); // "
+            window.location.href = "index.php?pag=web"; // Vai a sezione Web
+            
+        }, 500);        
+        
+    });
 	
 }
