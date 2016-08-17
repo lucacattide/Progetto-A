@@ -1,6 +1,6 @@
 <!--Inizio Logo--->
 
-<a href="<?php echo $siteurl_base ?>home" title="Laboratorio-a" tabindex="0">
+<a href="index.php?pag=home" title="Laboratorio-a" tabindex="0">
 
     <aside id="logo">
     
@@ -114,16 +114,16 @@
     
     	<ul class="container_voci">
         
-        	<a class="sottolineata" href="<?php echo $siteurl_base ?>home" title="" tabindex="a">
+        	<a class="sottolineata <?php if( $pag == "home"): echo "selezionato"; endif;  ?>" href="index.php?pag=home" title="" tabindex="a">
             
-                <li class="straniere sezione">
+                <li class="straniere sezione <?php if( $pag == "home"): echo "sezione_attiva"; endif;  ?>">
                     
                     Home
                     
                 </li>
             
             </a>
-            <a href="<?php echo $siteurl_base ?>home" title="">
+            <a class="<?php if( $lang == "ita"): echo "selezionato"; endif;  ?>" href="<?php "index.php?pag=".$_GET["pag"]."?lang=ita" ?>" title="">
             
                 <li class="prima_voce">
                 
@@ -132,7 +132,7 @@
                 </li>
                 
             </a>
-            <a href="<?php echo $siteurl_base ?>home" title="">
+            <a class="<?php if( $lang == "eng"): echo "selezionato"; endif;  ?>" href="<?php "index.php?pag=".$_GET["pag"]."?lang=eng" ?>" title="">
             
                 <li>
                 
@@ -150,7 +150,7 @@
                 </li>
                 
             </a>
-            <a class="spaziatura" href="<?php echo $siteurl_base ?>cookies" title="">
+            <a class="spaziatura <?php if( $pag == "privacy"): echo "selezionato"; endif;  ?>" href="index.php?pag=privacy" title="">
              
                 <li class="straniere">
                     
@@ -172,16 +172,16 @@
     
     	<ul class="container_voci">
         
-        	<a class="sottolineata" href="<?php echo $siteurl_base ?>chi-siamo" title="" tabindex="b">
+        	<a class="sottolineata <?php if( $pag == "chi_siamo"): echo "selezionato"; endif;  ?>" href="index.php?pag=chi_siamo" title="" tabindex="b">
             
-                <li class="sezione">
+                <li class="sezione <?php if( $pag == "chi_siamo"): echo "sezione_attiva"; endif;  ?>">
                     
                     Chi Siamo
                     
                 </li>
             
             </a>
-            <a href="<?php echo $siteurl_base ?>laboratorio-a" title="">
+            <a class="<?php if( $pag == "laboratorio_a"): echo "selezionato"; endif;  ?>" href="index.php?pag=laboratorio_a" title="">
             
                 <li class="prima_voce">
                     
@@ -192,7 +192,7 @@
             </a>
             <li>
             	
-                <a class="spaziatura" href="<?php echo $siteurl_base ?>team" title="">
+                <a class="spaziatura <?php if( $pag == "team"): echo "selezionato"; endif;  ?>" href="index.php?pag=team" title="">
                 
                     <span class="straniere">
                     
@@ -204,7 +204,7 @@
                 
                 <ul>
                 
-                	<a href="<?php echo $siteurl_base ?>radeesh" title="">
+                	<a class="<?php if( $pag == "radeesh"): echo "selezionato"; endif;  ?>" href="index.php?pag=radeesh" title="">
                     
                         <li>
                         
@@ -213,7 +213,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>claudio" title="">
+                    <a class="<?php if( $pag == "claudio"): echo "selezionato"; endif;  ?>" href="index.php?pag=claudio" title="">
                     
                         <li>
                         
@@ -222,7 +222,7 @@
                         </li>
                     
                     </a>
-                    <a href="<?php echo $siteurl_base ?>fabrizio" title="">
+                    <a class="<?php if( $pag == "fabrizio"): echo "selezionato"; endif;  ?>" href="index.php?pag=fabrizio" title="">
                     
                         <li>
                         
@@ -231,7 +231,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>giulio" title="">
+                    <a class="<?php if( $pag == "giulio"): echo "selezionato"; endif;  ?>" href="index.php?pag=giulio" title="">
                     
                         <li>
                         
@@ -240,7 +240,7 @@
                         </li> 
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>luca" title="">
+                    <a class="<?php if( $pag == "luca"): echo "selezionato"; endif;  ?>" href="index.php?pag=luca" title="">
                     
                         <li>
                         
@@ -249,7 +249,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>fabio" title="">
+                    <a class="fabio <?php if( $pag == "fabio"): echo "selezionato"; endif;  ?>" href="index.php?pag=fabio" title="">
                     
                         <li>
                         
@@ -262,7 +262,7 @@
                 </ul>
                 
             </li>
-            <a href="<?php echo $siteurl_base ?>tabio" title="">
+            <a class="<?php if( $pag == "traguardi"): echo "selezionato"; endif;  ?>" href="index.php?pag=traguardi" title="">
             
                 <li>
                     
@@ -284,9 +284,9 @@
     
     	<ul class="container_voci">
         
-        	<a class="sottolineata" href="<?php echo $siteurl_base ?>chi-siamo" title="" tabindex="c">
+        	<a class="sottolineata <?php if( $pag == "servizi"): echo "selezionato"; endif;  ?>" href="index.php?pag=servizi" title="" tabindex="c">
         
-                <li class="sezione">
+                <li class="sezione <?php if( $pag == "servizi"): echo "sezione_attiva"; endif;  ?>">
                     
                     Servizi
                     
@@ -295,7 +295,7 @@
             </a>
             <li class="prima_voce">
             	
-                <a href="<?php echo $siteurl_base ?>web" title="">
+                <a class="<?php if( $pag == "web_mobile_development"): echo "selezionato"; endif;  ?>" href="index.php?pag=web_mobile_development" title="">
                 
                     <span class="straniere">
                     
@@ -307,7 +307,7 @@
                 
                  <ul>
                 
-                	<a href="<?php echo $siteurl_base ?>studio" title="">
+                	<a class="<?php if( $pag == "studio"): echo "selezionato"; endif;  ?>" href="index.php?pag=studio" title="">
                     
                         <li>
                         
@@ -316,7 +316,7 @@
                         </li>
                     
                     </a>
-                    <a href="<?php echo $siteurl_base ?>analisi" title="">
+                    <a class="<?php if( $pag == "analisi_web"): echo "selezionato"; endif;  ?>" href="index.php?pag=analisi_web" title="">
                     
                         <li>
                         
@@ -325,7 +325,7 @@
                         </li>
                     
                     </a>
-                    <a href="<?php echo $siteurl_base ?>sviluppo" title="">
+                    <a class="<?php if( $pag == "sviluppo"): echo "selezionato"; endif;  ?>" href="index.php?pag=sviluppo" title="">
                     
                         <li>
                         
@@ -334,7 +334,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>consegna" title="">
+                    <a class="<?php if( $pag == "consegna"): echo "selezionato"; endif;  ?>" href="index.php?pag=consegna" title="">
                         
                         <li>
                         
@@ -349,7 +349,7 @@
             </li>
             <li>
             	
-                <a href="<?php echo $siteurl_base ?>consegna" title="" tabindex="d">
+                <a class="<?php if( $pag == "visual_brand_identity"): echo "selezionato"; endif;  ?>" href="index.php?pag=visual_brand_identity" title="" tabindex="d">
                 
                     <span class="straniere">
                     
@@ -361,7 +361,7 @@
                 
                 <ul>
                 
-                	<a href="<?php echo $siteurl_base ?>analisi" title="">
+                	<a class="<?php if( $pag == "analisi_visual"): echo "selezionato"; endif;  ?>" href="index.php?pag=analisi_visual" title="">
                     
                         <li>
                         
@@ -370,7 +370,7 @@
                         </li>
                     
                     </a>
-                    <a href="<?php echo $siteurl_base ?>creativita" title="">
+                    <a class="<?php if( $pag == "creativita"): echo "selezionato"; endif;  ?>" href="index.php?pag=creativita" title="">
                     
                         <li>
                         
@@ -379,7 +379,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>produzione" title="">
+                    <a class="<?php if( $pag == "produzione"): echo "selezionato"; endif;  ?>" href="index.php?pag=produzione" title="">
                     
                         <li>
                         
@@ -388,7 +388,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>presentazione" title="">
+                    <a class="<?php if( $pag == "presentazione"): echo "selezionato"; endif;  ?>" href="index.php?pag=presentazione" title="">
                     
                         <li>
                         
@@ -403,7 +403,7 @@
             </li>
             <li>
             	
-                <a href="<?php echo $siteurl_base ?>social" title="">
+                <a class="<?php if( $pag == "social"): echo "selezionato"; endif;  ?>" href="index.php?pag=social" title="">
                 
                 	<span class="straniere">
                 
@@ -415,7 +415,7 @@
                 
                 <ul>
                 
-                	<a href="<?php echo $siteurl_base ?>analisi" title="">
+                	<a class="<?php if( $pag == "analisi_social"): echo "selezionato"; endif;  ?>" href="index.php?pag=analisi_social" title="">
                     
                         <li>
                         
@@ -424,7 +424,7 @@
                         </li>
                     
                     </a>
-                    <a href="<?php echo $siteurl_base ?>editoria" title="">
+                    <a class="<?php if( $pag == "editoria"): echo "selezionato"; endif;  ?>" href="index.php?pag=editoria" title="">
                     
                         <li>
                         
@@ -433,7 +433,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>pubblicazione" title="">
+                    <a class="<?php if( $pag == "pubblicazione"): echo "selezionato"; endif;  ?>" href="index.php?pag=pubblicazione" title="">
                 	
                         <li>
                         
@@ -442,7 +442,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>condivisione" title="">
+                    <a class="<?php if( $pag == "condivisione"): echo "selezionato"; endif;  ?>" href="index.php?pag=condivisione" title="">
                     
                         <li>
                         
@@ -457,7 +457,7 @@
             </li>
             <li>
                 
-                <a href="<?php echo $siteurl_base ?>eventi" title="">
+                <a class="<?php if( $pag == "eventi"): echo "selezionato"; endif;  ?>" href="index.php?pag=eventi" title="">
                 
                 	Eventi
                 
@@ -465,7 +465,7 @@
                                     
                 <ul>
                 
-                	<a href="<?php echo $siteurl_base ?>soggetto" title="">
+                	<a class="<?php if( $pag == "soggetto"): echo "selezionato"; endif;  ?>" href="index.php?pag=soggetto" title="">
                     
                         <li>
                         
@@ -474,7 +474,7 @@
                         </li>
                     
                     </a>
-                    <a href="<?php echo $siteurl_base ?>ideazione" title="">
+                    <a class="<?php if( $pag == "ideazione"): echo "selezionato"; endif;  ?>" href="index.php?pag=ideazione" title="">
                     
                         <li>
                         
@@ -483,7 +483,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>organizzazione" title="">
+                    <a class="<?php if( $pag == "organizzazione"): echo "selezionato"; endif;  ?>" href="index.php?pag=organizzazione" title="">
                     
                         <li>
                         
@@ -492,7 +492,7 @@
                         </li>
                         
                     </a>
-                    <a href="<?php echo $siteurl_base ?>lancio" title="">
+                    <a class="<?php if( $pag == "lancio"): echo "selezionato"; endif;  ?>" href="index.php?pag=lancio" title="">
                     
                         <li>
                         
@@ -518,9 +518,9 @@
     
     	<ul class="container_voci">
         
-        	<a class="sottolineata" href="<?php echo $siteurl_base ?>casi-di-successo" title="" tabindex="e">
+        	<a class="sottolineata <?php if( $pag == "referenze"): echo "selezionato"; endif;  ?>" href="index.php?pag=referenze" title="" tabindex="e">
             
-                <li class="sezione">
+                <li class="sezione <?php if( $pag == "referenze"): echo "sezione_attiva"; endif;  ?>">
                     
                     Casi di Successo
                     
@@ -540,9 +540,9 @@
     
     	<ul class="container_voci">
         
-        	<a class="sottolineata" href="<?php echo $siteurl_base ?>contatti" title="" tabindex="f">
+        	<a class="sottolineata <?php if( $pag == "contatti"): echo "selezionato"; endif;  ?>" href="index.php?pag=contatti" title="" tabindex="f">
             
-                <li class="sezione">
+                <li class="sezione <?php if( $pag == "contatti"): echo "sezione_attiva"; endif;  ?>">
                     
                     Contatti
                     
@@ -603,10 +603,8 @@
     
     </h7>
     
-    <div class="marker marker_home"> <!--Marker-->    
-    </div>
-    
-    
+    <div class="marker"> <!--Marker-->    
+    </div>   
 
 </aside>
 

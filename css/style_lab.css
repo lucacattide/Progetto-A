@@ -80,12 +80,6 @@ h7 { display: none; }
 
 .evidenzia_3 { background-color: #14A3A7 !important }
 
-.marker_home
-{
-    top: 85% !important;
-    left: 10% !important;
-}
-
 .straniere { font-style: italic; }
 
 .sezione
@@ -96,6 +90,8 @@ h7 { display: none; }
     border-bottom: 1px solid #fff;
 }
 
+.sezione_attiva { border-color: #000 !important; }
+
 .prima_voce { padding-top: 1em; }
 
 .spaziatura { margin-top: 1em; }
@@ -105,6 +101,8 @@ h7 { display: none; }
 .sottolineata:hover { /*border-bottom: 1px solid #000;*//* text-decoration: underline;*/ }
 
 .sottolineata:hover li { border-bottom: 1px solid #000; }
+
+.selezionato { color: #000 !important; }
 
 /* Links ***********************************************/
 
@@ -274,6 +272,8 @@ a-scene { z-index: 0; }
 
 /* Mappa del Sito */
 
+/* Icona */
+
 #icona_mappa_sito
 {
     position: fixed;
@@ -395,6 +395,8 @@ a-scene { z-index: 0; }
 .c-hamburger--htx.is-active:hover span::after { left: 0; }
 
 .c-hamburger--htx.is-active span::before, .c-hamburger--htx.is-active span::after { transition-delay: 0s, 0.3s; }
+
+/* Menu */
 
 #mappa_sito
 {
@@ -588,9 +590,9 @@ padding: 5em 0 !important; */ }
     border: 2px solid #14A3A7;
     opacity: .7;
     background-image: url("../img/planimetria.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: 400%;
+    /*    background-position: center;
+*/    background-repeat: no-repeat;
     background-attachment: scroll;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -618,6 +620,48 @@ padding: 5em 0 !important; */ }
     background-position: 0 0;
     transform: translateY(-50%);
     margin: 0 auto;
+}
+
+/* Minimappa */
+
+.minimap_home { background-position: 65% 125%; }
+
+.minimap_web { background-position: 5% 105%; }
+
+.minimap_grafica { background-position: 27% 105%; }
+
+.minimap_menu { background-position: 89% 0; }
+
+.minimap_chi_siamo { background-position: 60% 30%; }
+
+.marker_home
+{
+    top: 85% !important;
+    left: 10% !important;
+}
+
+.marker_web
+{
+    top: 75% !important;
+    left: -30% !important;
+}
+
+.marker_grafica
+{
+    top: 75% !important;
+    left: -15% !important;
+}
+
+.marker_menu
+{
+    top: 25% !important;
+    left: 26% !important;
+}
+
+.marker_chi_siamo
+{
+    top: 40% !important;
+    left: 10% !important;
 }
 
 #mappa_breadcrumb
@@ -806,7 +850,7 @@ padding: 5em 0 !important; */ }
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
     overflow: hidden;
-    padding: 1em 2%;
+    padding: 1em 32px;
 }
 
 .sfondo_scheda
@@ -823,6 +867,8 @@ padding: 5em 0 !important; */ }
     height: 100%;
     position: absolute;
 }
+
+/* Chiudi */
 
 .chiudi
 {
@@ -858,6 +904,8 @@ padding: 5em 0 !important; */ }
     opacity: 1;
     color: #000;
 }
+
+/* Articolo */
 
 .scheda_summary_articolo
 {
@@ -914,6 +962,8 @@ padding: 5em 0 !important; */ }
     border-color: #14A3A7;
 }
 
+/* Iconografie */
+
 .iconografia
 {
     width: 32%;
@@ -928,6 +978,8 @@ padding: 5em 0 !important; */ }
     width: 100%;
     height: auto;
 }
+
+/* Recensioni */
 
 #recensioni .scheda_summary_articolo
 {
@@ -945,6 +997,8 @@ padding: 5em 0 !important; */ }
 .recensione:nth-child(even) .foto_recensione { float: right; }
 
 .recensione:nth-child(even) .corpo_recensione { float: right; }
+
+/* Foto */
 
 .foto_recensione
 {
@@ -973,6 +1027,8 @@ padding: 5em 0 !important; */ }
     min-height: 279px;
     max-height: 279px;
 }
+
+/* Recensione */
 
 .corpo_recensione
 {
@@ -1003,6 +1059,153 @@ padding: 5em 0 !important; */ }
     color: #fff;
     margin-bottom: 0;
 }
+
+/* 2° Livello **********************************************/
+
+/* Schede */
+
+/* Menu Contestuale */
+
+.menu_contestuale
+{
+    z-index: 3000;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 90%;
+    max-width: 90%;
+}
+
+.menu_contestuale ul
+{
+    padding-left: 0;
+    padding-top: 1em;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap;
+    height: 4em;
+    max-height: 52px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.menu_contestuale ul a
+{
+    padding: 1em 16px;
+    border-radius: 25px;
+}
+
+.menu_contestuale ul a:hover { background-color: #F48E4E; }
+
+.menu_contestuale ul a:focus { background-color: #FFA46B; }
+
+.menu_contestuale ul a:focus li { color: #000; }
+
+.menu_contestuale ul li
+{
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #fff;
+}
+
+/* Container */
+
+#container_contenuti
+{
+    position: relative;
+    margin: 6em auto 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    min-height: 75em;
+    max-height: 75em;
+    z-index: 3000;
+}
+
+/* Video */
+
+.video_intro
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 52em;
+    z-index: 3000;
+}
+
+/* Articolo */
+
+.secondo_livello .scheda_summary_articolo
+{
+    top: 0;
+    transform: none;
+}
+
+.secondo_livello .scheda_summary_titolo
+{
+    padding-left: 64px;
+    margin-top: 2em;
+    text-align: left;
+}
+
+.secondo_livello .scheda_summary
+{
+    text-align: left;
+    text-indent: 32px;
+}
+
+/* Iconografie */
+
+.illustrazione
+{
+    display: inline;
+    float: right;
+}
+
+.illustrazione img
+{
+    width: 100%;
+    height: auto;
+    max-width: 279px;
+    max-height: 279px;
+    padding: 1em;
+}
+
+.didascalia
+{
+    display: block;
+    opacity: .7;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+/* Elenchi */
+
+.elenco
+{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.elenco li
+{
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #F48E4E;
+    width: 33%;
+    height: 33%;
+    min-height: 15em;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+/* Custom Scroll **********************************************/
+
+.mCSB_inside>.mCSB_container { margin-right: 46px !important; }
 
 /* Transizioni **********************************************/
 
@@ -1069,6 +1272,10 @@ padding: 5em 0 !important; */ }
 .chiudi { transition: all .3s ease-in-out; }
 
 .chiudi i { transition: all .3s ease-in-out; }
+
+.menu_contestuale ul a { transition: all .3s ease-in-out; }
+
+.menu_contestuale ul li { transition: all .3s ease-in-out; }
 
 /* Inizio Mobile ***********************************************/
 

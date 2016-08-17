@@ -21,13 +21,13 @@ jQuery(document).ready(function($){
 	//open modal window
 	modalTrigger.on('click', function(event){	
 		event.preventDefault();
-		var modalId = $(event.target).attr('href');
+		var modalId = $(event.target).attr('data-href'); // Estrae il data URL
 		transitionLayer.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 800;
 		setTimeout(function(){
 			//modalWindow.filter(modalId).addClass('visible');
 			//transitionLayer.removeClass('opening');
-            location.href = modalId;
+            location.href = modalId; // Cambio pagina
 		}, delay);
 	});
 

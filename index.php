@@ -72,7 +72,7 @@
     
     <!--Inizio Body-->
 
-	<body class="glitch-transition">
+	<body class="glitch-transition animated fadeIn">
     
         <!--Inizio Ink Transition-->
     
@@ -84,7 +84,7 @@
             
                 <?php 
                 
-                 include("include/ui.php"); // Inclusione Intaerfaccia Utente
+                 include("include/ui.php"); // Inclusione Interfaccia Utente
                  
                   /*-- BODY -------------------------------------------------------------------*/
           
@@ -105,6 +105,48 @@
                       case "home":
                      
                       include("include/home.php");
+                      
+                      break;
+                      
+                      case "web":
+                     
+                      include("include/web.php");
+                      
+                      break;
+                      
+                      case "grafica":
+                     
+                      include("include/grafica.php");
+                      
+                      break;
+                      
+                      case "menu":
+                     
+                      include("include/menu.php");
+                      
+                      break;
+                      
+                      case "chi_siamo":
+                     
+                      include("include/chi_siamo.php");
+                      
+                      break;
+                      
+                      case "servizi":
+                     
+                      include("include/servizi.php");
+                      
+                      break;
+                      
+                      case "referenze":
+                     
+                      include("include/referenze.php");
+                      
+                      break;
+                      
+                      case "contatti":
+                     
+                      include("include/contatti.php");
                       
                       break;
                     

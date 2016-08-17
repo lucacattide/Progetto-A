@@ -11,6 +11,7 @@ $(document).ready(function() {
 
 	inizializza(); // Invocazione Funzione Inizializzazione 
 	transizioni(); // Invocazione Funzione Transizioni 
+    breadcrumb(); // Invocazione Funzione Breadcrumb
 	
 });
 
@@ -40,14 +41,6 @@ $(document).ready(function() {
       (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
 	  
 	  $(".c-hamburger.c-hamburger--htx").toggleClass("attivo"); // Rimuove lo stato attivo dal menu
-	/*  $("#mappa_sito").toggleClass("mappa_sito_attiva"); // "
-	  $(".mappa_sito_sfondo").toggleClass("mappa_sito_sfondo_attivo"); // Rimuove la transizione sui pannelli del menu
-	  $(".pannello_1").toggleClass("pannello_1_attivo"); // Rimuove la transizione sui pannelli del menu
-	  $(".pannello_2").toggleClass("pannello_2_attivo"); // Rimuove la transizione sui pannelli del menu
-	  $(".pannello_3").toggleClass("pannello_3_attivo"); // Rimuove la transizione sui pannelli del menu
-	  $(".pannello_4").toggleClass("pannello_4_attivo"); // Rimuove la transizione sui pannelli del menu
-	  $(".pannello_5").toggleClass("pannello_5_attivo"); // Rimuove la transizione sui pannelli del menu
-*/
 	  
     });
 
@@ -61,10 +54,10 @@ $(document).ready(function() {
  
     $(window).on("load", function() {
  
-        $("#container_recensioni").mCustomScrollbar({
+        $("#container_recensioni, #container_contenuti").mCustomScrollbar({
         
             axis: "y",
-           /* autoDraggerLength: true,
+            autoDraggerLength: true,
             autoHideScrollbar: true,
             autoExpandScrollbar: true,
             mouseWheel: { 
@@ -74,7 +67,7 @@ $(document).ready(function() {
                     
             },
             documentTouchScroll: false,
-            contentTouchScroll: 25,*/
+            contentTouchScroll: 25,
             theme: "rounded"
             
         });
@@ -378,6 +371,15 @@ function transizioni() {
         
     });
     
+    // Chi Siamo
+    
+    $("#chi_siamo_marker").on("click", function() { // Al click sul marker 
+    
+        $("#chi_siamo").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#chi_siamo").addClass("animated zoomIn"); // "
+        
+    });
+    
     // Chiudi
     
     $(".chiudi").on("click tap", function() { // Al click del pulsante
@@ -409,10 +411,92 @@ function transizioni() {
         setTimeout(function() {
             
             cliccato.parents(".scheda").addClass("nascondi"); // "
+            
             window.location.href = "index.php?pag=web"; // Vai a sezione Web
             
         }, 500);        
         
     });
 	
+}
+
+
+// Funzione Breadcrumb
+
+function breadcrumb() {
+    
+    // Dichiarazione Variabili
+    
+    var pag = ""; // Inizializzazione Variabile Pagina  
+    
+    // Controllo Posizione
+    
+    if ($("#home_pagina").length > 0) { // Se siamo in home
+        
+        pag = "home";    
+        
+    } else if ($("#web_pagina").length > 0) { // Se siamo su web
+        
+        pag = "web";    
+        
+    } else if ($("#grafica_pagina").length > 0) { // Se siamo su grafica
+        
+       pag = "grafica";    
+        
+    } else if ($("#menu_pagina").length > 0) { // Se siamo nel menu
+        
+       pag = "menu";     
+        
+    } else if ($("#chi_siamo").length > 0) { // Se siamo nel menu
+        
+       pag = "chi_siamo";     
+        
+    }
+    
+    // Assegnazione posizioni su minimappa
+    
+    switch(pag) { // Controllo Pagina
+        
+        case "home": // Se siamo in home
+            
+            $("#breadcrumb").addClass("minimap_home"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_home"); // Allora segna home su minimappa 
+                   
+            break;
+            
+        case "web": // Se siamo su web
+            
+            $("#breadcrumb").addClass("minimap_web"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_web"); // Allora segna web su minimappa 
+            
+            break;
+            
+        case "grafica": // Se siamo su grafica
+            
+             $("#breadcrumb").addClass("minimap_grafica"); // Aggiorna il breadcrumb
+             $("#mappa_breadcrumb .marker").addClass("marker_grafica"); // Allora segna grafica su minimappa
+            
+            break;
+            
+        case "menu": // Se siamo nel menu
+            
+            $("#breadcrumb").addClass("minimap_menu"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_menu"); // Allora segna menu su minimappa 
+            
+            break;      
+            
+        case "chi_siamo": // Se siamo nel menu
+            
+            $("#breadcrumb").addClass("minimap_chi_siamo"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_chi_siamo"); // Allora segna menu su minimappa 
+            
+            break;   
+        
+        default: // Standard
+        
+            $("#breadcrumb").addClass("minimap_home"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_home"); // Allora segna home su minimappa    
+        
+    }  
+    
 }

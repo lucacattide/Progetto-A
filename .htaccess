@@ -4,6 +4,17 @@ RewriteEngine On
 
 # Regole URL SEF
 
+# Italiano
+
 RewriteRule ^/?$ index.php [L]
 RewriteRule ^/?$ index.php?pag=landing [L]
 RewriteRule ^home/?$ index.php?pag=home [L]
+RewriteRule ^web/?$ index.php?pag=web [L]
+RewriteRule ^grafica/?$ index.php?pag=grafica [L]
+RewriteRule ^menu/?$ index.php?pag=menu [L]
+RewriteRule ^chi-siamo/?$ index.php?pag=chi_siamo [L]
+RewriteRule ^servizi/?$ index.php?pag=menuservizi[L]
+RewriteRule ^casi-di-successo/?$ index.php?pag=referenze [L]
+RewriteRule ^contatti/?$ index.php?pag=contatti [L]
+
+# Inglese

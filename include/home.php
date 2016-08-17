@@ -1,12 +1,12 @@
 <!--Inizio Scena Home-->
 
-<a-scene keyboard-shortcuts vr-mode-ui>
+<a-scene keyboard-shortcuts vr-mode-ui id="home_pagina">
 
 	<!--Inizio Assets-->
     
      <a-assets>
     
-    	<img id="home" src="img/home.jpg" alt=""> <!--Sfondo-->
+    	<img id="home_sfondo" src="img/home.jpg" alt=""> <!--Sfondo-->
         <img id="marker_1" src="img/marker_video_1.svg" alt=""> <!--Marker-->
         <img id="marker_2" src="img/marker_video_2.svg" alt=""> <!--"-->
         <audio id="bgm" src="audio/wonder-cycle-chris-zabriskie.mp3"> <!--BGM-->
@@ -17,7 +17,7 @@
 
 	<!--Inizio Area-->
         
-    <a-sky src="#home" transparent="true" rotation="0 30 0"> <!--Sfondo-->
+    <a-sky src="#home_sfondo" transparent="true" rotation="0 30 0"> <!--Sfondo-->
     </a-sky>
     
     <!--
@@ -32,13 +32,13 @@
     
     <a-image id="summary_marker" class="marker" src="#marker_1" width="1" height="1" position="15 0 0" scale="1.5 1.5 1.5" rotation="0 -75 0"> <!--Marker Summary-->   
     </a-image>
-    <a-image id="web_marker" class="marker" src="#marker_1" width="1" height="1" position="-1.8 -1.2 -3" scale="0.2 0.2 0.2" rotation="10 20 0"> <!--Marker Web-->   
+    <a-image id="home_web" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-1.8 -1.2 -3" scale="0.2 0.2 0.2" rotation="10 20 0" data-href="index.php?pag=web"> <!--Marker Web-->   
     </a-image>
-    <a-image id="grafica_marker" class="marker" src="#marker_1" width="1" height="1" position="-2.5 -2 -1.5" scale="0.2 0.2 0.2" rotation="10 72 0"> <!--Marker Grafica-->    
+    <a-image id="home_grafica" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-2.5 -2 -1.5" scale="0.2 0.2 0.2" rotation="10 72 0" data-href="index.php?pag=grafica"> <!--Marker Grafica-->    
     </a-image>
     <a-image id="recensioni_marker" class="marker" src="#marker_1" width="1" height="1" position="-4 2 -3" scale="0.2 0.2 0.2" rotation="-10 45 0"> <!--Marker Recensioni-->    
     </a-image>
-    <a-image id="menu_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="3 -0.5 -5" scale="0.2 0.2 0.2" rotation="0 0 0"> <!--Marker Menu-->    
+    <a-image id="menu_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="3 -0.5 -5" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=menu"> <!--Marker Menu-->    
     </a-image>
     
     <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true; loop: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio-->
@@ -330,7 +330,7 @@
         
         <!--Inizio Container Recensioni-->
         
-        <div id="container_recensioni mCustomScrollbar" data-mcs-theme="rounded">
+        <div id="container_recensioni" class="mCustomScrollbar" data-mcs-theme="rounded">
         
             <!--Inizio Corpo-->
             
