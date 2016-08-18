@@ -67,9 +67,9 @@
 
 <!--Inizio Links Associativi-->
 
-<!--Inizio Web-->
+<!--Inizio Chi Siamo-->
 
-<section id="chi_siamo" class="scheda secondo_livello">
+<section id="chi_siamo" class="scheda secondo_livello" rel="laboratorio_a">
 
     <h7> <!--Titolo-->
     
@@ -89,18 +89,16 @@
         
         <ul>
         
-             <a href="" title="">
+             <a href="include/laboratorio_a.php" title="" rel="laboratorio_a">
              
                 <li>
             
-               
-                
                     Laboratorio-a
                     
                 </li>
                 
             </a>
-            <a href="" title="">
+            <a href="include/team.php" title="" rel="team">
              
                 <li class="straniere">
                 
@@ -109,7 +107,7 @@
                 </li>
                 
             </a>
-            <a href="" title="">
+            <a href="include/traguardi.php" title="" rel="traguardi">
              
                 <li>
             
@@ -141,98 +139,13 @@
     </aside>
     
     <!--Fine Pulsante Chiusura-->   
-     
-    <div id="container_contenuti" class="mCustomScrollbar" data-mcs-theme="rounded">
-    
-    <!--Inizio Multimedia-->
-
-    <object class="video_intro" type="text/html" data="https://www.youtube.com/embed/FdUKN23jIyc" title="">
-                
-        <embed src="https://www.youtube.com/embed/FdUKN23jIyc" title=""> <!--Video-->
-        </embed>
-    
-    </object>
-    
-    <!--Fine Multimedia-->
-
-    <!--Inizio Contenuti-->
-    
-    <article class="scheda_summary_articolo">
-            
-        <!--Fine Iconografia-->
-        
-        <h1 class="scheda_summary_titolo"> <!--Titolo-->
-        
-            Chi Siamo
-        
-        </h1>
-        
-        <!--Inizio Corpo-->
-        
-        <p class="scheda_summary">
-        
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas mi non dolor eleifend tincidunt. Donec ante metus, bibendum at ipsum in, venenatis vestibulum nisi. Mauris nec porta odio, et malesuada diam. Donec varius mauris nec dui pulvinar, in efficitur erat mollis. Maecenas lacus risus, tincidunt nec mauris at, ultrices hendrerit eros. Duis quis scelerisque sem, non porta orci. Nulla faucibus dui quis mi tincidunt, non cursus dui volutpat. Proin tincidunt est dui, non gravida neque dapibus eu. Donec elit turpis, mattis quis hendrerit nec, dignissim sed ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed feugiat, ante at euismod interdum, nunc lorem cursus libero, eget faucibus quam lectus ut sapien. Curabitur nec blandit ante. Nullam consectetur semper venenatis. Vivamus pellentesque magna eu feugiat vulputate.
-            
-        </p>
-            
-        <div class="illustrazione">
-        
-            <img src="img/logo.svg" alt="" /> <!--Iconografia-->
-            
-            <span class="didascalia">
-            
-                Luca Cattide
-            
-            </span>
-        
-        </div>
-            
-        <p class="scheda_summary">    
-            
-            In rhoncus lacinia dui, non viverra est tempus vitae. Sed mattis aliquet dictum. Nam vestibulum lectus nibh. Morbi et enim non ipsum tristique molestie ac vel ipsum. Donec sollicitudin augue interdum justo rutrum dictum. Sed consectetur urna eget imperdiet efficitur. Phasellus urna erat, blandit nec arcu nec, sollicitudin ullamcorper erat. Aenean dignissim ultrices mauris, eget faucibus ante convallis in. Vestibulum consectetur tincidunt turpis porttitor tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam auctor consequat ipsum, quis tempor dolor ornare non. Duis fermentum leo id odio tempus, ut faucibus magna venenatis. Etiam varius sem varius, sagittis enim vel, ornare lacus. Proin eu ipsum urna. Cras placerat erat est, ut rutrum enim dapibus molestie.
-        
-        </p>
-        
-        <ul class="elenco">
-        
-            <li>
-            
-                Lorem ipsum
-            
-            </li>
-            <li>
-            
-                Lorem ipsum
-            
-            </li>
-            <li>
-            
-                Lorem ipsum
-            
-            </li>
-        
-        </ul>
-        
-        <!--Fine Corpo-->
-        
-        <a class="scheda_summary_pulsante deseleziona" href="#" title="" tabindex="g"> <!--Link Associativo-->
-        
-            Scarica
-        
-        </a>
-    
-    </article>
-    
-    </div>
-    
-    <!--Fine Contenuti-->
     
     <div class="sfondo_scheda"> <!--Sfondo-->
     </div>
 
 </section>
 
-<!--Fine Web-->
+<!--Fine Chi Siamo-->
 
 <!--Fine Links Associativi-->
 
