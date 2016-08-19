@@ -52,6 +52,8 @@ h7 { display: none; }
 
 .nascondi { display: none !important; }
 
+.occulta { opacity: 0 !important; }
+
 .ruota_giu
 {
     -webkit-transform: rotate(180deg);
@@ -1240,6 +1242,81 @@ color: #fff;
     color: #000 !important;
 }
 
+/* Selettori */
+
+.selettore { margin: 0 auto; }
+
+.selettore a { color: #fff; }
+
+.selettore a li span { letter-spacing: 2px; }
+
+.selettore a:focus { color: #000; }
+
+.selettore a:hover li { background-color: #14A3A7; }
+
+.selettore a:hover li span { text-shadow: 0px 0px 12px #14A3A7; }
+
+.selettore a:focus li { background-color: #4EEFF4; }
+
+.selettore a:focus li span
+{
+    color: #fff !important;
+    text-shadow: 0px 0px 12px #4EEFF4;
+}
+
+.selettore li
+{
+    margin: 0 4% 2em;
+    padding: 5.5em 64px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
+
+.ruota { transform: rotate(360deg); }
+
+.radeesh { background-image: url("../img/luca_1.png"); }
+
+.radeesh_1 { background-image: url("../img/luca_2.png") !important; }
+
+.giulio { background-image: url("../img/luca_1.png"); }
+
+.giulio_1 { background-image: url("../img/luca_2.png") !important; }
+
+.claudio { background-image: url("../img/luca_1.png"); }
+
+.claudio_1 { background-image: url("../img/luca_2.png") !important; }
+
+.luca { background-image: url("../img/luca_1.png"); }
+
+.luca_1 { background-image: url("../img/luca_2.png") !important; }
+
+.fabio { background-image: url("../img/luca_1.png"); }
+
+.fabio_1 { background-image: url("../img/luca_2.png") !important; }
+
+.fabrizio { background-image: url("../img/luca_1.png"); }
+
+.fabrizio_1 { background-image: url("../img/luca_2.png") !important; }
+
+/* Dati */
+
+.dati { margin: 0 auto; }
+
+.dati li
+{
+    margin: 0 4% 2em;
+    padding: 4em 64px;
+}
+
+.dati li .valore
+{
+    font-size: 4rem;
+    letter-spacing: 2px; 
+    margin-bottom: .5em;
+}
+
 /* Documenti */
 
 .documento
@@ -1372,6 +1449,10 @@ color: #fff;
 .video_intro { transition: all .3s ease-in-out; }
 
 .elenco li { transition: background-color .5s ease-in-out, color .3s ease-in-out .3s; }
+
+.selettore a li { transition: all .7s ease-out; }
+
+.nome { transition: all .3s ease-in .5s; }
 
 .documento a li { transition: background-color .5s ease-in-out, color .3s ease-in-out .3s; }
 

@@ -397,8 +397,8 @@ function transizioni() {
         $("#chi_siamo").removeClass("nascondi animated zoomOut"); // Mostra scheda
         $("#chi_siamo").addClass("animated zoomIn"); // "
         
-        if ($("#chi_siamo .scheda.secondo_livello #container_contenuti").length === 0) { // Se i contenuti della scheda non sono stati inizializzati
-            
+        if (($("#chi_siamo_pagina").length > 0) && ($("#chi_siamo.scheda.secondo_livello #container_contenuti").length === 0)) { // Se siamo sulla pagina di secondo livello e se i contenuti della scheda non sono stati inizializzati
+
             caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
             
         }
@@ -449,8 +449,8 @@ function transizioni() {
         
     });
    
-    $(".menu_contestuale a").on("click tap", function(e) { // Al click di della voce
-        
+    $(".menu_contestuale a, .selettore a").on("click tap", function(e) { // Al click di della voce
+
         e.preventDefault(); // Disabilita funzionalità standard link
         caricaContenutiClick($(this)); // Invocazione Funzione Caricamento Contenuti AJAX
         
@@ -464,6 +464,8 @@ function transizioni() {
 // Funzione Transizioni Schede
 
 function transizioniSchede() {
+    
+    var rollover = null; // Dichiarazione ed Inizializzazione Variabile Immagine Rollover
     
     // Menu Contestuale
     
@@ -482,6 +484,28 @@ function transizioniSchede() {
         }
         
     }); 
+    
+    // Selettori
+    
+    $(".selettore a").hover(function() { // Al passaggio del mouse
+        
+        rollover = $("li", this).parent().attr("rel") + "_1"; // Assegna l'immagine di rollover
+
+        // Anima
+        
+        $("li", this).addClass("ruota"); // Ruota immagine
+        $("li", this).addClass(rollover); // Sostituisci foto
+        $("li span", this).removeClass("occulta"); // Mostra nome
+        $("li span", this).addClass("animated pulse nome"); // Anima nome
+   
+    }, function() {
+        
+        $("li span", this).addClass("occulta"); // Nascondi nome
+        $("li span", this).removeClass("animated pulse nome"); // Rimuovi animazione nome
+        $("li", this).removeClass(rollover); // Sostituisci foto     
+        $("li", this).removeClass("ruota"); // Ruota immagine
+       
+    });
             
     // Documento
     
@@ -510,16 +534,16 @@ function animaElementi(el) {
         
         // Allora animali
         
-        $(".elenco:not('.documento') li:first-child").addClass("animated pulse elenco_attivo");  
+        $(".elenco:not('.documento, .selettore, .dati') li:first-child").addClass("animated pulse elenco_attivo");  
         
         setTimeout(function() {
             
-            $(".elenco:not('.documento') li:nth-child(2)").addClass("animated pulse elenco_attivo");      
+            $(".elenco:not('.documento, .selettore, .dati') li:nth-child(2)").addClass("animated pulse elenco_attivo");      
             
         }, 700);  
         setTimeout(function() {
             
-            $(".elenco:not('.documento') li:last-child").addClass("animated pulse elenco_attivo");      
+            $(".elenco:not('.documento, .selettore, .dati') li:last-child").addClass("animated pulse elenco_attivo");      
             
         }, 1000);
 
@@ -554,7 +578,7 @@ function breadcrumb() {
         
        pag = "menu";     
         
-    } else if ($("#chi_siamo").length > 0) { // Se siamo nel menu
+    } else if ($("#chi_siamo").length > 0) { // Se siamo su laboratorio-a
         
        pag = "chi_siamo";     
         
@@ -592,7 +616,7 @@ function breadcrumb() {
             
             break;      
             
-        case "chi_siamo": // Se siamo nel menu
+        case "chi_siamo": // Se siamo su laboratorio-a
             
             $("#breadcrumb").addClass("minimap_chi_siamo"); // Aggiorna il breadcrumb
             $("#mappa_breadcrumb .marker").addClass("marker_chi_siamo"); // Allora segna menu su minimappa 
@@ -628,13 +652,18 @@ function caricaContenutiClick(cliccato) {
     
     contenutiAjax(urlPagina); // Invocazione Funzione iniezione Contenuti AJAX    
     
-    
 }
 
 
 // Funzione iniezione Contenuti AJAX  
 
 function contenutiAjax(urlPagina) {
+    
+    // Dichiarazione Variabili
+    
+    var href = ""; // Inizializzazione Variabile URL attuale
+    var path = ""; // Inizializzazione Variabile URL Finale
+    var pathFinale = ""; // "
     
     // Controllo Contenuti
     
@@ -662,17 +691,25 @@ function contenutiAjax(urlPagina) {
     
     // Controllo URL
     
-    if (urlPagina !== window.location) { // Se la path caricata è diverso dall'URL visualizzato
+    if (($(".scheda.secondo_livello").length > 0) && (urlPagina !== window.location.href)) { // Se siamo in una pagina di secondo livello e se la path caricata è diverso dall'URL visualizzato
+    
+        href = window.location.href.replace(/#.*$/, ''); // Assegnazione radice URL attuale
+        urlPagina = "#" + urlPagina.replace("include/", ""); // Assegnazione deep link
+        path = href + urlPagina; // Assegnazione URL finale
+        
+        // Assegnazione URL finale in modalità SEF senza l'estensione
+        
+        pathFinale = path.replace(/.php([^/.php]*)$/,'$1', "");
   
         window.history.pushState({ // Allora aggiorna l'URL
             
-            path: window.location + (urlPagina = "#" + urlPagina.replace("include/", "")) // Assegna l'attuale path filtrando l'URL e convertendolo in un deep link
+            path: path // Assegna l'attuale path filtrando l'URL e convertendolo in un deep link eliminando i precedenti
             
-        }, '', window.location + urlPagina); // Imposta l'URL aggiornato
+        }, '', pathFinale); // Imposta l'URL aggiornato 
 
     }
     
-            
+                
     // Sovrascrittura funzione Back browser e recupero contenuto precedente
 
     $(window).bind('popstate', function() { // Al cambio di stato del browser
@@ -705,14 +742,8 @@ function video() {
     $(".video_intro").on("click tap", function() { // Al click sul video
 
         $(this)[0].play(); // Avvia il video    
-        $(this).removeClass("sopra");
+        $(this).removeClass("sopra"); // Rimuove transizioni
         
     }); 
-/*    $(".video_intro").on("ended", function() { // Al termine della riproduzione
-    console.log("ok");
-        $(this).fadeOut();
-        $(this)[0].load(); // Ricarica il video
-        $(this).fadeIn();
-    });
-*/    
+
 }
