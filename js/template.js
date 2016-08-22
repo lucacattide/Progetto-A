@@ -1,5 +1,7 @@
 // Inizio Javascript
 
+<!--
+
 // Dichiarazione ed Inizializzazione Variabili Globali
 
 var aperto = 0; // Controllo attivazione mappa sito
@@ -49,9 +51,9 @@ $(document).ready(function() {
 
 })();
 
- // Custom Scrollbar
+// Custom Scrollbar
  
- (function($){   
+(function($){   
  
     $(window).on("load", function() {
          
@@ -95,6 +97,92 @@ function  inizializzaScroll() {
 }
 
 
+// Counter
+
+(function($) {
+    
+    $.fn.countTo = function(options) {
+        
+        // merge the default plugin settings with the custom options
+        
+        options = $.extend({}, $.fn.countTo.defaults, options || {});
+
+        // how many times to update the value, and how much to increment the value on each update
+        
+        var loops = Math.ceil(options.speed / options.refreshInterval),
+        
+            increment = (options.to - options.from) / loops;
+
+        return $(this).each(function() {
+            
+            var _this = this,
+                loopCount = 0,
+                value = options.from,
+                interval = setInterval(updateTimer, options.refreshInterval);
+
+            function updateTimer() {
+                
+                value += increment;
+                loopCount++;
+                $(_this).html(value.toFixed(options.decimals));
+
+                if (typeof(options.onUpdate) == 'function') {
+                    
+                    options.onUpdate.call(_this, value);
+                    
+                }
+
+                if (loopCount >= loops) {
+                    
+                    clearInterval(interval);
+                    value = options.to;
+
+                    if (typeof(options.onComplete) == 'function') {
+                        
+                        options.onComplete.call(_this, value);
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        });
+        
+    };
+
+    $.fn.countTo.defaults = {
+        
+        from: 0,  // the number the element should start at
+        to: 999,  // the number the element should end at
+        speed: 9000,  // how long it should take to count between the target numbers
+        refreshInterval: 90,  // how often the element should be updated
+        decimals: 0,  // the number of decimal places to show
+        onUpdate: null,  // callback method for every time the element is updated,
+        onComplete: null,  // callback method for when the element finishes updating
+        
+    };
+    
+})(jQuery);
+function inizializzaCounter(elemento) {
+    
+    elemento.countTo({
+            
+        from: 0,
+        to: 999,
+        speed: 1000,
+        refreshInterval: 90,
+        onComplete: function() {
+           
+            $(this).addClass("animated flipInX"); 
+            
+        }
+        
+    }); 
+    
+} 
+
+
 // Funzione Inizializzazione
 
 function inizializza() {   
@@ -122,7 +210,7 @@ function inizializza() {
 		}  	
 		
 	});
-
+    
 }
 
 
@@ -405,12 +493,102 @@ function transizioni() {
         
     });
     
+    // Chi Siamo - Fabio (Landing)
+    
+    $("#fabio_marker").on("click", function() { // Al click sul marker 
+
+        $("#fabio").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#fabio").addClass("animated zoomIn"); // "
+        
+        if (($("#fabio_pagina").length > 0) && ($("#fabio.scheda.secondo_livello #container_contenuti").length === 0)) { // Se siamo sulla pagina di secondo livello e se i contenuti della scheda non sono stati inizializzati
+
+            caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
+            
+        }
+        
+    });
+    
+    // Chi Siamo - Radeesh (Landing)
+    
+    $("#radeesh_marker").on("click", function() { // Al click sul marker 
+
+        $("#radeesh").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#radeesh").addClass("animated zoomIn"); // "
+        
+        if (($("#radeesh_pagina").length > 0) && ($("#radeesh.scheda.secondo_livello #container_contenuti").length === 0)) { // Se siamo sulla pagina di secondo livello e se i contenuti della scheda non sono stati inizializzati
+
+            caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
+            
+        }
+        
+    });
+    
+    // Chi Siamo - Claudio (Landing)
+    
+    $("#claudio_marker").on("click", function() { // Al click sul marker 
+
+        $("#claudio").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#claudio").addClass("animated zoomIn"); // "
+        
+        if (($("#claudio_pagina").length > 0) && ($("#claudio.scheda.secondo_livello #container_contenuti").length === 0)) { // Se siamo sulla pagina di secondo livello e se i contenuti della scheda non sono stati inizializzati
+
+            caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
+            
+        }
+        
+    });
+    
+    // Chi Siamo - Luca (Landing)
+    
+    $("#luca_marker").on("click", function() { // Al click sul marker 
+
+        $("#luca").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#luca").addClass("animated zoomIn"); // "
+        
+        if (($("#luca_pagina").length > 0) && ($("#luca.scheda.secondo_livello #container_contenuti").length === 0)) { // Se siamo sulla pagina di secondo livello e se i contenuti della scheda non sono stati inizializzati
+
+            caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
+            
+        }
+        
+    });
+    
+    // Chi Siamo - Giulio (Landing)
+    
+    $("#giulio_marker").on("click", function() { // Al click sul marker 
+
+        $("#giulio").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#giulio").addClass("animated zoomIn"); // "
+        
+        if (($("#giulio_pagina").length > 0) && ($("#giulio.scheda.secondo_livello #container_contenuti").length === 0)) { // Se siamo sulla pagina di secondo livello e se i contenuti della scheda non sono stati inizializzati
+
+            caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
+            
+        }
+        
+    });
+    
+    // Chi Siamo - Fabrizio (Landing)
+    
+    $("#fabrizio_marker").on("click", function() { // Al click sul marker 
+
+        $("#fabrizio").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#fabrizio").addClass("animated zoomIn"); // "
+        
+        if (($("#fabrizio_pagina").length > 0) && ($("#fabrizio.scheda.secondo_livello #container_contenuti").length === 0)) { // Se siamo sulla pagina di secondo livello e se i contenuti della scheda non sono stati inizializzati
+
+            caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
+            
+        }
+        
+    });
+      
     // Chiudi
     
     $(".chiudi").on("click tap", function() { // Al click del pulsante
         
         var cliccato = $(this); // Dichiarazione ed Inizializzazione variabile elemento cliccato
-        
+               
         $(this).parent().removeClass("animated zoomIn"); // Chiudi scheda
         $(this).parent().addClass("animated zoomOut"); // "
            
@@ -448,8 +626,10 @@ function transizioni() {
         }, 500);        
         
     });
+    
+    // Menu Contestuale
    
-    $(".menu_contestuale a, .selettore a").on("click tap", function(e) { // Al click di della voce
+    $(".menu_contestuale a").on("click tap", function(e) { // Al click di della voce
 
         e.preventDefault(); // Disabilita funzionalità standard link
         caricaContenutiClick($(this)); // Invocazione Funzione Caricamento Contenuti AJAX
@@ -465,7 +645,9 @@ function transizioni() {
 
 function transizioniSchede() {
     
+    var selezionato = null; // Dichiarazione ed Inizializzazione variabile selettore selezionato
     var rollover = null; // Dichiarazione ed Inizializzazione Variabile Immagine Rollover
+    var postazione_luca = '<a-animation attribute="rotation" from="0 0 0" to="2 83 15.2" easing="ease-out" dur="3000"></a-animation>'; // Dichiarazione ed Inizializzazione Variabile coordinate postazione
     
     // Menu Contestuale
     
@@ -486,8 +668,10 @@ function transizioniSchede() {
     }); 
     
     // Selettori
-    
+ 
     $(".selettore a").hover(function() { // Al passaggio del mouse
+          
+        selezionato = this; // Inizializzazione variabile selettore selezionato
         
         rollover = $("li", this).parent().attr("rel") + "_1"; // Assegna l'immagine di rollover
 
@@ -495,18 +679,122 @@ function transizioniSchede() {
         
         $("li", this).addClass("ruota"); // Ruota immagine
         $("li", this).addClass(rollover); // Sostituisci foto
-        $("li span", this).removeClass("occulta"); // Mostra nome
-        $("li span", this).addClass("animated pulse nome"); // Anima nome
-   
+        
+        setTimeout(function () {
+            
+            $("li span:first-child", selezionato).removeClass("occulta"); // Mostra nome
+        
+        }, 500);
+        setTimeout(function () {
+            
+            $("li span:nth-child(2)", selezionato).removeClass("occulta"); // Mostra nome
+            $("li span:nth-child(2)", selezionato).addClass("animated pulse"); // Mostra nome
+
+        }, 700);
+        setTimeout(function () {
+            
+            $("li span:last-child", selezionato).removeClass("occulta"); // Mostra nome
+            $("li span:last-child", selezionato).addClass("animated slideInUp"); // Mostra nome
+
+        }, 1000);
+        
     }, function() {
         
         $("li span", this).addClass("occulta"); // Nascondi nome
-        $("li span", this).removeClass("animated pulse nome"); // Rimuovi animazione nome
+        $("li span", this).removeClass("animated pulse slideInUp"); // Rimuovi animazione nome
         $("li", this).removeClass(rollover); // Sostituisci foto     
         $("li", this).removeClass("ruota"); // Ruota immagine
+
+        selezionato = null; // Dissocia selettore selezionato dall'evento
        
     });
+    $(".selettore a").on("click tap", function() { // Al click del selettore
+        
+        var cliccato = $(this); // Dichiarazione ed Inizializzazione variabile elemento cliccato
+               
+        $(this).parents(".secondo_livello").removeClass("animated zoomIn"); // Chiudi scheda
+        $(this).parents(".secondo_livello").addClass("animated zoomOut"); // "
+           
+        setTimeout(function() {
             
+            cliccato.parents(".scheda.secondo_livello").addClass("nascondi"); // "
+            
+        }, 500);
+        
+        if ($(this).parents(".scheda.secondo_livello").length > 0) { // Se siamo in una scheda di secondo livello
+            
+            $(this).parents(".chiudi").siblings("#container_contenuti").remove(); // Allora alla chiusura rimuovi contenuti
+            
+        }
+        
+        // Animazione Navigazione
+        
+        switch($(this).attr("rel")) { // Controllo Selezione
+            
+            case "luca": // Se è stata selezionata la postazione di Luca
+        
+                $("#camera").append(postazione_luca); // Sposta la visuale sulla postazione
+                
+                break;
+                           
+        }
+        
+        $(".marker").on("stateadded", function() { // Al passaggio sul marker
+		
+		    $(this).siblings().addClass("opacity", "0.2"); // Metti in secondo piano gli altri
+		
+	    });
+        //$("#chi_siamo_pagina").attr("fog", "type: exponential; color: #ccc; density: 0.00025"); // Aggiungi la nebbia alla scena
+        
+    });
+    
+    // Dati
+    
+    // Al caricamento anima in sequenza
+
+    setTimeout(function() {    
+    
+        $(".elenco.dati li:first-child").addClass("animated pulse elenco_attivo");  
+                
+        inizializzaCounter($(".elenco.dati li:first-child .valore")); // Invocazione Funzione Inizializazione Counter
+            
+    }, 200);   
+    setTimeout(function() {
+        
+        $(".elenco.dati li:nth-child(2)").addClass("animated pulse elenco_attivo");      
+        
+        inizializzaCounter($(".elenco.dati li:nth-child(2) .valore")); // Invocazione Funzione Inizializazione Counter
+        
+    }, 700);  
+    setTimeout(function() {
+        
+        $(".elenco.dati li:nth-child(3)").addClass("animated pulse elenco_attivo");      
+        
+        inizializzaCounter($(".elenco.dati li:nth-child(3) .valore")); // Invocazione Funzione Inizializazione Counter
+        
+    }, 900);  
+    setTimeout(function() {
+        
+        $(".elenco.dati li:nth-child(4)").addClass("animated pulse elenco_attivo");  
+        
+        inizializzaCounter($(".elenco.dati li:nth-child(4) .valore")); // Invocazione Funzione Inizializazione Counter
+        
+    }, 1100);  
+    setTimeout(function() {
+        
+        $(".elenco.dati li:nth-child(5)").addClass("animated pulse elenco_attivo");    
+        
+        inizializzaCounter($(".elenco.dati li:nth-child(5) .valore")); // Invocazione Funzione Inizializazione Counter
+        
+    }, 1300);  
+    setTimeout(function() {
+        
+        $(".elenco.dati li:last-child").addClass("animated pulse elenco_attivo");  
+        
+        inizializzaCounter($(".elenco.dati li:last-child .valore")); // Invocazione Funzione Inizializazione Counter
+        
+    }, 1500);
+
     // Documento
     
     $(".documento a").hover(function() { // Al passaggio del mouse sul link topico
@@ -530,7 +818,7 @@ function animaElementi(el) {
             
     // Elenchi 
            
-    if (el.mcs.draggerTop >= $(".elenco").position().top) { // Se lo scrolling ha raggiunto i punti
+    if (el.mcs.draggerTop >= ($(".elenco").offset().top - $(".elenco").height())) { // Se lo scrolling ha raggiunto i punti <--- MENO LA RISPETTIVA ALTEZZA / EVITA IL RITARDO DELL'ANIMAZIONE
         
         // Allora animali
         
@@ -547,7 +835,7 @@ function animaElementi(el) {
             
         }, 1000);
 
-    }    
+    }
         
 }
 
@@ -581,6 +869,30 @@ function breadcrumb() {
     } else if ($("#chi_siamo").length > 0) { // Se siamo su laboratorio-a
         
        pag = "chi_siamo";     
+        
+    } else if ($("#fabio").length > 0) { // Se siamo su fabio
+        
+       pag = "fabio_landing";     
+        
+    } else if ($("#radeesh").length > 0) { // Se siamo su radeesh
+        
+       pag = "radeesh_landing";     
+        
+    } else if ($("#claudio").length > 0) { // Se siamo su claudio
+        
+       pag = "claudio_landing";     
+        
+    } else if ($("#luca").length > 0) { // Se siamo su luca
+        
+       pag = "claudio_landing";     
+        
+    } else if ($("#giulio").length > 0) { // Se siamo su giulio
+        
+       pag = "giulio_landing";     
+        
+    } else if ($("#fabrizio").length > 0) { // Se siamo su fabrizio
+        
+       pag = "fabrizio_landing";     
         
     }
     
@@ -622,6 +934,48 @@ function breadcrumb() {
             $("#mappa_breadcrumb .marker").addClass("marker_chi_siamo"); // Allora segna menu su minimappa 
             
             break;   
+            
+        case "fabio_landing": // Se siamo su Fabio
+            
+            $("#breadcrumb").addClass("minimap_fabio"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_fabio"); // Allora segna menu su minimappa 
+            
+            break; 
+            
+        case "radeesh_landing": // Se siamo su radeesh
+            
+            $("#breadcrumb").addClass("minimap_radeesh"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_radeesh"); // Allora segna menu su minimappa 
+            
+            break;
+        
+        case "claudio_landing": // Se siamo su claudio
+            
+            $("#breadcrumb").addClass("minimap_claudio"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_claudio"); // Allora segna menu su minimappa 
+            
+            break;
+            
+        case "luca_landing": // Se siamo su luca
+            
+            $("#breadcrumb").addClass("minimap_luca"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_luca"); // Allora segna menu su minimappa 
+            
+            break;
+            
+        case "giulioh_landing": // Se siamo su giulio
+            
+            $("#breadcrumb").addClass("minimap_giulio"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_giulio"); // Allora segna menu su minimappa 
+            
+            break;
+            
+        case "fabrizio_landing": // Se siamo su fabrizio
+            
+            $("#breadcrumb").addClass("minimap_fabrizio"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_fabrizio"); // Allora segna menu su minimappa 
+            
+            break;
         
         default: // Standard
         
@@ -636,10 +990,14 @@ function breadcrumb() {
 // Funzione Caricamento Contenuti AJAX
 
 function caricaContenuti() {
-   
-    var urlPagina = "include/" + $(".scheda.secondo_livello").attr("rel") + ".php"; // Dichiarazione ed inizializzazione variabile pagina invocata
     
-    contenutiAjax(urlPagina); // Invocazione Funzione iniezione Contenuti AJAX    
+    if ($(".scheda.secondo_livello").length > 0) { // Solo se siamo in una pagina di secondo livello
+   
+        var urlPagina = "include/" + $(".scheda.secondo_livello").attr("rel") + ".php"; // Dichiarazione ed inizializzazione variabile pagina invocata
+    
+        contenutiAjax(urlPagina); // Invocazione Funzione iniezione Contenuti AJAX 
+        
+    }
     
 }
 
@@ -747,3 +1105,5 @@ function video() {
     }); 
 
 }
+
+//-->

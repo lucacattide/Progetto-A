@@ -132,6 +132,42 @@
                       
                       break;
                       
+                      case "fabio_landing":
+                     
+                      include("include/fabio_landing.php");
+                      
+                      break;
+                      
+                      case "radeesh_landing":
+                     
+                      include("include/radeesh_landing.php");
+                      
+                      break;
+                      
+                      case "claudio_landing":
+                     
+                      include("include/claudio_landing.php");
+                      
+                      break;
+                      
+                      case "luca_landing":
+                     
+                      include("include/luca_landing.php");
+                      
+                      break;
+                      
+                      case "giulio_landing":
+                     
+                      include("include/giulio_landing.php");
+                      
+                      break;
+                      
+                      case "fabrizio_landing":
+                     
+                      include("include/fabrizio_landing.php");
+                      
+                      break;
+                      
                       case "servizi":
                      
                       include("include/servizi.php");

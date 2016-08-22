@@ -20,9 +20,23 @@
             
                 <li>
                 
+                    <div class="valore">    
+                    
+                        0
+
+                    </div>
+                    <span>
+                    
+                        Lorem ipsum dolor sit amet
+                        
+                    </span>
+                
+                </li>
+                <li>
+                
                     <div class="valore">
                     
-                        999
+                        0
                     
                     </div>
                     <span>
@@ -36,7 +50,7 @@
                 
                     <div class="valore">
                     
-                        999
+                        0
                     
                     </div>
                     <span>
@@ -50,7 +64,7 @@
                 
                     <div class="valore">
                     
-                        999
+                        0
                     
                     </div>
                     <span>
@@ -64,7 +78,7 @@
                 
                     <div class="valore">
                     
-                        999
+                        0
                     
                     </div>
                     <span>
@@ -78,21 +92,7 @@
                 
                     <div class="valore">
                     
-                        999
-                    
-                    </div>
-                    <span>
-                    
-                        Lorem ipsum dolor sit amet
-                        
-                    </span>
-                
-                </li>
-                <li>
-                
-                    <div class="valore">
-                    
-                        999
+                        0
                     
                     </div>
                     <span>

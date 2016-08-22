@@ -1,6 +1,6 @@
 <!--Inizio Scena Home Web-->
 
-<a-scene keyboard-shortcuts vr-mode-ui id="chi_siamo_pagina">
+<a-scene keyboard-shortcuts vr-mode-ui id="chi_siamo_pagina"> 
 
 	<!--Inizio Assets-->
     
@@ -34,13 +34,33 @@
     </a-image>
     <a-image id="chi_siamo_marker" class="marker" src="#marker_1" width="1" height="1" position="3 0 -1" scale="0.2 0.2 0.2" rotation="0 90 0"> <!--Marker Chi Siamo-->   
     </a-image>
+    <a-image id="fabio_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-1.5 -2 -1" scale="0.2 0.2 0.2" rotation="-45 0 40" data-href="index.php?pag=fabio_landing"> <!--Marker Fabio-->   
+    </a-image>
+    <a-image id="radeesh_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-3 0 -1.5" scale="0.2 0.2 0.2" rotation="0 20 0" data-href="index.php?pag=radeesh_landing"> <!--Marker Radeesh-->   
+    </a-image>
+    <a-image id="claudio_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-1.5 0.7 -2" scale="0.2 0.2 0.2" rotation="0 40 0" data-href="index.php?pag=claudio_landing"> <!--Marker Claudio-->   
+    </a-image>
+    <a-image id="luca_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-0.5 0.7 -2.5" scale="0.2 0.2 0.2" rotation="0 20 0" data-href="index.php?pag=luca_landing"> <!--Marker Giulio-->   
+    </a-image>
+    <a-image id="giulio_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="1 1.5 -3.5" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=giulio_landing"> <!--Marker Luca-->   
+    </a-image>
+    <a-image id="fabrizio_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="2 -0.5 -2" scale="0.2 0.2 0.2" rotation="0 120 0" data-href="index.php?pag=fabrizio_landing"> <!--Marker Fabrizio-->   
+    </a-image>
+    <a-image id="menu_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="2 0 2" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=menu"> <!--Marker Menu-->    
+    </a-image>
     
     <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true; loop: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio-->
     </a-entity>
     
     <!--Inizio Entità Camera-->
     
-    <a-entity position="0 0 0">
+    <a-entity id="camera" position="0 0 0">
+    
+        <!--ROTATION
+        
+            Rispetto a rotation di un elemento, il primo valore è invertito con l'ultimo
+            
+        -->
   
   		<a-entity camera look-controls> <!--Camera-->
         
@@ -50,9 +70,9 @@
                 </a-animation>
             
             </a-cursor>
-        
-        </a-entity>
 
+        </a-entity>
+      
 	</a-entity>
     
     <!--Fine Entità Camera-->
@@ -69,12 +89,12 @@
 
 <!--Inizio Chi Siamo-->
 
-<section id="chi_siamo" class="scheda secondo_livello" rel="laboratorio_a">
+<section id="chi_siamo" class="scheda secondo_livello nascondi" rel="laboratorio_a">
 
     <h7> <!--Titolo-->
     
         Chi Siamo
-    
+            
     </h7>
     
     <!--Inizio Menu Contestuale-->

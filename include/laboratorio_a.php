@@ -4,12 +4,12 @@
     
         <!--Inizio Video-->
     
-        <video class="video_intro sopra" preload muted poster="img/cover.png"> 
+<!--        <video class="video_intro sopra" preload muted poster="img/cover.png"> 
             
             <source src="video/prova.mp4" type="video/mp4" />
                 
         </video>
-        
+-->        
         <!--Fine Video-->
     
         <!--Inizio Contenuti-->

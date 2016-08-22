@@ -643,6 +643,18 @@ padding: 5em 0 !important; */ }
 
 .minimap_chi_siamo { background-position: 60% 30%; }
 
+.minimap_fabio { background-position: 48% 32%; }
+
+.minimap_radeesh { background-position: 20% 45%; }
+
+.minimap_claudio { background-position: -10% 30%; }
+
+.minimap_luca { background-position: -10% 10%; }
+
+.minimap_giulio { background-position: 15% -30%; }
+
+.minimap_fabrizio { background-position: 65% -5%; }
+
 .marker_home
 {
     top: 85% !important;
@@ -670,6 +682,42 @@ padding: 5em 0 !important; */ }
 .marker_chi_siamo
 {
     top: 40% !important;
+    left: 10% !important;
+}
+
+.marker_fabio
+{
+    top: 55% !important;
+    left: 3% !important;
+}
+
+.marker_radeesh
+{
+    top: 48% !important;
+    left: -15% !important;
+}
+
+.marker_claudio
+{
+    top: 40% !important;
+    left: -40% !important;
+}
+
+.marker_luca
+{
+    top: 30% !important;
+    left: -40% !important;
+}
+
+.marker_giulio
+{
+    top: 9% !important;
+    left: -25% !important;
+}
+
+.marker_fabrizio
+{
+    top: 25% !important;
     left: 10% !important;
 }
 
@@ -1250,6 +1298,21 @@ color: #fff;
 
 .selettore a li span { letter-spacing: 2px; }
 
+.selettore a li span:nth-child(2)
+{
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+}
+
+.selettore a li span:last-child
+{
+    letter-spacing: 0;
+    display: block;
+    font-size: 1rem;
+}
+
 .selettore a:focus { color: #000; }
 
 .selettore a:hover li { background-color: #14A3A7; }
@@ -1313,7 +1376,7 @@ color: #fff;
 .dati li .valore
 {
     font-size: 4rem;
-    letter-spacing: 2px; 
+    letter-spacing: 2px;
     margin-bottom: .5em;
 }
 
@@ -1452,7 +1515,7 @@ color: #fff;
 
 .selettore a li { transition: all .7s ease-out; }
 
-.nome { transition: all .3s ease-in .5s; }
+.selettore a li span { transition: all .3s ease-in;}
 
 .documento a li { transition: background-color .5s ease-in-out, color .3s ease-in-out .3s; }
 

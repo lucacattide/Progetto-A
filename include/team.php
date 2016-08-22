@@ -16,9 +16,9 @@
             
             <!--Inizio Corpo-->
             
-            <ul class="elenco selettore">
+            <ul class="elenco selettore deseleziona">
             
-                <a href="include/radeesh.php" title="" rel="radeesh">
+                <a data-href="#" title="" rel="radeesh">
                 
                     <li class="radeesh">
                     
@@ -27,11 +27,21 @@
                             Radeesh
                             
                         </span>
+                        <span class="straniere occulta">
+                        
+                            Art Director
+                        
+                        </span>
+                        <span class="occulta">
+                        
+                            Vai alla mia postazione
+                            
+                        </span>
                     
                     </li>
                 
                 </a>
-                <a href="include/giulio.php" title="" rel="giulio">
+                <a href="#" title="" rel="giulio">
                 
                     <li class="giulio">
                     
@@ -40,11 +50,21 @@
                             Giulio
                             
                         </span>
+                        <span class="straniere occulta">
+                        
+                            Graphic Designer
+                        
+                        </span>
+                        <span class="occulta">
+                        
+                            Vai alla mia postazione
+                            
+                        </span>
                     
                     </li>
                 
                 </a>
-                <a href="include/claudio.php" title="" rel="claudio">
+                <a href="#" title="" rel="claudio">
                 
                     <li class="claudio">
                     
@@ -53,11 +73,21 @@
                             Claudio
                             
                         </span>
+                        <span class="straniere occulta">
+                        
+                            Web Developer
+                        
+                        </span>
+                        <span class="occulta">
+                        
+                            Vai alla mia postazione
+                            
+                        </span>
                     
                     </li>
                 
                 </a>
-                <a href="include/luca.php" title="" rel="luca">
+                <a href="#" title="" rel="luca">
                 
                     <li class="luca">
                     
@@ -66,11 +96,21 @@
                             Luca
                             
                         </span>
+                        <span class="straniere occulta">
+                        
+                            Web Developer
+                        
+                        </span>
+                        <span class="occulta">
+                        
+                            Vai alla mia postazione
+                            
+                        </span>
                     
                     </li>
                 
                 </a>
-                <a href="include/fabio.php" title="" rel="fabio">
+                <a href="#" title="" rel="fabio">
                 
                     <li class="fabio">
                     
@@ -79,17 +119,37 @@
                             Fabio
                             
                         </span>
+                        <span class="straniere occulta">
+                        
+                            Web Designer
+                        
+                        </span>
+                        <span class="occulta">
+                        
+                            Vai alla mia postazione
+                            
+                        </span>
                     
                     </li>
                 
                 </a>
-                <a href="include/fabrizio.php" title="" rel="fabrizio">
+                <a href="#" title="" rel="fabrizio">
                 
                     <li class="fabrizio">
                     
                         <span class="occulta">
                         
                             Fabrizio
+                            
+                        </span>
+                        <span class="straniere occulta">
+                        
+                            Account Manager
+                        
+                        </span>
+                        <span class="occulta">
+                        
+                            Vai alla mia postazione
                             
                         </span>
                     
