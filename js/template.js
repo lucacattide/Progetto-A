@@ -87,6 +87,7 @@ function  inizializzaScroll() {
             whileScrolling: function() {
             
                 animaElementi(this);
+                animaElementi_1(this);
         
             }
         
@@ -582,7 +583,95 @@ function transizioni() {
         }
         
     });
-      
+    
+    // Referenze
+    
+    $("#referenze_marker").on("click", function() { // Al click sul marker 
+    
+        $("#referenze").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#referenze").addClass("animated zoomIn"); // "
+        
+        if (($("#referenze_pagina").length > 0) && ($("#referenze.scheda.secondo_livello #container_contenuti").length === 0)) { // Se siamo sulla pagina di secondo livello e se i contenuti della scheda non sono stati inizializzati
+
+            caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
+            
+        }
+        
+    });      
+    
+    // Contatti - Recapiti
+    
+    $("#recapiti_marker").on("click", function() { // Al click sul marker 
+    
+        $("#recapiti").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#recapiti").addClass("animated zoomIn"); // "
+        
+    });
+    $("#recapiti .selettore li").hover(function() { // Al passaggio del mouse
+        
+        $(".recapito", this).removeClass("occulta"); // Mostra il recapito
+
+    }, function() { // All'uscita nascondi
+
+        $(".recapito", this).addClass("occulta");
+        
+    });
+    $("#recapiti .selettore .indirizzo").hover(function() {
+    
+        var selezionato = this;
+        
+        setTimeout(function() {
+            
+            $(".recapito", selezionato).addClass("animated flipInY");       
+            
+        }, 300);
+        
+    }, function() {
+        
+        $(".recapito", this).removeClass("animated flipInY");       
+        
+    });
+    $("#recapiti .selettore .telefono").hover(function() {
+        
+        var selezionato = this;
+        
+        setTimeout(function() {
+    
+            $(".recapito", selezionato).addClass("animated swing"); 
+        
+        }, 300);      
+        
+    }, function() {
+        
+        $(".recapito", this).removeClass("animated swing");     
+        
+    });
+    $("#recapiti .selettore .email").hover(function() {
+    
+        var selezionato = this;
+        
+        setTimeout(function() {
+        
+            $(".recapito", selezionato).addClass("animated rotateIn");     
+            
+        }, 300);     
+        
+    }, function() {
+        
+        $(".recapito", this).removeClass("animated rotateIn");     
+        
+    });
+
+    
+    // Contatti - Dove Siamo
+    
+    $("#dove_siamo_marker").on("click", function() { // Al click sul marker 
+    
+        $("#dove_siamo").removeClass("nascondi animated zoomOut"); // Mostra scheda
+        $("#dove_siamo").addClass("animated zoomIn"); // "
+        
+    });
+    
     // Chiudi
     
     $(".chiudi").on("click tap", function() { // Al click del pulsante
@@ -645,9 +734,21 @@ function transizioni() {
 
 function transizioniSchede() {
     
-    var selezionato = null; // Dichiarazione ed Inizializzazione variabile selettore selezionato
-    var rollover = null; // Dichiarazione ed Inizializzazione Variabile Immagine Rollover
-    var postazione_luca = '<a-animation attribute="rotation" from="0 0 0" to="2 83 15.2" easing="ease-out" dur="3000"></a-animation>'; // Dichiarazione ed Inizializzazione Variabile coordinate postazione
+    // Dichiarazione Variabili
+    
+    var selezionato = null; // Inizializzazione variabile selettore selezionato
+    var rollover = null; // Inizializzazione Variabile Immagine Rollover
+
+    // Inizializzazione Variabile coordinate postazione
+
+    var postazione = [
+        '<a-animation attribute="rotation" from="0 0 0" to="-15 135 -46" easing="ease-out" dur="3000"></a-animation>', // Fabio
+        '<a-animation attribute="rotation" from="0 0 0" to="2 135 -1" easing="ease-out" dur="3000"></a-animation>', // Radeesh
+        '<a-animation attribute="rotation" from="0 0 0" to="6 110 15" easing="ease-out" dur="3000"></a-animation>', // Claudio
+        '<a-animation attribute="rotation" from="0 0 0" to="2 83 15.2" easing="ease-out" dur="3000"></a-animation>', // Luca
+        '<a-animation attribute="rotation" from="0 0 0" to="12 58 20" easing="ease-out" dur="3000"></a-animation>', // Giulio
+        '<a-animation attribute="rotation" from="0 0 0" to="-2 25 -10" easing="ease-out" dur="3000"></a-animation>' // Fabrizio
+    ];
     
     // Menu Contestuale
     
@@ -731,9 +832,39 @@ function transizioniSchede() {
         
         switch($(this).attr("rel")) { // Controllo Selezione
             
+            case "fabio": // Se è stata selezionata la postazione di Fabio
+        
+                $("#camera").append(postazione[0]); // Sposta la visuale sulla postazione
+                
+                break;
+                
+            case "radeesh": // Se è stata selezionata la postazione di Radeesh
+        
+                $("#camera").append(postazione[1]); // Sposta la visuale sulla postazione
+                
+                break;
+                
+            case "claudio": // Se è stata selezionata la postazione di Claudio
+        
+                $("#camera").append(postazione[2]); // Sposta la visuale sulla postazione
+                
+                break;
+                
             case "luca": // Se è stata selezionata la postazione di Luca
         
-                $("#camera").append(postazione_luca); // Sposta la visuale sulla postazione
+                $("#camera").append(postazione[3]); // Sposta la visuale sulla postazione
+                
+                break;
+                
+            case "giulio": // Se è stata selezionata la postazione di Giulio
+        
+                $("#camera").append(postazione[4]); // Sposta la visuale sulla postazione
+                
+                break;
+                
+            case "fabrizio": // Se è stata selezionata la postazione di Fabrizio
+        
+                $("#camera").append(postazione[5]); // Sposta la visuale sulla postazione
                 
                 break;
                            
@@ -741,13 +872,13 @@ function transizioniSchede() {
         
         $(".marker").on("stateadded", function() { // Al passaggio sul marker
 		
-		    $(this).siblings().addClass("opacity", "0.2"); // Metti in secondo piano gli altri
+		    $(this).siblings().attr("opacity", "0.2"); // Metti in secondo piano gli altri
 		
 	    });
         //$("#chi_siamo_pagina").attr("fog", "type: exponential; color: #ccc; density: 0.00025"); // Aggiungi la nebbia alla scena
         
     });
-    
+        
     // Dati
     
     // Al caricamento anima in sequenza
@@ -836,6 +967,38 @@ function animaElementi(el) {
         }, 1000);
 
     }
+        
+}
+
+
+// Funzione Animazione Elementi Referenze su scrolling
+
+function animaElementi_1(el) {
+                
+    // Elenchi 
+    
+    $("#referenze .selettore li").each(function(index, elemento) {
+                          
+        if (el.mcs.draggerTop >= ($(elemento).offset().top - $(elemento).height())) { // Se lo scrolling ha raggiunto i punti <--- MENO LA RISPETTIVA ALTEZZA / EVITA IL RITARDO DELL'ANIMAZIONE
+            
+            // Allora animali
+            
+            $(elemento).prev().addClass("animated zoomIn");  
+            
+            setTimeout(function() {
+                
+                $(elemento).addClass("animated zoomIn");  
+                
+            }, 200);
+            setTimeout(function() {
+                
+                $(elemento).next().addClass("animated zoomIn");  
+                
+            }, 500);
+    
+        }
+    
+    });
         
 }
 

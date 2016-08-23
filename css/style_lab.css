@@ -1223,6 +1223,32 @@ color: #fff;
     text-align: left;
 }
 
+#recapiti .scheda_summary_titolo
+{
+    padding-left: 64px;
+    margin-top: 2em;
+    text-align: left;
+}
+
+#dove_siamo .scheda_summary_titolo
+{
+    padding-left: 64px;
+    margin-top: 2em;
+    text-align: left;
+}
+
+#recapiti .scheda_summary
+{
+    text-align: left;
+    text-indent: 32px;
+}
+
+#dove_siamo .scheda_summary
+{
+    text-align: left;
+    text-indent: 32px;
+}
+
 .secondo_livello .scheda_summary
 {
     text-align: left;
@@ -1362,6 +1388,37 @@ color: #fff;
 .fabrizio { background-image: url("../img/luca_1.png"); }
 
 .fabrizio_1 { background-image: url("../img/luca_2.png") !important; }
+
+#referenze .selettore { margin-top: 10em; }
+
+#recapiti .selettore { margin: 10em auto 5em; }
+
+#recapiti .selettore li:hover
+{
+    cursor: pointer;
+    background-color: #14A3A7;
+}
+
+#recapiti .selettore li:hover span { text-shadow: none; }
+
+#recapiti .selettore li:hover span i
+{
+    font-size: 4rem;
+    opacity: .2;
+}
+#recapiti .selettore li span i
+{
+    display: block;
+    font-size: 8rem;
+    line-height: 2rem;
+}
+
+#recapiti .selettore li .recapito
+{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-transform: none; 
+}
 
 /* Dati */
 
@@ -1515,7 +1572,7 @@ color: #fff;
 
 .selettore a li { transition: all .7s ease-out; }
 
-.selettore a li span { transition: all .3s ease-in;}
+.selettore a li span { transition: all .3s ease-in; }
 
 .documento a li { transition: background-color .5s ease-in-out, color .3s ease-in-out .3s; }
 
@@ -1526,6 +1583,10 @@ color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
+#recapiti .selettore li span i { transition: all .3s ease-in-out .3s; }
+
+#recapiti .selettore li .recapito { transition: all .3s ease-in-out .6s; }
 
 /* Inizio Mobile ***********************************************/
 

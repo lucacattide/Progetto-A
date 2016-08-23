@@ -36,7 +36,7 @@
     </a-image>
     <a-image id="servizi_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="0.5 -2.5 -2" scale="0.2 0.2 0.2" rotation="-75 0 -10" data-href="index.php?pag=servizi"> <!--Marker Servizi-->    
     </a-image>
-    <a-image id="successo_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="3 -0.5 1" scale="0.2 0.2 0.2" rotation="-10 45 0" data-href="index.php?pag=referenze"> <!--Marker Referenze-->    
+    <a-image id="referenze_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="3 -0.5 1" scale="0.2 0.2 0.2" rotation="-10 45 0" data-href="index.php?pag=referenze"> <!--Marker Referenze-->    
     </a-image>
     <a-image id="contatti_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="2.5 -1 1.5" scale="0.2 0.2 0.2" rotation="0 45 0" data-href="index.php?pag=contatti"> <!--Marker Contatti-->    
     </a-image>

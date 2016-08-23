@@ -1,4 +1,4 @@
-<!--Inizio Scena Home Web-->
+<!--Inizio Scena Chi Siamo-->
 
 <a-scene keyboard-shortcuts vr-mode-ui id="chi_siamo_pagina"> 
 
@@ -54,7 +54,7 @@
     
     <!--Inizio Entità Camera-->
     
-    <a-entity id="camera" position="0 0 0">
+    <a-entity id="camera" position="0 0 0" rotation="0 0 0">
     
         <!--ROTATION
         
@@ -81,7 +81,7 @@
 
 </a-scene>
 
-<!--Fine Scena Home Web-->
+<!--Fine Scena Chi Siamo-->
 
 <!--Inizio Layout Home Web-->
 
@@ -169,4 +169,4 @@
 
 <!--Fine Links Associativi-->
 
-<!--Fine Layout Home Web-->
+<!--Fine Layout Chi Siamo-->
