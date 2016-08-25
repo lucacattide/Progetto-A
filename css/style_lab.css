@@ -113,6 +113,17 @@ h7 { display: none; }
     border-radius: 100px;
 }
 
+.richiesto { color: #FFA46B; }
+
+.richiesto_invalido { color: #4EEFF4 !important; }
+
+.invalido
+{
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(78,299,224,1) !important;
+    -moz-box-shadow: 0px 0px 10px 0px rgba(78,299,224,1) !important;
+    box-shadow: 0px 0px 10px 0px rgba(78,299,224,1) !important;
+}
+
 /* Links ***********************************************/
 
 a:link { text-decoration: none; }
@@ -1188,6 +1199,32 @@ padding: 5em 0 !important; */ }
     z-index: 3000;
 }
 
+#container_recapiti
+{
+    position: relative;
+    margin: 6em auto 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    min-height: 75em;
+    max-height: 75em;
+    z-index: 3000;
+}
+
+#container_dove_siamo
+{
+    position: relative;
+    margin: 6em auto 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    min-height: 75em;
+    max-height: 75em;
+    z-index: 3000;
+}
+
 /* Video */
 
 .video_intro
@@ -1406,6 +1443,7 @@ color: #fff;
     font-size: 4rem;
     opacity: .2;
 }
+
 #recapiti .selettore li span i
 {
     display: block;
@@ -1417,7 +1455,31 @@ color: #fff;
 {
     font-size: 1.5rem;
     line-height: 2rem;
-    text-transform: none; 
+    text-transform: none;
+}
+
+#dove_siamo .selettore { margin-top: 4em; }
+
+#dove_siamo .selettore li:hover
+{
+    cursor: pointer;
+    background-color: #14A3A7;
+}
+
+#dove_siamo .selettore li:hover span { text-shadow: none; }
+
+#dove_siamo .selettore li span i
+{
+    display: block;
+    font-size: 8rem;
+    line-height: 2rem;
+}
+
+#dove_siamo .selettore li .mezzo
+{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-transform: none;
 }
 
 /* Dati */
@@ -1484,6 +1546,184 @@ color: #fff;
     display: block;
     margin: 0 auto;
     font-size: 4rem;
+}
+
+/* Contatti **********************************************/
+
+/* Recapiti */
+
+#container_recapiti .scheda_summary_articolo
+{
+    top: 0;
+    transform: none;
+}
+
+/* Form */
+
+#form_contatti
+{
+    text-align: center;
+    margin-top: 5em;
+}
+
+#form_contatti legend { display: none; }
+
+#form_contatti fieldset
+{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+#form_contatti label
+{
+    font-size: 1rem;
+    line-height: 1rem;
+    display: inline-block;
+    width: 32%;
+    text-align: left;
+    text-indent: 16px;
+}
+
+#form_contatti input
+{
+    display: block;
+    width: 96%;
+    margin: 1em 2% 2em;
+    padding: .5em 2%;
+}
+
+#nome:hover, #cognome:hover, #telefono:hover, #email:hover, #messaggio:hover, #accettazione:hover
+{
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(244,142,28,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(244,142,28,1);
+    box-shadow: 0px 0px 10px 0px rgba(244,142,28,1);
+}
+
+#nome:focus, #cognome:focus, #telefono:focus, #email:focus, #messaggio:focus, #accettazione:focus
+{
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,164,107,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255,164,107,1);
+    box-shadow: 0px 0px 10px 0px rgba(255,164,107,1);
+}
+ #email::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+ font-style: normal;
+}
+#email::-moz-placeholder { /* Firefox 19+ */
+ font-style: normal;
+}
+#email:-ms-input-placeholder { /* IE 10+ */
+ font-style: normal;
+}
+#email:-moz-placeholder { /* Firefox 18- */
+ font-style: normal;
+}
+
+#email #shadow-root #inner-editor { font-style: normal; }
+
+label[for="messaggio"]
+{
+    display: block !important;
+    width: 65.5% !important;
+    margin: 0 auto;
+    text-indent: 28px !important;
+}
+
+#form_contatti textarea
+{
+    display: block;
+    width: 96%;
+    min-height: 10em;
+    margin: 1em 2% 2em;
+    padding: 1em 1%;
+}
+
+#form_contatti label:hover { cursor: pointer; }
+
+label[for="accettazione"]
+{
+    width: auto !important;
+    margin: 0 auto;
+    text-indent: 28px !important;
+}
+
+#accettazione
+{
+    display: inline-block;
+    float: left;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#accettazione:hover { cursor: pointer; }
+
+#antispam { margin: 2em auto 1em; }
+
+#antispam div { margin: 0 auto; }
+
+#invia
+{
+    width: auto !important;
+    background-color: transparent;
+    margin: 2em auto 0 !important;
+    color: #4EEFF4;
+    padding: .5em 1% !important;
+    outline: none;
+}
+
+#invia:hover
+{
+    cursor: pointer;
+    background-color: #14A3A7;
+    color: #fff;
+}
+
+#invia:focus
+{
+    background-color: #4EEFF4;
+    border-color: #14A3A7;
+}
+
+#messaggio_form
+{
+    font-size: 1rem;
+    line-height: 1.429rem;
+    padding-top: 2em;
+    display: none;
+}
+
+/* Dove Siamo */
+
+#container_dove_siamo .scheda_summary_articolo
+{
+    top: 0;
+    transform: none;
+}
+
+/* Mappa */
+
+#mappa
+{
+    width: 100%;
+    height: auto;
+    min-height: 46em;
+    margin: 5em auto;
+}
+
+#content { text-align: center; }
+
+#logo_mappa
+{
+    width: 32%;
+    height: auto;
+}
+
+#logo_mappa img
+{
+    width: 100%;
+    height: auto;
 }
 
 /* Custom Scroll **********************************************/
@@ -1587,6 +1827,10 @@ color: #fff;
 #recapiti .selettore li span i { transition: all .3s ease-in-out .3s; }
 
 #recapiti .selettore li .recapito { transition: all .3s ease-in-out .6s; }
+
+.richiesto { transition: all .3s ease-in; }
+
+#form_contatti input { transition: all .3s ease-in; }
 
 /* Inizio Mobile ***********************************************/
 

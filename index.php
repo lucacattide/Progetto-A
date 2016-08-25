@@ -58,15 +58,19 @@
         
         <script type="text/javascript" src="js/aframe.min.js"> <!--A-Frame-->
 		</script>
-        
+        <script type="text/javascript" src="js/antispam.js" async defer> <!--Anti-Spam-->
+		</script>
+
         <!--Fine Inclusione JavaScript-->
         
-		<!--Inclusione CSS-->
+		<!--Inizio Inclusione CSS-->
 
 		<link rel="stylesheet" type="text/css" href="<?php echo $siteurl; ?>css/style_lab.css"> <!--CSS Main-->
         <link rel="icon" type="image/png" href="favicon.png" /> <!--FavIcon-->
-
-	</head>
+	
+    	<!--Fine Inclusione CSS-->
+	
+    </head>
     
     <!--Fine Head-->
     

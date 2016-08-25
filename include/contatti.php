@@ -79,7 +79,7 @@
 
 <!--Inizio Recapiti-->
 
-<section id="recapiti" class="scheda">
+<section id="recapiti" class="scheda nascondi">
 
     <h7> <!--Titolo-->
     
@@ -104,19 +104,19 @@
     
     <!--Fine Pulsante Chiusura-->
     
-    <!--Inizio Contenuti-->
+    <!--Inizio Container Recapiti-->
+        
+    <div id="container_recapiti" class="mCustomScrollbar" data-mcs-theme="rounded">
     
-    <article class="scheda_summary_articolo">
+        <!--Inizio Contenuti-->
+    
+        <article class="scheda_summary_articolo">
         
-        <h1 class="scheda_summary_titolo"> <!--Titolo-->
-        
-            Recapiti
-        
-        </h1>
-        
-        <!--Inizio Container Recapiti-->
-        
-        <div id="container_recapiti" class="mCustomScrollbar" data-mcs-theme="rounded">
+            <h1 class="scheda_summary_titolo"> <!--Titolo-->
+            
+                Recapiti
+            
+            </h1>
         
             <!--Inizio Corpo-->
             
@@ -140,7 +140,7 @@
                     </span>
                     <span class="occulta recapito"> <!--Indirizzo-->
                     
-                        Via Francesco Soave, 24 20135 Milano MI ITALIA
+                        Via Francesco Soave 24, 20135 Milano MI ITALIA
                     
                     </span>
                 
@@ -195,15 +195,119 @@
             
             </p>
             
+            <!--Inizio Form-->
+            
+            <form method="post" autocomplete="on" id="form_contatti" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+            
+                <legend> <!--Legenda-->
+                
+                    Lorem ipsum dolor sit amet    
+                
+                </legend>
+                
+                <!--Inizio Dati Anagrafici-->
+                
+                <fieldset>
+                
+                    <label for="nome">
+                    
+                        Nome <span class="richiesto">*</span>
+                    
+                        <input type="text" id="nome" name="nome" placeholder="Inserire il nome (es. Mario)" required form="form_contatti" tabindex="n" pattern="[a-zA-Zàèìòù' ]+" />        
+                
+                    </label>
+                    <label for="cognome">
+                    
+                        Cognome <span class="richiesto">*</span>
+                    
+                        <input type="text" id="cognome" name="cognome" placeholder="Inserire il cognome (es. Rossi)" required form="form_contatti" tabindex="c" pattern="[a-zA-Zàèìòù' ]+" />        
+                
+                    </label>
+                    
+                </fieldset>
+                
+                <!--Fine Dati Anagrafici-->
+                
+                <!--Inizio Recapiti-->
+                
+                <fieldset>
+               
+                    <label for="telefono">
+                    
+                        Telefono
+                    
+                        <input type="tel" id="telefono" name="telefono" placeholder="Inserire il telefono (es. 123456789)" form="form_contatti" tabindex="t" pattern="^[0-9]{5,15}$" />        
+                
+                    </label>
+                    <label for="email" class="straniere">
+                    
+                        E-Mail <span class="richiesto">*</span>
+                    
+                        <input type="email" id="email" name="email" placeholder="Inserire l'indirizzo l'e-mail (es. m.rossi@email.it)" required form="form_contatti" tabindex="e" pattern="^[a-z0-9][_.a-z0-9-]+@([a-z0-9][0-9a-z-]+.)+([a-z]{2,4})" />        
+                
+                    </label>
+                    
+                </fieldset>
+                
+                <!--Fine Recapiti-->
+                
+                <!--Inizio Messaggio-->
+               
+                <label for="messaggio">
+                
+                    Messaggio <span class="richiesto">*</span>
+                
+                    <textarea id="messaggio" name="messaggio" required maxlength="300" wrap="hard" placeholder="Inserire il messaggio" form="form_contatti" tabindex="m"></textarea> 
+                
+                </label>
+                
+                <!--Fine Messaggio-->
+                
+                <!--Inizio Privacy-->
+                
+                <label for="accettazione">
+                
+                    Lorem ipsum dolor sit amet <span class="richiesto">*</span>
+                
+                    <input type="checkbox" id="accettazione" name="accettazione" required form="form_contatti" tabindex="o" />        
+                    
+                </label>
+                
+                <!--Fine Privacy-->
+                
+                <div id="antispam" class="g-recaptcha" data-type="image" data-tabindex="s"> <!--Widget Anti-Spam-->
+                </div>
+                    
+                <button type="button" id="invia" class="scheda_summary_pulsante" name="invia" form="form_contatti" tabindex="i"> <!--Invio-->
+            
+                    Invia
+            
+                </button>
+            
+                <!--Inizio messaggio di notifica-->
+                
+                <div id="messaggio_form">
+                
+                    <p>                    
+                    </p>
+                
+                </button>
+                
+                <!--Fine messaggio di notifica-->
+            
+            </form>
+            
+            <!--Fine Form-->
+            
             <!--Fine Corpo-->
-                                
-        </div>
+                                    
+        </article>
         
-        <!--Fine Container Recapiti-->
+        <!--Fine Contenuti-->
+
+    </div>
     
-    </article>
-    
-    <!--Fine Contenuti-->
+    <!--Fine Container Recapiti-->
     
     <div class="sfondo_scheda"> <!--Sfondo-->
     </div>
@@ -214,7 +318,7 @@
 
 <!--Inizio Dove Siamo-->
 
-<section id="dove_siamo" class="scheda nascondi">
+<section id="dove_siamo" class="scheda">
 
     <h7> <!--Titolo-->
     
@@ -239,20 +343,20 @@
     
     <!--Fine Pulsante Chiusura-->
     
-    <!--Inizio Contenuti-->
+    <!--Inizio Container Dove Siamo-->
     
-    <article class="scheda_summary_articolo">
+    <div id="container_dove_siamo" class="mCustomScrollbar" data-mcs-theme="rounded">
         
-        <h2 class="scheda_summary_titolo"> <!--Titolo-->
+        <!--Inizio Contenuti-->
+    
+        <article class="scheda_summary_articolo">
         
-            Dove Siamo
-        
-        </h2>
-        
-        <!--Inizio Container Dove Siamo-->
-        
-        <div id="container_dove_siamo" class="mCustomScrollbar" data-mcs-theme="rounded">
-        
+            <h2 class="scheda_summary_titolo"> <!--Titolo-->
+            
+                Dove Siamo
+            
+            </h2>
+                
             <!--Inizio Corpo-->
             
             <p class="scheda_summary">
@@ -260,16 +364,79 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada nec felis eget posuere. Fusce luctus tortor suscipit pretium pulvinar. Suspendisse potenti. Proin id iaculis turpis. Aenean pharetra sapien a finibus dapibus. Morbi at rhoncus ex. Nulla a ligula id ipsum bibendum sollicitudin at ut dolor. Mauris eget fringilla nulla. Praesent quis dolor hendrerit, accumsan nulla at, lacinia diam. Sed porta bibendum tempor. Sed tristique sem ut erat auctor tristique.
             
             </p>
+                        
+            <div id="mappa"> <!--Mappa-->
+            </div>
+                        
+            <!--Inizio Indicazioni-->
+            
+            <h2 class="scheda_summary_titolo"> <!--Titolo-->
+            
+                Come Raggiungerci
+            
+            </h2>
+            
+            <ul class="elenco selettore deseleziona">
+                
+                <li class="aeroporto">
+                
+                    <span>
+                    
+                        <i class="fa fa-plane" aria-hidden="true"> <!--Icona-->
+                        </i>
+                        
+                    </span>
+                    <span class="occulta mezzo"> <!--Aereo-->
+                    
+                        Aeroporto
+                    
+                    </span>
+                
+                </li>
+                <li class="auto">
+                
+                    <span>
+                    
+                        <i class="fa fa-taxi" aria-hidden="true"> <!--Icona-->
+                        </i>
+                        
+                    </span>
+                    <span class="occulta mezzo"> <!--Taxi-->
+                    
+                        Auto
+                    
+                    </span>
+                
+                </li>
+                <li class="metro">
+                
+                    <span >
+                    
+                        <i class="fa fa-subway" aria-hidden="true"> <!--Icona-->
+                        </i>
+                        
+                    </span>
+                    <span class="occulta mezzo"> <!--Treno-->
+                    
+                        Mezzi Pubblici
+                    
+                    </span>
+                
+                </li>
+                
+            </ul>
+            
+            <!--Fine Indicazioni-->
             
             <!--Fine Corpo-->
                     
-        </div>
+        </article>
         
-        <!--Inizio Container Dove Siamo-->
+        <!--Fine Contenuti-->
     
-    </article>
+    </div>
     
-    <!--Fine Contenuti-->
+    <!--Fine Container Dove Siamo-->
     
     <div class="sfondo_scheda"> <!--Sfondo-->
     </div>

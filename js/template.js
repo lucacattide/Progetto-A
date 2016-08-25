@@ -15,7 +15,8 @@ $(document).ready(function() {
     caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
 	transizioni(); // Invocazione Funzione Transizioni 
     breadcrumb(); // Invocazione Funzione Breadcrumb
-	
+    validaInviaForm(); // Invocazione Funzione Form
+
 });
 
 
@@ -68,7 +69,7 @@ $(document).ready(function() {
 
 function  inizializzaScroll() {
     
-    $("#container_recensioni, #container_contenuti").mCustomScrollbar({
+    $("#container_recensioni, #container_contenuti, #container_recapiti, #container_dove_siamo").mCustomScrollbar({
         
         axis: "y",
         autoDraggerLength: true,
@@ -223,6 +224,7 @@ function transizioni() {
 	
 	var marker = document.querySelector("#marker_1"); // Marker
 	var audio = document.querySelector('[sound]'); // Audio
+    var selezionato = null; // Elemento selezionato
 	
 	// UI
 	
@@ -616,24 +618,24 @@ function transizioni() {
         $(".recapito", this).addClass("occulta");
         
     });
-    $("#recapiti .selettore .indirizzo").hover(function() {
+    $("#recapiti .selettore .indirizzo").hover(function() { // Al passaggio del mouse
     
-        var selezionato = this;
+        selezionato = this;
         
         setTimeout(function() {
             
-            $(".recapito", selezionato).addClass("animated flipInY");       
+            $(".recapito", selezionato).addClass("animated flipInY"); // Anima Indirizzo        
             
         }, 300);
         
-    }, function() {
+    }, function() {  // All'uscita nascondi
         
         $(".recapito", this).removeClass("animated flipInY");       
         
     });
-    $("#recapiti .selettore .telefono").hover(function() {
+    $("#recapiti .selettore .telefono").hover(function() { // Anima Telefono    
         
-        var selezionato = this;
+        selezionato = this;
         
         setTimeout(function() {
     
@@ -641,28 +643,27 @@ function transizioni() {
         
         }, 300);      
         
-    }, function() {
+    }, function() { // Al passaggio del mouse
         
         $(".recapito", this).removeClass("animated swing");     
         
     });
-    $("#recapiti .selettore .email").hover(function() {
+    $("#recapiti .selettore .email").hover(function() { // Al passaggio del mouse
     
-        var selezionato = this;
+        selezionato = this;
         
         setTimeout(function() {
         
-            $(".recapito", selezionato).addClass("animated rotateIn");     
+            $(".recapito", selezionato).addClass("animated rotateIn");  // Anima E-Mail        
             
         }, 300);     
         
-    }, function() {
+    }, function() {  // All'uscita nascondi
         
         $(".recapito", this).removeClass("animated rotateIn");     
         
     });
 
-    
     // Contatti - Dove Siamo
     
     $("#dove_siamo_marker").on("click", function() { // Al click sul marker 
@@ -670,7 +671,62 @@ function transizioni() {
         $("#dove_siamo").removeClass("nascondi animated zoomOut"); // Mostra scheda
         $("#dove_siamo").addClass("animated zoomIn"); // "
         
+    });    
+    $("#dove_siamo .selettore li").hover(function() { // Al passaggio del mouse
+        
+        $(".mezzo", this).removeClass("occulta"); // Mostra il recapito
+
+    }, function() { // All'uscita nascondi
+
+        $(".mezzo", this).addClass("occulta");
+        
     });
+    $("#dove_siamo .selettore .aeroporto").hover(function() { // Al passaggio del mouse
+    
+        selezionato = this;
+        
+        setTimeout(function() {
+            
+            $("span i", selezionato).addClass("animated lightSpeedOut"); // Anima Indirizzo        
+            
+        }, 300);
+        
+    }, function() {  // All'uscita nascondi
+        
+        $("span i", this).removeClass("animated lightSpeedOut");       
+        
+    });
+    $("#dove_siamo .selettore .auto").hover(function() { // Anima Telefono    
+        
+        selezionato = this;
+        
+        setTimeout(function() {
+    
+            $("span i", selezionato).addClass("animated fadeOutLeft"); 
+        
+        }, 300);      
+        
+    }, function() { // Al passaggio del mouse
+        
+        $("span i", this).removeClass("animated fadeOutLeft");     
+        
+    });
+    $("#dove_siamo .selettore .metro").hover(function() { // Al passaggio del mouse
+    
+        selezionato = this;
+        
+        setTimeout(function() {
+        
+            $("span i", selezionato).addClass("animated zoomOut");  // Anima E-Mail        
+            
+        }, 300);     
+        
+    }, function() {  // All'uscita nascondi
+        
+        $("span i", this).removeClass("animated zoomOut");     
+        
+    });
+
     
     // Chiudi
     
@@ -1267,6 +1323,191 @@ function video() {
         
     }); 
 
+}
+
+
+// Funzione Validazione Form
+
+function validaInviaForm() {
+    
+    $("#invia").on("click tap", function(e) { // All'invio del form
+    
+        e.preventDefault(); // Disabilita funzione di default dell'elemento
+    
+        var campi = []; // Dichiarazione Vettore campi form
+            
+        if ($("#form_contatti input[required], #form_contatti textarea[required]").val().length === 0) { // Se i campi richiesti risultano ancora vuoti
+            
+            $("#form_contatti input[required], #form_contatti textarea[required]").filter(function() { // Allora per ogni campo richiesto
+                
+                $(this).siblings().addClass("richiesto_invalido"); // All'etichetta corrispondente segnala l'errore
+                
+                return !this.value; // Restituisci i campi non compilati
+                
+            }).addClass("invalido"); // Al campo corrispondente segnala l'errore
+                        
+        } else { // Altrimenti invia
+            
+            // Assegna i campi compilati
+            
+            campi = [$("#nome").val(), $("#cognome").val(), $("#telefono").val(), $("#email").val(), $("#messaggio").val()];
+            
+            // Chiamata AJAX
+            
+            $.post("include/form.php", { 
+            
+                nome: campi[0], 
+                cognome: campi[1],
+                telefono: campi[2],
+                email: campi[3],
+                messaggio: campi[4],
+                
+            }, function(data) { // A chiamata avenuta 
+	 
+                $('#messaggio_form').html(data).slideDown(); // Output messaggio con animazione
+                
+                setTimeout(function() {
+                
+                    $("#messaggio_form").slideUp(); // Nascondi dopo 3 secondi
+                    
+                }, 3000); 
+                
+	            $('#form_contatti')[0].reset(); // Resetta i campi del form
+                                    
+            });
+            
+            $("#container_recapiti").mCustomScrollbar("scrollTo", "bottom", { // Scrolla in fondo ai contenuti
+                
+                scrollEasing: "easeOut" // Anima lo scrolling
+            
+            });
+            
+        }
+        
+        return false; // Blocca il refresh
+        
+    });    
+    
+}
+
+
+// Funzione Inizializza Mappa
+
+function mappaDoveSiamo() {
+    
+  // Dichiarazione Variabili
+  
+  var luogo = new google.maps.LatLng(45.4477114,9.1932925); // Posizione
+
+  // Inizializzazione Oggetto Stile
+  
+  var stileMappa = [
+      {
+        "featureType": "poi",
+        "stylers": [
+          { "color": "#14A3A7" }
+        ]
+      },{
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+          { "visibility": "off" }
+        ]
+      },{
+        "featureType": "road",
+        "stylers": [
+          { "color": "#F48E4E" }
+        ]
+      },{
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+          { "color": "#ffffff" }
+        ]
+      },{
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+          { "visibility": "off" }
+        ]
+      },{
+        "featureType": "transit",
+        "stylers": [
+          { "visibility": "off" }
+        ]
+      },{
+        "featureType": "water",
+        "stylers": [
+          { "visibility": "off" }
+        ]
+      },{
+        "featureType": "landscape",
+        "stylers": [
+          { "color": "#A75725" }
+        ]
+      },{
+      }
+    ];
+    
+  // Dichiarazione ed Istanziazione oggetto mappa con assegnazione stile e nome
+
+  var stilizzata = new google.maps.StyledMapType(stileMappa, {
+        
+        name: "Laboratorio-a"
+        
+  });
+  var opzioniMappa = {
+	  
+    zoom: 18, // Livello Zoom
+    center: luogo, // Centro
+	disableDefaultUI: true, // Disabilita UI
+    mapTypeControlOptions: {
+      
+		mapTypeIds: [google.maps.MapTypeId.ROADMAP, stileMappa] // Tipo di Visualizzazione
+    
+	}
+    
+  };
+  var mappa = new google.maps.Map(document.getElementById('mappa'), opzioniMappa);
+ 
+  //Assegnazione ID mappa ad elemento ed output
+  
+  mappa.mapTypes.set('stile_mappa', stilizzata);
+  mappa.setMapTypeId('stile_mappa');
+ 
+  // Contenuto Finestra informativa
+	
+  var contentString = '<div id="content">' +
+	  '<div id="siteNotice">' +
+	  '</div>' +
+	  '<img id="logo_mappa" src="img/logo.png" alt="Laboratorio-a">' +
+	  '</img>';
+
+  // Finestra informativa
+  
+  var infowindow = new google.maps.InfoWindow({
+	  
+	content: contentString, // Imposta contenuto
+	maxWidth: 210
+    
+  });
+
+  // Marker
+
+  var marker = new google.maps.Marker({
+	  
+	position: luogo,
+	map: mappa,
+	title: 'Laboratorio-a'
+	
+  });
+  
+  marker.addListener('click', function() { // Al click del marker
+	
+	infowindow.open(mappa, marker); // Apri finestra informativa
+	
+  });
+  	  
 }
 
 //-->

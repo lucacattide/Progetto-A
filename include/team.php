@@ -121,7 +121,7 @@
                         </span>
                         <span class="straniere occulta">
                         
-                            Web Designer
+                            Web Developer
                         
                         </span>
                         <span class="occulta">
