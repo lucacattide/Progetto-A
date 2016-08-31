@@ -560,6 +560,22 @@
 
 <!--Fine Mappa del Sito-->
 
+<!--Inizio Mirino-->
+<!--
+<aside id="mirino">
+
+	<h7> <!--Titolo--
+    
+    	Cursore
+        
+   	</h7>
+    
+    <img src="img/mirino.svg" alt="" /> <!--Cursore--
+
+</aside>
+-->
+<!--Fine Mirino-->
+
 <!--Inizio Audio-->
 
 <aside id="volume">

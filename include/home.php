@@ -9,6 +9,7 @@
     	<img id="home_sfondo" src="img/home.jpg" alt=""> <!--Sfondo-->
         <img id="marker_1" src="img/marker_video_1.svg" alt=""> <!--Marker-->
         <img id="marker_2" src="img/marker_video_2.svg" alt=""> <!--"-->
+        <img id="mirino" src="img/mirino.svg" alt=""> <!--"-->
         <audio id="bgm" src="audio/wonder-cycle-chris-zabriskie.mp3"> <!--BGM-->
   
   	</a-assets>
@@ -49,7 +50,10 @@
     <a-entity position="0 0 0">
   
   		<a-entity camera look-controls> <!--Camera-->
-        
+        	
+            <a-cursor position="0 0 -10" geometry="primitive: circle; radius: 7;" material="src: #mirino; side: front; transparent: true">
+            </a-cursor>
+            
         	<a-cursor position="0 0 -10" geometry="primitive: ring" material="color: white; shader: flat; opacity: .7; side: front" scale="0.1 0.1 0.1"> <!--Cursore-->
     
                 <a-animation begin="hovering" attribute="position" from="0 0 -10" to="0 0 -2" easing="ease-in-out" fill="both" dur="300"> <!--Hover-->

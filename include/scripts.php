@@ -10,9 +10,9 @@
 
 <script type="text/javascript" src='https://www.google.com/recaptcha/api.js?onload=antiSpam&render=explicit' async defer> <!--ReCaptcha-->
 </script>
-<script type="text/javascript" async defer src="js/jquery-3.1.0.min.js"> <!--jQuery-->
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"> <!--jQuery-->
 </script>
-<script type="text/javascript" async defer src="js/jquery.mCustomScrollbar.concat.min.js"> <!--Custom Scrollbar-->
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js" async defer> <!--Custom Scrollbar-->
 </script>
 <script type="text/javascript" async defer src="js/main.js"> <!--Ink Transition-->
 </script>

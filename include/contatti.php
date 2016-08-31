@@ -318,7 +318,7 @@
 
 <!--Inizio Dove Siamo-->
 
-<section id="dove_siamo" class="scheda">
+<section id="dove_siamo" class="scheda nascondi">
 
     <h7> <!--Titolo-->
     
@@ -410,7 +410,7 @@
                 </li>
                 <li class="metro">
                 
-                    <span >
+                    <span>
                     
                         <i class="fa fa-subway" aria-hidden="true"> <!--Icona-->
                         </i>
@@ -425,6 +425,39 @@
                 </li>
                 
             </ul>
+            
+            <!--Inizio Tragitti-->
+            
+            <div class="indicazioni aeroporto"> <!--Aeroporto-->
+            
+            	<p>
+            
+            		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis ex quis diam semper hendrerit. Nulla ut imperdiet odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce id porttitor massa. Donec in sem auctor, scelerisque eros ut, posuere enim. Aliquam laoreet lorem quis luctus malesuada. In feugiat mauris ipsum, quis luctus diam viverra non. Nullam pretium consectetur ipsum eget interdum. Morbi fringilla lectus sit amet feugiat bibendum. Mauris mollis felis ut mauris accumsan, sed consequat sapien volutpat. Phasellus tincidunt dignissim eleifend. Fusce posuere nisl eget mi auctor, sed ornare massa vulputate. Cras vel egestas justo.
+                
+                </p>
+            
+            </div>
+            <div class="indicazioni auto"> <!--Auto-->
+            
+            	<p>
+            
+            		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis ex quis diam semper hendrerit. Nulla ut imperdiet odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce id porttitor massa. Donec in sem auctor, scelerisque eros ut, posuere enim. Aliquam laoreet lorem quis luctus malesuada. In feugiat mauris ipsum, quis luctus diam viverra non. Nullam pretium consectetur ipsum eget interdum. Morbi fringilla lectus sit amet feugiat bibendum. Mauris mollis felis ut mauris accumsan, sed consequat sapien volutpat. Phasellus tincidunt dignissim eleifend. Fusce posuere nisl eget mi auctor, sed ornare massa vulputate. Cras vel egestas justo.
+                
+                </p>
+            
+            </div>
+            <div class="indicazioni metro"> <!--Mezzi Pubblici-->
+
+            
+            	<p>
+            
+            		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis ex quis diam semper hendrerit. Nulla ut imperdiet odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce id porttitor massa. Donec in sem auctor, scelerisque eros ut, posuere enim. Aliquam laoreet lorem quis luctus malesuada. In feugiat mauris ipsum, quis luctus diam viverra non. Nullam pretium consectetur ipsum eget interdum. Morbi fringilla lectus sit amet feugiat bibendum. Mauris mollis felis ut mauris accumsan, sed consequat sapien volutpat. Phasellus tincidunt dignissim eleifend. Fusce posuere nisl eget mi auctor, sed ornare massa vulputate. Cras vel egestas justo.
+                
+                </p>
+            
+            </div>
+            
+            <!--Fine Tragitti-->
             
             <!--Fine Indicazioni-->
             

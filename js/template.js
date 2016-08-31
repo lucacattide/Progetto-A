@@ -673,60 +673,159 @@ function transizioni() {
         
     });    
     $("#dove_siamo .selettore li").hover(function() { // Al passaggio del mouse
+	
+		if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo allora anima
         
-        $(".mezzo", this).removeClass("occulta"); // Mostra il recapito
+        	$(".mezzo", this).removeClass("occulta"); // Mostra il recapito
+		
+		}
 
     }, function() { // All'uscita nascondi
 
-        $(".mezzo", this).addClass("occulta");
+        if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo allora anima
+		
+			$(".mezzo", this).addClass("occulta");
+		
+		}
         
     });
     $("#dove_siamo .selettore .aeroporto").hover(function() { // Al passaggio del mouse
+	
+		if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo allora anima
     
-        selezionato = this;
-        
-        setTimeout(function() {
-            
-            $("span i", selezionato).addClass("animated lightSpeedOut"); // Anima Indirizzo        
-            
-        }, 300);
+		  selezionato = this;
+		  
+		  setTimeout(function() {
+			  
+			  $("span i", selezionato).addClass("animated lightSpeedOut"); // Anima Indirizzo        
+			  
+		  }, 300);
+		  setTimeout(function() {
+			  
+			  $("span i", selezionato).removeClass("animated lightSpeedOut"); // Anima Indirizzo 
+			  $("span i", selezionato).addClass("sfuma animated pulse"); // Anima Indirizzo        
+			  
+		  }, 1300);
+		
+		}
         
     }, function() {  // All'uscita nascondi
+	
+		if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo allora anima
         
-        $("span i", this).removeClass("animated lightSpeedOut");       
+        	$("span i", this).removeClass("sfuma animated lightSpeedOut pulse");   
+			
+		}
         
     });
     $("#dove_siamo .selettore .auto").hover(function() { // Anima Telefono    
+	
+		if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo allora anima
         
-        selezionato = this;
-        
-        setTimeout(function() {
-    
-            $("span i", selezionato).addClass("animated fadeOutLeft"); 
-        
-        }, 300);      
+		  selezionato = this;
+		  
+		  setTimeout(function() {
+	  
+			  $("span i", selezionato).addClass("animated fadeOutLeft"); 
+		  
+		  }, 300); 
+		  setTimeout(function() {
+	  
+			  $("span i", selezionato).removeClass("animated fadeOutLeft"); 
+			  $("span i", selezionato).addClass("sfuma animated pulse"); 
+		  
+		  }, 1200);      
+		
+		}
         
     }, function() { // Al passaggio del mouse
+	
+		if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo allora anima
         
-        $("span i", this).removeClass("animated fadeOutLeft");     
+        	$("span i", this).removeClass("sfuma animated fadeOutLeft pulse");     
+		
+		}
         
     });
     $("#dove_siamo .selettore .metro").hover(function() { // Al passaggio del mouse
+	
+		if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo allora anima
     
-        selezionato = this;
-        
-        setTimeout(function() {
-        
-            $("span i", selezionato).addClass("animated zoomOut");  // Anima E-Mail        
-            
-        }, 300);     
+		  selezionato = this;
+		  
+		  setTimeout(function() {
+		  
+			  $("span i", selezionato).addClass("animated zoomOut");  // Anima E-Mail   
+			  
+		  }, 300); 
+		  setTimeout(function() {
+		  
+			  $("span i", selezionato).removeClass("animated zoomOut");  // Anima E-Mail   
+			  $("span i", selezionato).addClass("sfuma animated pulse");  // Anima E-Mail         
+			  
+		  }, 1000);  
+		
+		}
         
     }, function() {  // All'uscita nascondi
+	
+		if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo allora anima
         
-        $("span i", this).removeClass("animated zoomOut");     
+        	$("span i", this).removeClass("sfuma animated zoomOut pulse");  
+		
+		}
         
     });
+	$("#dove_siamo .selettore li").on("click tap", function() { // Al click del selettore
+	
+		if (!$(this).hasClass("selettore_attivo")) { // Se non c'è nessun selettore attivo
+		
+			$(this).siblings().removeClass("selettore_attivo"); // Deseleziona elementi precedentemente attivi
+			$(".indicazioni").slideUp(); // Nascondi tutte le indicazioni
+			$(this).addClass("selettore_attivo"); // Seleziona elemento
+			
+			// Deseleziona adiacenti
+			
+			$(this).siblings().removeClass("evidenzia_3");
+			$(this).siblings().find(".mezzo").addClass("occulta");	
+			$(this).siblings().find("span").children().removeClass("sfuma animated pulse");  
+			
+			// Seleziona con animazione
+				
+			$(this).addClass("evidenzia_3");
+			$(".mezzo", this).removeClass("occulta");	
+			$("span i", this).addClass("sfuma animated pulse");  	
+			
+			// Controllo Indicazioni
+			
+			if ($(this).hasClass("aeroporto")) { // Se aeroporto è attivo
+				
+				$(".indicazioni.aeroporto").slideDown();	 // Mostra indicazioni
+				console.log("ok");
+			} else if ($(this).hasClass("auto")) { // Altrimenti Se auto è attivo
+				
+				$(".indicazioni.auto").slideDown();	// Mostra indicazioni
+				
+			} else if ($(this).hasClass("metro")) { // Altrimenti Se metro è attivo
+				
+				$(".indicazioni.metro").slideDown();	 // Mostra indicazioni
+				
+			}
+					
+		} else { // Altrimenti
+		
+			$(".indicazioni").slideUp(); // Nascondi indicazioni
+			$(this).removeClass("selettore_attivo"); // Deseleziona elemento
+			
+			// Seleziona con animazione
+				
+			$(this).removeClass("evidenzia_3");
+			$(".mezzo", this).addClass("occulta");	
+			$("span i", this).removeClass("sfuma animated pulse");  
 
+		}
+				
+	});
     
     // Chiudi
     
@@ -1113,6 +1212,14 @@ function breadcrumb() {
         
        pag = "fabrizio_landing";     
         
+    } else if ($("#referenze_pagina").length > 0) { // Se siamo su referenze
+        
+       pag = "referenze";     
+        
+    } else if ($("#contatti_pagina").length > 0) { // Se siamo su contatti
+        
+       pag = "contatti";     
+        
     }
     
     // Assegnazione posizioni su minimappa
@@ -1182,7 +1289,7 @@ function breadcrumb() {
             
             break;
             
-        case "giulioh_landing": // Se siamo su giulio
+        case "giulio_landing": // Se siamo su giulio
             
             $("#breadcrumb").addClass("minimap_giulio"); // Aggiorna il breadcrumb
             $("#mappa_breadcrumb .marker").addClass("marker_giulio"); // Allora segna menu su minimappa 
@@ -1193,6 +1300,20 @@ function breadcrumb() {
             
             $("#breadcrumb").addClass("minimap_fabrizio"); // Aggiorna il breadcrumb
             $("#mappa_breadcrumb .marker").addClass("marker_fabrizio"); // Allora segna menu su minimappa 
+            
+            break;
+			
+		case "referenze": // Se siamo su referenze
+            
+            $("#breadcrumb").addClass("minimap_chi_siamo"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_chi_siamo"); // Allora segna menu su minimappa 
+            
+            break;
+			
+		case "contatti": // Se siamo su contatti
+            
+            $("#breadcrumb").addClass("minimap_chi_siamo"); // Aggiorna il breadcrumb
+            $("#mappa_breadcrumb .marker").addClass("marker_chi_siamo"); // Allora segna menu su minimappa 
             
             break;
         
