@@ -560,21 +560,24 @@
 
 <!--Fine Mappa del Sito-->
 
-<!--Inizio Mirino-->
-<!--
-<aside id="mirino">
+<!--Inizio Container Mirino-->
 
-	<h7> <!--Titolo--
+<aside id="container_mirino">
+
+	<h7> <!--Titolo-->
     
     	Cursore
         
    	</h7>
     
-    <img src="img/mirino.svg" alt="" /> <!--Cursore--
+   <!-- <img src="img/mirino.svg" alt="" />--> <!--Texture mirino-->
+        
+    <canvas id="mirino" width="1920" height="960"> <!--Mirino-->
+    </canvas>
 
 </aside>
--->
-<!--Fine Mirino-->
+
+<!--Fine Container Mirino-->
 
 <!--Inizio Audio-->
 

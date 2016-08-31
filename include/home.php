@@ -31,15 +31,15 @@
        
     -->
     
-    <a-image id="summary_marker" class="marker" src="#marker_1" width="1" height="1" position="15 0 0" scale="1.5 1.5 1.5" rotation="0 -75 0"> <!--Marker Summary-->   
+    <a-image id="summary_marker" class="marker" src="#marker_1" width="1" height="1" position="15 0 0" scale="1.5 1.5 1.5" rotation="0 -75 0" look-at="#camera"> <!--Marker Summary-->   
     </a-image>
-    <a-image id="home_web" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-1.8 -1.2 -3" scale="0.2 0.2 0.2" rotation="10 20 0" data-href="index.php?pag=web"> <!--Marker Web-->   
+    <a-image id="home_web" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-1.8 -1.2 -3" scale="0.2 0.2 0.2" rotation="10 20 0" data-href="index.php?pag=web" look-at="#camera"> <!--Marker Web-->   
     </a-image>
-    <a-image id="home_grafica" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-2.5 -2 -1.5" scale="0.2 0.2 0.2" rotation="10 72 0" data-href="index.php?pag=grafica"> <!--Marker Grafica-->    
+    <a-image id="home_grafica" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-2.5 -2 -1.5" scale="0.2 0.2 0.2" rotation="10 72 0" data-href="index.php?pag=grafica" look-at="#camera"> <!--Marker Grafica-->    
     </a-image>
-    <a-image id="recensioni_marker" class="marker" src="#marker_1" width="1" height="1" position="-4 2 -3" scale="0.2 0.2 0.2" rotation="-10 45 0"> <!--Marker Recensioni-->    
+    <a-image id="recensioni_marker" class="marker" src="#marker_1" width="1" height="1" position="-4 2 -3" scale="0.2 0.2 0.2" rotation="-10 45 0" look-at="#camera"> <!--Marker Recensioni-->    
     </a-image>
-    <a-image id="menu_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="3 -0.5 -5" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=menu"> <!--Marker Menu-->    
+    <a-image id="menu_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="3 -0.5 -5" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=menu" look-at="#camera"> <!--Marker Menu-->    
     </a-image>
     
     <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true; loop: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio-->
@@ -49,11 +49,8 @@
     
     <a-entity position="0 0 0">
   
-  		<a-entity camera look-controls> <!--Camera-->
-        	
-            <a-cursor position="0 0 -10" geometry="primitive: circle; radius: 7;" material="src: #mirino; side: front; transparent: true">
-            </a-cursor>
-            
+  		<a-entity id="#camera" camera look-controls> <!--Camera-->
+        
         	<a-cursor position="0 0 -10" geometry="primitive: ring" material="color: white; shader: flat; opacity: .7; side: front" scale="0.1 0.1 0.1"> <!--Cursore-->
     
                 <a-animation begin="hovering" attribute="position" from="0 0 -10" to="0 0 -2" easing="ease-in-out" fill="both" dur="300"> <!--Hover-->

@@ -212,7 +212,65 @@ function inizializza() {
 		}  	
 		
 	});
-    
+	
+	mirino(); // Invocazione Funzione Inizializzazione Mirino
+
+}
+
+
+// Funzione Inizializzazione Mirino
+
+function mirino() {
+	
+	// Dichiarazione ed Inizializzazione Variabili
+	
+	var canvas = document.getElementById("mirino"); // Canvas mirino
+	var canvasMirino = canvas.getContext("2d"); // Assegna contesto 2D al canvas
+	var lente = new Image(); // Texture mirino
+
+	// Canvas
+	
+	dimensioniMirino(canvas); // Invocazione Funzione Dimensioni Mirino
+	
+	$(window).on("resize", function() { // Al ridimensionamento della finestra
+		
+		dimensioniMirino(canvas);	// Invocazione Funzione Dimensioni Mirino
+		
+	});
+	
+	// Mirino
+	
+	lente.src = "img/mirino.svg"; // Assegna path immagine mirino
+		
+	lente.onload = function () { // Al caricamento dell'immagine
+	
+		lente.imageSmoothingEnabled = false; // Disattiva antialias immagine
+		canvasMirino.drawImage(lente, 220, 0); // Disegna il mirino sul canvas
+
+	};
+	
+	// Canvas - Focus
+	
+	$('#mirino').bind('mousemove mousedown mouseup', function(e) {
+		
+        $(".a-canvas").trigger(e); // passing thru the event
+
+    });
+
+}
+
+
+// Funzione Dimensioni Mirino
+
+function dimensioniMirino(canvas) {
+	
+	$(canvas).css({ // Imposta dimensioni dinamicamente
+	
+		width: "" + $("#container_mirino").width() + "px",	
+		height: "" + $("#container_mirino").height() + "px"
+		
+	});
+
 }
 
 
