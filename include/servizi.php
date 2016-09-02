@@ -1,12 +1,12 @@
 <!--Inizio Scena Chi Siamo-->
 
-<a-scene keyboard-shortcuts vr-mode-ui id="chi_siamo_pagina"> 
+<a-scene keyboard-shortcuts vr-mode-ui id="servizi_pagina"> 
 
 	<!--Inizio Assets-->
     
      <a-assets>
     
-    	<img id="chi_siamo_sfondo" src="img/chi_siamo.jpg" alt=""> <!--Sfondo-->
+    	<img id="servizi_sfondo" src="img/chi_siamo.jpg" alt=""> <!--Sfondo-->
         <img id="marker_1" src="img/marker_video_1.svg" alt=""> <!--Marker-->
         <img id="marker_2" src="img/marker_video_2.svg" alt=""> <!--"-->
         <audio id="bgm" src="audio/wonder-cycle-chris-zabriskie.mp3"> <!--BGM-->
@@ -17,7 +17,7 @@
 
 	<!--Inizio Area-->
         
-    <a-sky src="#chi_siamo_sfondo" transparent="true" rotation="0 -150 0"> <!--Sfondo-->
+    <a-sky src="#servizi_sfondo" transparent="true" rotation="0 -150 0"> <!--Sfondo-->
     </a-sky>
     
     <!--
@@ -30,11 +30,11 @@
        
     -->
     
-    <a-image id="home_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-10 0 10" scale="1.5 1.5 1.5" rotation="0 5 0" data-href="index.php?pag=home" look-at="#camera"> <!--Marker Home-->   
+<!--    <a-image id="home_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-10 0 10" scale="1.5 1.5 1.5" rotation="0 5 0" data-href="index.php?pag=home" look-at="#camera"> <!--Marker Home-->   
     </a-image>
     <a-image id="chi_siamo_marker" class="marker" src="#marker_1" width="1" height="1" position="3 0 -1" scale="0.2 0.2 0.2" rotation="0 90 0" look-at="#camera"> <!--Marker Chi Siamo-->   
     </a-image>
-    <a-image id="fabio_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-1.5 -2 -1" scale="0.2 0.2 0.2" rotation="-45 0 40" data-href="index.php?pag=fabio_landing" look-at="#camera"> <!--Marker Fabio-->   
+    <a-image id="fabio_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-1.5 -2 -1" scale="0.2 0.2 0.2" rotation="-45 0 40" data-href="index.php?pag=fabio_landing" look-at="#camera"> <!--Marker Fabio-->  
     </a-image>
     <a-image id="radeesh_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-3 0 -1.5" scale="0.2 0.2 0.2" rotation="0 20 0" data-href="index.php?pag=radeesh_landing" look-at="#camera"> <!--Marker Radeesh-->   
     </a-image>
@@ -48,6 +48,9 @@
     </a-image>
     <a-image id="menu_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="2 0 2" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=menu" look-at="#camera"> <!--Marker Menu-->    
     </a-image>
+    
+-->    <a-sphere color="yellow" radius="5" position="0 0 -2">
+    </a-sphere>
     
     <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true; loop: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio-->
     </a-entity>

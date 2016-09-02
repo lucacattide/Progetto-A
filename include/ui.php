@@ -570,10 +570,16 @@
         
    	</h7>
     
-   <!-- <img src="img/mirino.svg" alt="" />--> <!--Texture mirino-->
+    <?php 
+	
+		include "mirino.php"; // Inclusione Mirino
+		
+	?>
+    
+   <!-- <img id="mirino" src="img/mirino.svg" alt="" />--> <!--Texture mirino-->
         
-    <canvas id="mirino" width="1920" height="960"> <!--Mirino-->
-    </canvas>
+ <!--   <canvas id="mirino" width="1920" height="960"> <!--Mirino--
+    </canvas>-->
 
 </aside>
 

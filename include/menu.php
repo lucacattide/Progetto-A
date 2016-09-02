@@ -30,15 +30,15 @@
        
     -->
     
-    <a-image id="home_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="1.5 0 3" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=home"> <!--Marker Home-->   
+    <a-image id="home_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="1.5 0 3" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=home" look-at="#camera"> <!--Marker Home-->   
     </a-image>
-    <a-image id="chi_siamo_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-0.5 -1.5 -2" scale="0.2 0.2 0.2" rotation="-45 0 10" data-href="index.php?pag=chi_siamo"> <!--Marker Chi Siamo-->   
+    <a-image id="chi_siamo_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-0.5 -1.5 -2" scale="0.2 0.2 0.2" rotation="-45 0 10" data-href="index.php?pag=chi_siamo" look-at="#camera"> <!--Marker Chi Siamo-->   
     </a-image>
-    <a-image id="servizi_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="0.5 -2.5 -2" scale="0.2 0.2 0.2" rotation="-75 0 -10" data-href="index.php?pag=servizi"> <!--Marker Servizi-->    
+    <a-image id="servizi_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="0.5 -2.5 -2" scale="0.2 0.2 0.2" rotation="-75 0 -10" data-href="index.php?pag=servizi" look-at="#camera"> <!--Marker Servizi-->    
     </a-image>
-    <a-image id="referenze_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="3 -0.5 1" scale="0.2 0.2 0.2" rotation="-10 45 0" data-href="index.php?pag=referenze"> <!--Marker Referenze-->    
+    <a-image id="referenze_marker"  class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="3 -0.5 1" scale="0.2 0.2 0.2" rotation="-10 45 0" data-href="index.php?pag=referenze" look-at="#camera"> <!--Marker Referenze-->    
     </a-image>
-    <a-image id="contatti_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="2.5 -1 1.5" scale="0.2 0.2 0.2" rotation="0 45 0" data-href="index.php?pag=contatti"> <!--Marker Contatti-->    
+    <a-image id="contatti_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="2.5 -1 1.5" scale="0.2 0.2 0.2" rotation="0 45 0" data-href="index.php?pag=contatti" look-at="#camera"> <!--Marker Contatti-->    
     </a-image>
     
     <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true; loop: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio-->
@@ -46,7 +46,7 @@
     
     <!--Inizio Entità Camera-->
     
-    <a-entity position="0 0 0">
+    <a-entity id="camera" position="0 0 0">
   
   		<a-entity camera look-controls> <!--Camera-->
         

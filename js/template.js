@@ -6,14 +6,14 @@
 
 var aperto = 0; // Controllo attivazione mappa sito
 
-
 // Main
 
 $(document).ready(function() {
 
 	inizializza(); // Invocazione Funzione Inizializzazione 
     caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
-	transizioni(); // Invocazione Funzione Transizioni 
+	transizioni(); // Invocazione Funzione Transizioni
+	navigazione(); // Invocazione Funzione Navigazione 
     breadcrumb(); // Invocazione Funzione Breadcrumb
     validaInviaForm(); // Invocazione Funzione Form
 
@@ -187,7 +187,7 @@ function inizializzaCounter(elemento) {
 
 // Funzione Inizializzazione
 
-function inizializza() {   
+function inizializza() { 
 
 	// Aggiungi ai Preferiti
 	
@@ -209,68 +209,11 @@ function inizializza() {
 		} else { // webkit - safari/chrome
 		
 			alert('Premi ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D per aggiungere la pagina.');
+			
 		}  	
 		
 	});
-	
-	mirino(); // Invocazione Funzione Inizializzazione Mirino
-
-}
-
-
-// Funzione Inizializzazione Mirino
-
-function mirino() {
-	
-	// Dichiarazione ed Inizializzazione Variabili
-	
-	var canvas = document.getElementById("mirino"); // Canvas mirino
-	var canvasMirino = canvas.getContext("2d"); // Assegna contesto 2D al canvas
-	var lente = new Image(); // Texture mirino
-
-	// Canvas
-	
-	dimensioniMirino(canvas); // Invocazione Funzione Dimensioni Mirino
-	
-	$(window).on("resize", function() { // Al ridimensionamento della finestra
 		
-		dimensioniMirino(canvas);	// Invocazione Funzione Dimensioni Mirino
-		
-	});
-	
-	// Mirino
-	
-	lente.src = "img/mirino.svg"; // Assegna path immagine mirino
-		
-	lente.onload = function () { // Al caricamento dell'immagine
-	
-		lente.imageSmoothingEnabled = false; // Disattiva antialias immagine
-		canvasMirino.drawImage(lente, 220, 0); // Disegna il mirino sul canvas
-
-	};
-	
-	// Canvas - Focus
-	
-	$('#mirino').bind('mousemove mousedown mouseup', function(e) {
-		
-        $(".a-canvas").trigger(e); // passing thru the event
-
-    });
-
-}
-
-
-// Funzione Dimensioni Mirino
-
-function dimensioniMirino(canvas) {
-	
-	$(canvas).css({ // Imposta dimensioni dinamicamente
-	
-		width: "" + $("#container_mirino").width() + "px",	
-		height: "" + $("#container_mirino").height() + "px"
-		
-	});
-
 }
 
 
@@ -283,6 +226,7 @@ function transizioni() {
 	var marker = document.querySelector("#marker_1"); // Marker
 	var audio = document.querySelector('[sound]'); // Audio
     var selezionato = null; // Elemento selezionato
+	var x, y = 0; // Coordinate puntatore  
 	
 	// UI
 	
@@ -398,6 +342,76 @@ function transizioni() {
 		
 	});
 	
+	// Mirino
+	
+	$(document).on("mousemove", function(event) { // Al movimento del mouse
+
+		// Se si sposta a destra
+				
+		if (event.pageX > $(this).width() / 2) { 
+		    
+			x = event.pageX;
+
+			$("#mirino_img .quadrante_interno").css({ // Allora ruota in senso orario
+				
+				"-webkit-transform": "rotate(" + x + "deg)",
+				"-moz-transform": "rotate(" + x + "deg)",
+				transform: "rotate(" + x + "deg)",
+				"transform-origin": "center"
+				
+			});	
+			
+		// Altrimenti Se si sposta a sinistra
+			
+		} else if (event.pageX < $(this).width() / 2) { 
+		
+			x = event.pageX;
+		
+			$("#mirino_img .quadrante_interno").css({ // Allora ruota in senso orario
+				
+				"-webkit-transform": "rotate(-" + x + "deg)",
+				"-moz-transform": "rotate(-" + x + "deg)",
+				transform: "rotate(-" + x + "deg)",
+				"transform-origin": "center"
+				
+			});	
+			
+		}
+		
+		// Se si sposta in alto
+				
+		if (event.pageY < $(this).height() / 2) { 
+		    
+			y = event.pageY;
+
+			$("#mirino_img .quadrante_esterno").css({ // Allora ruota in senso orario
+				
+				"-webkit-transform": "rotate(" + y + "deg)",
+				"-moz-transform": "rotate(" + y + "deg)",
+				transform: "rotate(" + y + "deg)",
+				"transform-origin": "center"
+				
+			});	
+			
+		// Altrimenti Se si sposta a sinistra
+			
+		} else if (event.pageY > $(this).height() / 2) { 
+		
+			y = event.pageY;
+		
+			$("#mirino_img .quadrante_esterno").css({ // Allora ruota in senso orario
+				
+				"-webkit-transform": "rotate(-" + y + "deg)",
+				"-moz-transform": "rotate(-" + y + "deg)",
+				transform: "rotate(-" + y + "deg)",
+				"transform-origin": "center"
+				
+			});	
+			
+		}
+		
+	});
+	
 	// Volume
 	
 	$("#volume").on("click tap", function() { // Al click sul pulsante
@@ -492,13 +506,24 @@ function transizioni() {
 	// Marker
 	
 	$(".marker").on("stateadded", function() { // Al click sul marker
-		
-		$(this).attr("src", "#marker_2"); // Effetto rollover
+	
+		$(this).attr({
+			
+			"src": "#marker_2"//,
+			//"scale": "0.5 0.5 0.5"
+			
+		}); // Effetto rollover
 		
 	});
 	$(".marker").on("stateremoved", function() { // All'uscita dall'elemento
 		
-		$(this).attr("src", "#marker_1"); // Effetto rollover
+		$(this).attr({
+			
+			"src": "#marker_1",
+			//"scale": "0.2 0.2 0.2"
+			
+		}); // Effetto rollover
+
 		$("a-cursor").attr("position", "0 0 -10"); // Resetta dimensioni
 		
 	});
@@ -859,7 +884,7 @@ function transizioni() {
 			if ($(this).hasClass("aeroporto")) { // Se aeroporto è attivo
 				
 				$(".indicazioni.aeroporto").slideDown();	 // Mostra indicazioni
-				console.log("ok");
+
 			} else if ($(this).hasClass("auto")) { // Altrimenti Se auto è attivo
 				
 				$(".indicazioni.auto").slideDown();	// Mostra indicazioni
@@ -1216,6 +1241,139 @@ function animaElementi_1(el) {
 }
 
 
+// Funzione Navigazione
+
+function navigazione() {
+	
+	// Dichiarazione ed Inizializzazione Variabili
+	
+	// Dichiarazione ed Inizializzazione area sensibile movimento libero
+
+	var area = $(window).width() / 4; 
+	var puntatore = true; // Controllo visibilità mouse
+	var scena = document.querySelector('a-scene'); // Oggetto Scena
+	var camera = document.querySelector("a-entity[camera]").components.camera.camera; // Oggetto Camera
+	var renderer = THREE.WebGLRenderer; // Oggetto rendering 
+	var movimentoFree = false; // Selettore movimento libero
+	var long = 0; // Longitudine
+	var lat = 0; // Latitudine
+	var oldX = 0; // Vecchia coordinata X
+	var oldY = 0; // Vecchia coordinata Y
+	var oldLong = 0; // Vecchia longitudine
+	var oldLat = 0; // Vecchia latitudine
+	
+	
+	  // Sposta la camera alle coordinate attualmente visualizzate
+			
+			
+			
+			
+			lat = Math.max(-85, Math.min(85, lat));
+			camera.x = 500 * Math.sin(THREE.Math.degToRad(90 - lat)) * Math.cos(THREE.Math.degToRad(long));
+			camera.y = 500 * Math.cos(THREE.Math.degToRad(90 - lat)) * Math.sin(THREE.Math.degToRad(long));
+		
+			camera.lookAt(camera); // Imposta la visualizzazione
+			camera.updateProjectionMatrix();
+			//renderer(scena, camera); // calling again render function	 
+	
+	
+		
+	$(".a-canvas").hover(function() { // All'entrata del mouse
+	
+		puntatore = false; // Imposta il puntatore come nascosto			
+	
+	}, function() { // All'uscita
+		
+		puntatore = true; // Imposta il puntatore come nascosto		
+		
+	});
+	$(".a-canvas").on("mousemove", function(event) { // Al movimento del mouse
+	
+	    
+		
+		if (event.pageX >= area && event.pageX <= area * 3) { // Se ci troviamo all'interno del mirino
+						
+			 movimentoFree = true; // Attiva la modalità di navigazione libera
+	
+			if (puntatore === false) { // Se il puntatore è impostato su nascosto
+			
+				$("body").css("cursor", "none"); // Nasconde il mouse
+	
+			}
+	
+			
+			
+		}
+		if (event.pageX <= area || event.pageX >= area * 3) { // Se ci troviamo all'esterno del mirino
+		
+		   puntatore = false; // Imposta il puntatore come nascosto		
+		
+		}
+		
+		if (movimentoFree) { // Se la navigazione libera è attiva
+		
+				long = (oldX - event.clientX) * 0.1 + oldLong; // Assegna la longitudine attuale
+				lat = (event.clientY - oldY) * 0.1 + oldLat; // Assegna la latitudine attuale
+				
+				console.log( long );
+				console.log( lat );
+				
+				oldLong = long; // Salva la longitudine attuale
+			    oldLat = lat; // Salva la longitudine attuale
+				
+				
+		}	
+		
+	
+			
+			
+			oldX = event.clientX; // Salva le coordinate X attuale
+	        oldY = event.clientY; // Salva le coordinate Y attuale
+			
+				
+	});
+	$(window).on("keypress", function(e) { // Alla pressione del tasto
+
+		 var code = e.keyCode || e.which; // Dichiarazione ed Inizializzazione Variabile tasto
+		 
+		 if (code === 32) { // Se si preme la barra spaziatrice
+
+		 	movimentoFree = false; // Allora disattiva la navigazione libera
+			puntatore = true; // Imposta il puntatore su visibile
+			
+			if (puntatore === true) { // Se il puntatore è impostato su visibile
+			
+				$("body").css("cursor", "auto"); // Mostra il mouse
+	
+			}
+		   
+		 }	
+		
+	});
+	
+}
+
+/*function render(lat, long) {
+	
+	var scena = document.querySelector('a-scene'); // Oggetto Scena
+	var camera = document.querySelector("a-entity[camera]").components.camera.camera; // Oggetto Camera
+	var renderer = THREE.WebGLRenderer; // Oggetto rendering
+
+	console.log("ok");
+	//requestAnimationFrame(render);	
+	
+	// Sposta la camera alle coordinate attualmente visualizzate
+				
+	lat = Math.max(-85, Math.min(85, lat));
+	camera.x = 500 * Math.sin(THREE.Math.degToRad(90 - lat)) * Math.cos(THREE.Math.degToRad(long));
+	camera.y = 500 * Math.cos(THREE.Math.degToRad(90 - lat)) * Math.sin(THREE.Math.degToRad(long));
+
+	camera.lookAt(camera); // Imposta la visualizzazione
+	renderer(scena, camera); // calling again render function	
+	camera.updateProjectionMatrix();
+}
+
+*/
 // Funzione Breadcrumb
 
 function breadcrumb() {

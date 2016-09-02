@@ -30,9 +30,9 @@
        
     -->
     
-    <a-image id="luca_marker" class="marker" src="#marker_1" width="1" height="1" position="0 1 -2" scale="0.2 0.2 0.2" rotation="0 0 0"> <!--Marker Fabio-->    
+    <a-image id="luca_marker" class="marker" src="#marker_1" width="1" height="1" position="0 1 -2" scale="0.2 0.2 0.2" rotation="0 0 0" look-at="#camera"> <!--Marker Fabio-->    
     </a-image>
-    <a-image id="chi_siamo_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-2 2.5 -1" scale="0.2 0.2 0.2" rotation="45 45 -10" data-href="index.php?pag=chi_siamo"> <!--Marker Chi Siamo-->    
+    <a-image id="chi_siamo_landing_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-2 2.5 -1" scale="0.2 0.2 0.2" rotation="45 45 -10" data-href="index.php?pag=chi_siamo" look-at="#camera"> <!--Marker Chi Siamo-->    
     </a-image>
     
     <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true; loop: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International — CC BY 4.0"> <!--Audio-->
@@ -40,7 +40,7 @@
     
     <!--Inizio Entità Camera-->
     
-    <a-entity position="0 0 0">
+    <a-entity id="camera" position="0 0 0">
   
   		<a-entity camera look-controls> <!--Camera-->
         

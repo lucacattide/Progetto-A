@@ -569,25 +569,23 @@ padding: 5em 0 !important; */ }
 	right: 0;
 	bottom: 0;
 	margin: 0 auto;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 	pointer-events: none;
-
 }
 
-#mirino
+#mirino_img
 {
-	position: relative;
-	/*width: 100%;
-	height: 100%;
-	min-height: 100%;*/
+	display: block;
 	margin: 0 auto;
-	pointer-events: none;
-}
-
-#lente
-{
-	display: none;
 	width: 100%;
 	height: auto;
+	min-height: 100%;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
 }
 
 /* Volume */
@@ -1813,6 +1811,10 @@ label[for="accettazione"]
 
 /* Transizioni **********************************************/
 
+.quadrante_esterno { transition: all .7s ease-in-out; }
+
+.quadrante_interno { transition: all .5s ease-in-out; }
+
 .glitch-transition .cd-main-content { background-color: #fff !important; }
 
 #sfondo_landing { transition: all .3s ease-out; }
@@ -1855,8 +1857,6 @@ label[for="accettazione"]
 
 #mappa_sito { transition: transform 1s ease-in-out, border-radius .5s ease-in-out .5s, background-color 1s ease-in-out 1s; }
 
-/*.mappa_sito_sfondo { transition: all .5s ease-in-out 2.5s; }
-*/
 .pannello_1 { transition: height .5s ease-in 1s, padding .5s ease-in 1s, opacity .5s ease-in-out, background-color .5s ease-in-out; }
 
 .pannello_2 { transition: height .5s ease-in 1.1s, padding .5s ease-in 1.1s, opacity .5s ease-in-out, background-color .5s ease-in-out; }

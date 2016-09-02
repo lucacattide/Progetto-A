@@ -58,6 +58,8 @@
         
         <script type="text/javascript" src="js/aframe.min.js"> <!--A-Frame-->
 		</script>
+        <script type="text/javascript" src="js/aframe-mouse-cursor-component.min.js"> <!--A-Frame Mouse Cursor-->
+		</script>
         <script type="text/javascript" src="js/antispam.js" async defer> <!--Anti-Spam-->
 		</script>
 

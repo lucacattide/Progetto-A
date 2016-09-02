@@ -30,11 +30,11 @@
        
     -->
     
-    <a-image id="home_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-10 0 10" scale="1.5 1.5 1.5" rotation="0 5 0" data-href="index.php?pag=home"> <!--Marker Home-->   
+    <a-image id="home_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="-10 0 10" scale="1.5 1.5 1.5" rotation="0 5 0" data-href="index.php?pag=home" look-at="#camera"> <!--Marker Home-->   
     </a-image>
-    <a-image id="referenze_marker" class="marker" src="#marker_1" width="1" height="1" position="0.7 -2 -2" scale="0.2 0.2 0.2" rotation="-40 0 -10"> <!--Marker Referenze-->   
+    <a-image id="referenze_marker" class="marker" src="#marker_1" width="1" height="1" position="0.7 -2 -2" scale="0.2 0.2 0.2" rotation="-40 0 -10" look-at="#camera"> <!--Marker Referenze-->   
     </a-image>
-    <a-image id="menu_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="2 0 2" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=menu"> <!--Marker Menu-->    
+    <a-image id="menu_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="2 0 2" scale="0.2 0.2 0.2" rotation="0 0 0" data-href="index.php?pag=menu" look-at="#camera"> <!--Marker Menu-->    
     </a-image>
     
     <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true; loop: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio-->

@@ -30,9 +30,9 @@
        
     -->
     
-    <a-image id="home_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="15 0 0" scale="1.5 1.5 1.5" rotation="0 -75 0" data-href="index.php?pag=home"> <!--Marker Home-->   
+    <a-image id="home_marker" class="marker cd-btn cd-modal-trigger nascondi" src="#marker_1" width="1" height="1" position="15 0 0" scale="1.5 1.5 1.5" rotation="0 -75 0" data-href="index.php?pag=home" look-at="#camera"> <!--Marker Home-->   
     </a-image>
-    <a-image id="web_marker" class="marker" src="#marker_1" width="1" height="1" position="0 -0.5 -3" scale="0.2 0.2 0.2" rotation="10 0 0"> <!--Marker Web-->   
+    <a-image id="web_marker" class="marker" src="#marker_1" width="1" height="1" position="0 -0.5 -3" scale="0.2 0.2 0.2" rotation="10 0 0" look-at="#camera"> <!--Marker Web-->   
     </a-image>
     
     <a-entity id="bgm" position="0 0 0" sound="src: audio/wonder-cycle-chris-zabriskie.mp3; autoplay: true; loop: true" data-cc="Wonder Cycle by Chris Zabriskie - Creative Commons — Attribution 4.0 International— CC BY 4.0"> <!--Audio-->
@@ -40,7 +40,7 @@
     
     <!--Inizio Entità Camera-->
     
-    <a-entity position="0 0 0">
+    <a-entity id="camera" position="0 0 0">
   
   		<a-entity camera look-controls> <!--Camera-->
         
