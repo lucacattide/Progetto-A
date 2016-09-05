@@ -18,6 +18,8 @@
 </script>
 <script type="text/javascript" async defer src="js/template.js"> <!--Template-->
 </script>
+<!--<script type="text/javascript" async defer src="js/navigazione.js"> <!--Navigazione--
+</script>-->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ1z9xiHkYf19OZWncYT2NKdfl1s0qHpI&callback=mappaDoveSiamo" async defer> <!--Google Maps-->
 </script>
 

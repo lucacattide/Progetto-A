@@ -13,7 +13,7 @@ $(document).ready(function() {
 	inizializza(); // Invocazione Funzione Inizializzazione 
     caricaContenuti(); // Invocazione Funzione Caricamento Contenuti AJAX
 	transizioni(); // Invocazione Funzione Transizioni
-	navigazione(); // Invocazione Funzione Navigazione 
+	//navigazione(); // Invocazione Funzione Navigazione 
     breadcrumb(); // Invocazione Funzione Breadcrumb
     validaInviaForm(); // Invocazione Funzione Form
 
@@ -525,6 +525,11 @@ function transizioni() {
 		}); // Effetto rollover
 
 		$("a-cursor").attr("position", "0 0 -10"); // Resetta dimensioni
+		
+	});
+	$(".marker").on("click tap", function() { // Al click sul marker
+		
+		$("body").css("cursor", "auto"); // Mostra il puntatore
 		
 	});
     
@@ -1243,7 +1248,7 @@ function animaElementi_1(el) {
 
 // Funzione Navigazione
 
-function navigazione() {
+/*function navigazione() {
 	
 	// Dichiarazione ed Inizializzazione Variabili
 	
@@ -1262,22 +1267,16 @@ function navigazione() {
 	var oldLong = 0; // Vecchia longitudine
 	var oldLat = 0; // Vecchia latitudine
 	
+	// Sposta la camera alle coordinate attualmente visualizzate
+			
+	lat = Math.max(-85, Math.min(85, lat));
+	camera.x = 500 * Math.sin(THREE.Math.degToRad(90 - lat)) * Math.cos(THREE.Math.degToRad(long));
+	camera.y = 500 * Math.cos(THREE.Math.degToRad(90 - lat)) * Math.sin(THREE.Math.degToRad(long));
+
+	camera.lookAt(camera); // Imposta la visualizzazione
+	camera.updateProjectionMatrix();
+	//renderer(scena, camera); // calling again render function	 	
 	
-	  // Sposta la camera alle coordinate attualmente visualizzate
-			
-			
-			
-			
-			lat = Math.max(-85, Math.min(85, lat));
-			camera.x = 500 * Math.sin(THREE.Math.degToRad(90 - lat)) * Math.cos(THREE.Math.degToRad(long));
-			camera.y = 500 * Math.cos(THREE.Math.degToRad(90 - lat)) * Math.sin(THREE.Math.degToRad(long));
-		
-			camera.lookAt(camera); // Imposta la visualizzazione
-			camera.updateProjectionMatrix();
-			//renderer(scena, camera); // calling again render function	 
-	
-	
-		
 	$(".a-canvas").hover(function() { // All'entrata del mouse
 	
 		puntatore = false; // Imposta il puntatore come nascosto			
@@ -1289,8 +1288,6 @@ function navigazione() {
 	});
 	$(".a-canvas").on("mousemove", function(event) { // Al movimento del mouse
 	
-	    
-		
 		if (event.pageX >= area && event.pageX <= area * 3) { // Se ci troviamo all'interno del mirino
 						
 			 movimentoFree = true; // Attiva la modalità di navigazione libera
@@ -1300,8 +1297,6 @@ function navigazione() {
 				$("body").css("cursor", "none"); // Nasconde il mouse
 	
 			}
-	
-			
 			
 		}
 		if (event.pageX <= area || event.pageX >= area * 3) { // Se ci troviamo all'esterno del mirino
@@ -1309,26 +1304,17 @@ function navigazione() {
 		   puntatore = false; // Imposta il puntatore come nascosto		
 		
 		}
-		
 		if (movimentoFree) { // Se la navigazione libera è attiva
 		
 				long = (oldX - event.clientX) * 0.1 + oldLong; // Assegna la longitudine attuale
-				lat = (event.clientY - oldY) * 0.1 + oldLat; // Assegna la latitudine attuale
-				
-				console.log( long );
-				console.log( lat );
-				
+				lat = (event.clientY - oldY) * 0.1 + oldLat; // Assegna la latitudine attuale				
 				oldLong = long; // Salva la longitudine attuale
 			    oldLat = lat; // Salva la longitudine attuale
 				
-				
 		}	
 		
-	
-			
-			
-			oldX = event.clientX; // Salva le coordinate X attuale
-	        oldY = event.clientY; // Salva le coordinate Y attuale
+		oldX = event.clientX; // Salva le coordinate X attuale
+		oldY = event.clientY; // Salva le coordinate Y attuale
 			
 				
 	});
@@ -1352,7 +1338,7 @@ function navigazione() {
 	});
 	
 }
-
+*/
 /*function render(lat, long) {
 	
 	var scena = document.querySelector('a-scene'); // Oggetto Scena

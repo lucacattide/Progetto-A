@@ -79,7 +79,7 @@
     
     <a-entity position="0 0 0">
   
-  		<a-entity id="#camera" camera look-controls mouse-cursor> <!--Camera-->
+  		<a-entity id="#camera" camera no-click-look-controls mouse-cursor> <!--Camera-->
         
         	<a-cursor position="0 0 -10" geometry="primitive: ring" material="color: white; shader: flat; opacity: .7; side: front" scale="0.1 0.1 0.1"> <!--Cursore-->
     
