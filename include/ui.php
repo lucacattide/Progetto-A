@@ -562,7 +562,7 @@
 
 <!--Inizio Container Mirino-->
 
-<aside id="container_mirino">
+<aside id="container_mirino" class="nascondi">
 
 	<h7> <!--Titolo-->
     
@@ -576,11 +576,6 @@
 		
 	?>
     
-   <!-- <img id="mirino" src="img/mirino.svg" alt="" />--> <!--Texture mirino-->
-        
- <!--   <canvas id="mirino" width="1920" height="960"> <!--Mirino--
-    </canvas>-->
-
 </aside>
 
 <!--Fine Container Mirino-->

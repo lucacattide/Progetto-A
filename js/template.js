@@ -250,7 +250,7 @@ function transizioni() {
 		$("#preferiti_link").removeClass("evidenzia_2");
 		$("#preferiti").removeClass("entra_giu");
 				
-	});
+	});	
 	
 	// Mappa del Sito
 	
@@ -464,6 +464,7 @@ function transizioni() {
 		$("#mappa_breadcrumb").addClass("nascondi"); // Allora nascondi il breadcrumb
 		$("#icona_footer").addClass("nascondi"); // Allora nascondi il volume
 		$("#live").addClass("nascondi"); // Allora nascondi il livestream
+		$("#headline").addClass("animated fadeInUp");
 		
 	} else {
 		
@@ -475,6 +476,7 @@ function transizioni() {
 		$("#mappa_breadcrumb").removeClass("nascondi"); // Allora mostra
 		$("#icona_footer").removeClass("nascondi"); // Allora mostra
 		$("#live").removeClass("nascondi"); // Allora mostra
+		$("#headline").addClass("animated fadeInUp");
 
     }
 	

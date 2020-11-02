@@ -49,12 +49,12 @@
 
     <hgroup>
 
-        <h1 id="headline"> <!--Headline-->
+        <h1 id="headline" class="nascondi"> <!--Headline-->
         
             Lorem ipsum dolor sit amet
         
         </h1>
-        <h2 id="tagline"> <!--Tagline-->
+        <h2 id="tagline" class="nascondi"> <!--Tagline-->
         
             Consectetur adipiscing elit	
         
@@ -64,7 +64,7 @@
     
     <!--Fine Titoli-->
     
-    <a id="entra" href="#" title="" tabindex="100">
+    <a id="entra" class="nascondi" href="#" title="" tabindex="100">
     
         Entra	
     
